@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+/* Near-black with hairline borders and Inter, dark first. Color is reserved for status. */
+@theme inline {
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --color-bg: #08090a;
+  --color-surface: #0f1011;
+  --color-surface-2: #17181b;
+  --color-surface-3: #23252a;
+  --color-line: #1e2025;
+  --color-ink: #f7f8f8;
+  --color-ink-2: #d0d6e0;
+  --color-muted: #8a8f98;
+  --color-danger: #eb5757;
+  --color-ok: #4cb782;
+  --color-warn: #f2c94c;
+  --color-info: #828fff;
+  --color-flame: #ff6b1a;
+  --color-flame-2: #ffb347;
+
+  --animate-breathe: breathe 1.8s ease-in-out infinite;
+  --animate-rise: rise 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-ping-slow: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+
+  @keyframes breathe {
+    0%, 100% { opacity: 0.45; }
+    50% { opacity: 1; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes ping-slow {
+    0% { transform: scale(1); opacity: 0.55; }
+    80%, 100% { transform: scale(3.2); opacity: 0; }
+  }
+}
+
+html {
+  color-scheme: dark;
+  background: var(--color-bg);
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  letter-spacing: -0.012em;
+  font-feature-settings: "cv01", "ss03", "calt";
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 16px form text stops iOS from zooming on focus; in the base layer so utilities can still size buttons. */
+@layer base {
+  input,
+  select,
+  button,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-line bg-surface p-4;
+  }
+
+  .field {
+    @apply block w-full min-h-[48px] rounded-lg border border-line bg-surface-2 px-3.5 py-2.5 text-[15px] font-medium text-ink placeholder:font-normal placeholder:text-muted/70 transition-colors focus:border-info focus:outline-none focus:ring-2 focus:ring-info/25;
+  }
+
+  .btn {
+    @apply inline-flex min-h-[46px] cursor-pointer items-center justify-center gap-2 rounded-[10px] border border-line bg-surface-2 px-4 py-2 text-[15px] font-medium text-ink transition-[transform,background-color,opacity] duration-150 hover:bg-surface-3 active:scale-[0.985] disabled:cursor-not-allowed disabled:opacity-40 disabled:active:scale-100;
+  }
+
+  .btn-primary {
+    @apply border-transparent bg-[#e6e6e6] text-[#08090a] hover:bg-white;
+  }
+
+  .btn-danger {
+    @apply border-transparent bg-danger text-white hover:bg-[#f06a6a];
+  }
+
+  .btn-sm {
+    @apply min-h-8 rounded-lg px-3 py-1 text-[13px];
+  }
+
+  .label {
+    @apply mb-1.5 block text-[13px] font-medium text-ink-2;
+  }
+
+  .hint {
+    @apply mt-1.5 text-[13px] leading-snug text-muted;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-md border border-line bg-surface-2 px-2 py-1 text-[12px] font-medium text-ink-2;
+  }
+
+  .eyebrow {
+    @apply text-[13px] font-medium text-muted;
+  }
+
+  .h-section {
+    @apply text-[16px] font-semibold tracking-[-0.015em] text-ink;
+  }
+
+  .title-xl {
+    @apply font-display text-[28px] font-semibold leading-[1.1] tracking-[-0.03em];
+  }
+
+  /* A tappable list row, the building block of every tab */
+  .row {
+    @apply flex w-full items-center gap-3 py-3 text-left;
+  }
+
+  .tile {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-line bg-surface-2 text-ink-2;
+  }
+
+  .link {
+    @apply font-medium text-ink underline decoration-ink/25 underline-offset-4 hover:decoration-ink;
+  }
+
+  /* Round icon button, the kind that floats over a map */
+  .fab {
+    @apply flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-surface-2 text-ink shadow-[0_2px_12px_rgba(0,0,0,0.6)] transition-transform active:scale-95;
+  }
+
+  /* iOS-style switch built on a real checkbox */
+  .switch {
+    @apply relative h-[31px] w-[51px] shrink-0 cursor-pointer appearance-none rounded-full bg-surface-3 transition-colors duration-200 checked:bg-info focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ink/15;
+  }
+  .switch::after {
+    content: "";
+    @apply absolute left-[2px] top-[2px] h-[27px] w-[27px] rounded-full bg-white shadow-[0_2px_5px_rgba(0,0,0,0.25)] transition-transform duration-200;
+  }
+  .switch:checked::after {
+    transform: translateX(20px);
+  }
+
+  .check {
+    @apply h-6 w-6 shrink-0 cursor-pointer rounded-md accent-white;
+  }
+}
+
+.maplibregl-map {
+  font-family: var(--font-sans);
+}
+.maplibregl-popup-content {
+  @apply rounded-xl bg-surface-3 px-3 py-2 text-[13px] font-semibold text-ink shadow-[0_4px_18px_rgba(0,0,0,0.6)];
+}
+.maplibregl-ctrl-attrib {
+  font-size: 10px;
+}
+.maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
+  border-top-color: var(--color-surface-3);
+}
+.maplibregl-popup-anchor-top .maplibregl-popup-tip {
+  border-bottom-color: var(--color-surface-3);
+}
+/* Lift the map credit clear of the sheet that overlaps the map's bottom edge. */
+.maplibregl-ctrl-bottom-right {
+  bottom: var(--map-credit-lift, 0px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

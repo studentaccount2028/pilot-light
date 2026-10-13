@@ -1,0 +1,44 @@
+{
+  "id": "ossipee-2025-12-29",
+  "name": "Ossipee: Dec 29 2025 winter storm (ice)",
+  "_provenance": {
+    "note": "Real NWS Winter Storm Warning for Southern Carroll County (NHZ006), issued by NWS Gray ME on 2025-12-28 at 19:57 UTC. api.weather.gov no longer serves alerts this old, so the fields below were transcribed from the archived bulletin text into the same shape the live API returns. The alert id is ours; the VTEC code and product id are the real identifiers.",
+    "productId": "202512281957-KGYX-WWUS41-WSWGYX",
+    "vtec": "/O.NEW.KGYX.WS.W.0007.251229T0300Z-251230T0000Z/",
+    "source": "https://mesonet.agron.iastate.edu/api/1/nwstext/202512281957-KGYX-WWUS41-WSWGYX",
+    "vtecBrowser": "https://mesonet.agron.iastate.edu/vtec/?year=2025&wfo=KGYX&phenomena=WS&significance=W&eventid=0007"
+  },
+  "heartbeatScript": [
+    { "minutesBeforeRun": 40, "batteryPct": 71 },
+    { "minutesBeforeRun": 35, "batteryPct": 70 },
+    { "minutesBeforeRun": 30, "batteryPct": 68 },
+    { "minutesBeforeRun": 25, "batteryPct": 67 }
+  ],
+  "alert": {
+    "type": "Feature",
+    "properties": {
+      "id": "pilot-light-replay:KGYX.WS.W.0007.2025",
+      "areaDesc": "Northern Grafton; Northern Carroll; Southern Grafton; Southern Carroll; Sullivan; Merrimack; Belknap",
+      "geocode": {
+        "UGC": ["NHZ003", "NHZ004", "NHZ005", "NHZ006", "NHZ007", "NHZ008", "NHZ009"]
+      },
+      "sent": "2025-12-28T19:57:00Z",
+      "effective": "2025-12-28T19:57:00Z",
+      "onset": "2025-12-29T03:00:00Z",
+      "expires": "2025-12-29T08:00:00Z",
+      "ends": "2025-12-30T00:00:00Z",
+      "status": "Actual",
+      "messageType": "Alert",
+      "event": "Winter Storm Warning",
+      "senderName": "NWS Gray ME",
+      "headline": "Winter Storm Warning in effect from 10 PM this evening to 7 PM EST Monday",
+      "description": "* WHAT...Heavy mixed precipitation expected. Total snow accumulations up to one inch, sleet accumulations up to one tenth of an inch, and ice accumulations between one quarter and one half of an inch.\n\n* WHERE...Portions of central and northern New Hampshire.\n\n* WHEN...From 10 PM this evening to 7 PM EST Monday.\n\n* IMPACTS...A period of mixed precipitation is expected with air temperatures remaining below freezing. Expect slippery road conditions and avoid travel if possible. Gusty winds directly after the storm will cause a period of dangerous conditions. The ice loaded trees will easily snap with the winds, leading to a elevated power threat. Travel will be dangerous and is not advised due to icy road conditions. The hazardous conditions could impact the Monday morning and evening commutes.",
+      "instruction": "Persons should delay all travel if possible. If travel is absolutely necessary, drive with extreme caution. Leave plenty of room between you and the motorist ahead of you, and allow extra time to reach your destination. Avoid sudden braking or acceleration, and be especially cautious on hills or when making turns. Make sure your car is winterized and in good working order.",
+      "parameters": {
+        "VTEC": ["/O.NEW.KGYX.WS.W.0007.251229T0300Z-251230T0000Z/"],
+        "AWIPSidentifier": ["WSWGYX"],
+        "WMOidentifier": ["WWUS41 KGYX 281957"]
+      }
+    }
+  }
+}

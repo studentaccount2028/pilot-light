@@ -1,0 +1,52 @@
+{
+  "_note": "Stub. Links were checked on 2026-10-12. Town assignments are our best guess and are marked unverified: several NH towns are split between two utilities, so the form asks the family to confirm against the electric bill. The NH teammate replaces these with confirmed rows after calling each utility.",
+  "utilities": {
+    "eversource": {
+      "name": "Eversource",
+      "outageMapUrl": "https://outagemap.eversource.com/external/default.html",
+      "lifeSupportUrl": "https://www.eversource.com/MDform",
+      "lifeSupportPhone": null,
+      "lifeSupportNote": "Eversource's medical form protects against shutoff for non-payment. It is not an outage-priority program. Ask Eversource what outage notification they offer."
+    },
+    "unitil": {
+      "name": "Unitil",
+      "outageMapUrl": null,
+      "lifeSupportUrl": "https://unitil.com/outage-center/life-support-information",
+      "lifeSupportPhone": null,
+      "lifeSupportNote": "Unitil's Life Support program needs a Medical Alert Form. Unitil will attempt to notify you of planned outages and severe weather; it does not promise uninterrupted service."
+    },
+    "liberty": {
+      "name": "Liberty",
+      "outageMapUrl": null,
+      "lifeSupportUrl": "https://new-hampshire.libertyutilities.com/bow/residential/emergencies/electrical/life-sustaining-equipment.html",
+      "lifeSupportPhone": "1-800-833-4200",
+      "lifeSupportNote": "Call Liberty to register life-sustaining equipment."
+    },
+    "nhec": {
+      "name": "NH Electric Co-op",
+      "outageMapUrl": "https://www.nhec.com/outages-safety/",
+      "lifeSupportUrl": null,
+      "lifeSupportPhone": null,
+      "lifeSupportNote": "Enrollment path not yet confirmed. Call NHEC member services and ask about their medical or life-support list."
+    },
+    "other": {
+      "name": "Other / municipal",
+      "outageMapUrl": null,
+      "lifeSupportUrl": null,
+      "lifeSupportPhone": null,
+      "lifeSupportNote": "Call the number on the electric bill and ask whether they keep a medical or life-support list."
+    }
+  },
+  "towns": {
+    "Ossipee": { "utility": "nhec", "verified": false },
+    "Conway": { "utility": "eversource", "verified": false },
+    "Tamworth": { "utility": "eversource", "verified": false },
+    "Moultonborough": { "utility": "nhec", "verified": false },
+    "Sandwich": { "utility": "nhec", "verified": false },
+    "Wolfeboro": { "utility": "other", "verified": false },
+    "Laconia": { "utility": "eversource", "verified": false },
+    "Rochester": { "utility": "eversource", "verified": false },
+    "Portsmouth": { "utility": "eversource", "verified": false },
+    "Exeter": { "utility": "unitil", "verified": false }
+  }
+}
