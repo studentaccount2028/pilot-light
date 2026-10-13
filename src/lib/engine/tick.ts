@@ -22,7 +22,7 @@ import { allClearText, sayTwiml, stormPromptSms, stormPromptTwiml, thresholdSms,
 import { riskFor } from "../riskFor";
 import { TIER_LABEL, type Tier } from "./risk";
 import { placeCall, publicBaseUrl, sendSms, transportMode } from "../twilio";
-import { channelsFor, decide, findActiveWarning, limitingDevice, recipientsFor, WARNING_EVENTS, type Threshold } from "./rules";
+import { channelsFor, decide, findActiveWarning, limitingDevice, PROMPT_EVENTS, recipientsFor, WARNING_EVENTS, type Threshold } from "./rules";
 
 const MAX_ATTEMPTS = 5;
 const RETRY_LEASE_MS = 30_000;
@@ -131,6 +131,11 @@ async function sendStormPrompt(householdId: string): Promise<void> {
 
   const [alert] = await db.select({ event: nwsAlerts.event }).from(nwsAlerts).where(eq(nwsAlerts.id, alertId));
   const event = alert?.event ?? "storm warning";
+  // An advisory arms the watch but is not worth a call to the resident.
+  if (!(PROMPT_EVENTS as readonly string[]).includes(event)) {
+    await db.update(householdState).set({ promptAlertId: null, promptSentAt: null }).where(eq(householdState.householdId, householdId));
+    return;
+  }
   const who = household.residentName?.trim() || "the resident";
   const tag = transportMode() === "simulated" ? "SIMULATED " : "";
   try {

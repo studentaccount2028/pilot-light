@@ -18,7 +18,8 @@
     "test": "tsx --test tests/*.test.ts",
     "test:replay": "TWILIO_DRY_RUN=1 tsx scripts/replay.ts --assert --speed 3000",
     "backtest": "node scripts/backtest.mjs",
-    "twilio:check": "tsx scripts/twilio-check.ts"
+    "twilio:check": "tsx scripts/twilio-check.ts",
+    "backtest:outages": "node scripts/backtest-outages.mjs"
   },
   "dependencies": {
     "drizzle-orm": "^0.45.4",

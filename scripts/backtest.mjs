@@ -11,8 +11,8 @@ import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 const DIR = "data/backtest";
-// The same four events the live poller keeps (src/lib/engine/rules.ts).
-const QUALIFYING = new Set(["WS.W", "IS.W", "HW.W", "BZ.W"]);
+// The same events the live poller keeps (src/lib/engine/rules.ts).
+const QUALIFYING = new Set(["WS.W", "IS.W", "HW.W", "BZ.W", "WI.Y"]);
 const ZONE_NAMES = {
   NHZ001: "Northern Coos", NHZ002: "Southern Coos", NHZ003: "Northern Grafton", NHZ004: "Northern Carroll",
   NHZ005: "Southern Grafton", NHZ006: "Southern Carroll", NHZ007: "Sullivan", NHZ008: "Merrimack",
@@ -98,6 +98,11 @@ const perSeason = seasons.map((s) => ({
   carroll: all.filter((w) => w.season === s && w.zone === "NHZ006").length,
 }));
 
+// Prompts go to the resident only for warnings, not advisories.
+const PROMPT = new Set(["Winter Storm Warning", "Ice Storm Warning", "High Wind Warning", "Blizzard Warning"]);
+const prompts = all.filter((w) => PROMPT.has(w.event));
+const promptLeads = prompts.map((w) => w.leadHours).filter((x) => x != null);
+
 const summary = {
   source: "Iowa Environmental Mesonet VTEC archive (NWS Gray ME and Burlington VT products), zones NHZ001-NHZ015, 2016-07-01 to 2026-07-01",
   qualifyingEvents: [...QUALIFYING],
@@ -106,6 +111,13 @@ const summary = {
   byEvent: all.reduce((acc, w) => ((acc[w.event] = (acc[w.event] ?? 0) + 1), acc), {}),
   lead: { medianHours: r1(median(leads)), p10Hours: r1(pct(leads, 10)), p90Hours: r1(pct(leads, 90)), underOneHour: leads.filter((x) => x < 1).length, atLeastSixHours: leads.filter((x) => x >= 6).length },
   duration: { medianHours: r1(median(durations)), p90Hours: r1(pct(durations, 90)) },
+  prompts: {
+    total: prompts.length,
+    perZonePerWinter: r1(prompts.length / Object.keys(zones).length / seasons.length),
+    nh01PerZonePerWinter: r1(prompts.filter((w) => NH01.has(w.zone)).length / NH01.size / seasons.length),
+    medianLeadHours: r1(median(promptLeads)),
+    atLeastSixHours: promptLeads.filter((x) => x >= 6).length,
+  },
   nh01: {
     zones: [...NH01],
     warningsPerZonePerWinter: r1(all.filter((w) => NH01.has(w.zone)).length / NH01.size / seasons.length),
@@ -122,6 +134,7 @@ console.log(`${all.length} qualifying warnings across ${Object.keys(zones).lengt
 console.log("By event:", summary.byEvent);
 console.log(`Lead time (bulletin to hazard onset): median ${summary.lead.medianHours} h, p10 ${summary.lead.p10Hours} h, p90 ${summary.lead.p90Hours} h; ${summary.lead.underOneHour} under 1 h, ${summary.lead.atLeastSixHours} at least 6 h`);
 console.log(`Duration: median ${summary.duration.medianHours} h, p90 ${summary.duration.p90Hours} h`);
-console.log(`NH-01 zones: ${summary.nh01.warningsPerZonePerWinter} warnings and ${summary.nh01.hoursUnderWarningPerZonePerWinter} h under warning per zone per winter`);
+console.log(`Storm prompts (warnings only): ${prompts.length}; ${summary.prompts.nh01PerZonePerWinter} per NH-01 zone per winter; median lead ${summary.prompts.medianLeadHours} h; ${summary.prompts.atLeastSixHours} with 6 h or more`);
+console.log(`NH-01 zones: ${summary.nh01.warningsPerZonePerWinter} arming events and ${summary.nh01.hoursUnderWarningPerZonePerWinter} h under warning per zone per winter`);
 console.table(perZone.map(({ zone, name, nh01, warnings, perWinter, hoursUnderWarningPerWinter, medianLeadHours, medianDurationHours }) => ({ zone, name, nh01, warnings, perWinter, hoursUnderWarningPerWinter, medianLeadHours, medianDurationHours })));
 console.table(perSeason);

@@ -18,6 +18,8 @@ test("rule 1: only the four warning types, in zone, inside the time window", () 
   assert.equal(findActiveWarning([warning], "NHZ006", T0)?.id, "w1");
   assert.equal(findActiveWarning([warning], "NHZ010", T0), null);
   assert.equal(findActiveWarning([{ ...warning, event: "Winter Weather Advisory" }], "NHZ006", T0), null);
+  // Wind Advisory arms the watch (added after the outage backtest).
+  assert.equal(findActiveWarning([{ ...warning, event: "Wind Advisory" }], "NHZ006", T0)?.event, "Wind Advisory");
   assert.equal(findActiveWarning([warning], "NHZ006", at(-61)), null);
   assert.equal(findActiveWarning([warning], "NHZ006", at(600)), null);
 });

@@ -1,49 +1,61 @@
-# Backtest: ten winters of New Hampshire storm warnings
+# Backtest: ten winters of NWS warnings, three years of real outages
 
-Run with `npm run backtest`. Inputs are in `data/backtest/NHZ0xx.json`; outputs are `data/backtest/summary.json` and `data/backtest/warnings.csv`.
+Two scripts, run in order:
 
-## What was tested
+- `npm run backtest` replays every qualifying NWS event for every New Hampshire forecast zone (NHZ001–NHZ015) from July 2016 to June 2026, from the Iowa Environmental Mesonet VTEC archive. Inputs `data/backtest/NHZ0xx.json`; outputs `summary.json` and `warnings.csv`.
+- `npm run backtest:outages` joins those events to real outages: the Department of Energy / ORNL EAGLE-I dataset of county-level customers-out every 15 minutes, New Hampshire rows for 2023, 2024 and 2025 (`eaglei_nh_20xx.csv`, filtered from the public files; `MCC.csv` is the county customer count). Output `outages-summary.json`.
 
-Pilot Light arms a household's watch when one of four NWS warnings covers its forecast zone: Winter Storm Warning, Ice Storm Warning, High Wind Warning, Blizzard Warning. This backtest replays every such warning issued for every New Hampshire forecast zone (NHZ001 to NHZ015) from July 2016 to June 2026, taken from the Iowa Environmental Mesonet's archive of NWS VTEC products. It answers two questions:
+## The questions
 
-1. **How often would the watch arm, and for how long?** That is the false-alarm load on a family: each warning sends one storm prompt to the resident and puts the household on watch.
-2. **How much notice would the storm prompt give?** That is the time between the bulletin going out and the hazard beginning, which is the window the family has to charge the backup.
+1. **Coverage.** When the power really went out, was Pilot Light's watch armed? The dead-man's switch only starts a countdown while a qualifying NWS event covers the zone. An outage outside one is invisible to it.
+2. **Cost.** How often is a household on watch, and how often is the resident asked the storm-prompt question?
+3. **Notice.** How long before the hazard does the storm prompt go out?
 
-It does **not** measure whether the dead-man's switch would have caught real outages. That needs outage ground truth (when the power actually went out, where), which the free sources do not give at household level. See "What this cannot say".
+## What changed because of it
 
-## Results
+The original arming set was the four warnings: Winter Storm, Ice Storm, High Wind, Blizzard. Against three years of real outages that set was armed at the start of **17%** of outage episodes, **44%** of the big ones (10% or more of a county's customers out), and during **45%** of all peak customers-out.
 
-794 qualifying warnings across 15 zones and 10 winters: 713 Winter Storm Warnings, 67 High Wind Warnings, 14 Blizzard Warnings, and **no Ice Storm Warnings at all**. NWS Gray covers ice under Winter Storm Warnings in New Hampshire (the December 28, 2025 Ossipee warning in the demo forecast up to half an inch of ice), so the engine's four-event filter is right to include Winter Storm Warning rather than wait for an ice-specific product.
+Adding **Wind Advisory** to the arming set raised those to **34%**, **58%** and **59%**, for 190 hours on watch per county per year instead of 106. Adding Winter Weather Advisory on top bought little more (62% of peak customers-out) for 336 hours. So the engine now arms on the four warnings plus Wind Advisory, and sends the resident's storm prompt only for the warnings, so prompt load did not change.
 
-| Measure | Value |
-|---|---|
-| Warnings per zone per winter, NH-01 zones | 5.4 |
-| Hours under warning per zone per winter, NH-01 | 97 |
-| Lead time, bulletin to onset: median | 16.7 h |
-| Lead time: 10th / 90th percentile | 3.8 h / 27 h |
-| Warnings with at least 6 h of notice | 694 of 794 (87%) |
-| Warnings with under 1 h of notice | 65 (8%) |
-| Warning duration: median / 90th percentile | 19 h / 30 h |
+| Arming set | Outage episodes covered | Big episodes (10%+ of county) covered | Share of peak customers-out covered | Hours on watch, per county per year |
+|---|---|---|---|---|
+| Four warnings only | 63 of 366 (17%) | 35 of 80 (44%) | 45% | 106 |
+| **Four warnings + Wind Advisory (now)** | **125 of 366 (34%)** | **46 of 80 (58%)** | **59%** | **190** |
+| + Winter Weather Advisory | 139 of 366 (38%) | 49 of 80 (61%) | 62% | 336 |
+| + Winter Storm Watch, High Wind Watch | 139 of 366 (38%) | 49 of 80 (61%) | 62% | 336 |
 
-Carroll County, where the demo household lives, is the most warned part of the district: Northern Carroll averages 6.8 warnings and 129 hours under warning a winter, Southern Carroll 6.1 and 114. The coast gets fewer and shorter warnings (Coastal Rockingham: 4.9 a winter, median 14.7 h).
+An outage episode is a county's customers-out at or above 2% of its customers for at least an hour (gaps up to three hours bridged). 366 such episodes occurred in 2023–2025; 219 in November–April.
 
-Winters vary a lot: 137 warnings statewide in 2017-18, 55 in 2024-25.
+## Results with the current set
+
+**Coverage (2023–2025).** 125 of 366 episodes began under an arming event (34%); 119 of the 219 winter episodes (54%); 46 of the 80 episodes that hit 10% of a county (58%); 13 of the 16 that hit 25% (81%). All twelve largest outages of the three years, from the April 4, 2024 heavy-snow storm (Rockingham 64,000 out, Carroll over 100% of its modeled customer count) to the January 23 and March 14, 2023 storms, began under a warning. 59% of all peak customers-out happened under an arming event.
+
+**What is missed.** Two thirds of episodes, mostly small ones: 2–5% of a county, outside any NWS product, in every month of the year. Summer thunderstorms and equipment failures are not storms the Weather Service warns about. Pilot Light does not claim to catch those, and the write-up should say so.
+
+**Cost (2016–2026, 10 winters).** 1,724 arming events across the 15 zones: 930 Wind Advisories, 713 Winter Storm Warnings, 67 High Wind Warnings, 14 Blizzard Warnings, and **no Ice Storm Warnings at all**. NWS Gray covers ice under Winter Storm Warnings in New Hampshire (the December 28, 2025 Ossipee warning in the demo forecast up to half an inch of ice). An NH-01 household is on watch about 12 times a winter for about 168 hours in total (Carroll County: about 12.5 times and 190 hours), roughly 2% of the year. The resident is asked the storm-prompt question only for warnings: about **5.4 times a winter** in NH-01.
+
+**Notice.** For the warnings that carry the prompt, the median time from bulletin to hazard onset is **16.7 hours**; 694 of 794 (87%) give six hours or more and 65 (8%) give under an hour. Wind Advisories are issued closer to the event (median lead across all arming events: 13.3 hours).
+
+**Yield.** Of 362 county-level arming events in 2023–2025, 107 (30%) were followed by an outage episode within the event window. The other 70% cost a household nothing but the hours on watch, since a silent phone during them sends one text that asks the family to confirm.
 
 ## What it means for the design
 
-- **The storm prompt is cheap.** A family would field about five or six prompts a winter. Each is one text or one call to the resident. That is an acceptable cost for the benefit of knowing before the storm whether the backup is charged.
-- **The prompt usually has time to work.** With a median 16.7 hours between bulletin and onset, and 87% of warnings giving six hours or more, the resident's answer is almost always in hand before the power can go out. The 8% of warnings issued within an hour of onset are the case the risk score's "no reply" rule covers: no answer is treated as a reason to check, not as silence.
-- **Silence-plus-warning is a narrow trigger.** A household is under warning about 100 hours a winter, roughly 2% of the time. Outside those hours, a quiet phone does nothing. Inside them, 20 minutes of silence starts the clock. The false-positive exposure is bounded by those 100 hours, and a false positive costs one text that asks the family to confirm.
+- **The warning gate is a real limit, and now a measured one.** Pilot Light catches the big storm outages, which are the ones that last long enough to run a battery down, and misses most small ones. A plug-in power sensor would remove the gate; until then, the number to quote is 58% of major outages and 81% of the largest.
+- **Wind Advisory earned its place.** It roughly doubled coverage for less than double the watch hours and no extra prompts.
+- **The prompt is cheap and usually early.** Five or six prompts a winter, with 16.7 hours of median notice, is a fair price for knowing before the storm whether the backup is charged.
 
-## What this cannot say
+## Limits of this backtest
 
-- Whether real outages were caught, or how many were missed. That needs outage records with time and place. The best public source is the Department of Energy's EAGLE-I dataset (county-level outage counts every 15 minutes, 2014 onward). Joining it to these warnings by county and hour would give, for each warning, whether an outage followed and how long after onset. That is the next step and is the data an outage-risk model would be trained on.
-- Anything about the heartbeat. The archive has no phones in it. The 20-minute silence threshold is a design choice tied to the 5-minute heartbeat cadence, not a measured value.
-- Lead time is from the bulletin that first carried the warning. Watches issued a day earlier are not counted, so the real notice a family gets is often longer.
+- County-level outage counts cannot say which household lost power. "Covered" means the watch was armed in the household's zone when the county's outage began.
+- EAGLE-I's modeled customer count undercounts Carroll County (one episode shows 134% of customers out), so shares there are overstated; counts are not.
+- Three years of outage data against ten of warnings. The coverage figures are from 2023–2025 only.
+- Lead time is from the bulletin that first carried the event. Earlier watches are not counted, so the notice a family gets is often longer.
+- Nothing here measures the heartbeat. The 20-minute silence threshold is a design choice tied to the 5-minute check-in, not a measured value.
+- NH-01 is taken as Northern and Southern Carroll, Belknap, Strafford, Eastern Hillsborough, Interior and Coastal Rockingham; district lines do not follow forecast zones exactly.
 
 ## Method notes
 
-- The archive lists one row per product update, so the same storm appears several times. Rows are deduplicated on onset time and event type per zone.
-- The bulletin time is read from the product id (`YYYYMMDDHHMM-KGYX-...`); the hazard onset is the VTEC event start.
-- "Winter" runs July to June and is named for the year it ends.
-- NH-01 zones are taken as Northern and Southern Carroll, Belknap, Strafford, Eastern Hillsborough, Interior and Coastal Rockingham. District lines do not follow forecast zones exactly.
+- The VTEC archive lists one row per product update; rows are deduplicated per zone on onset time and event type. The bulletin time is read from the product id (`YYYYMMDDHHMM-KGYX-...`); the onset is the VTEC event start.
+- Zones map to counties (Northern and Southern Carroll both to Carroll, and so on); events are deduplicated per county for the yield figure.
+- "Winter" runs July to June and is named for the year it ends; "winter episodes" are November to April.
+- Outage rows with a blank customers-out value are skipped.

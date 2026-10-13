@@ -70,3 +70,6 @@ Ten winters of archived NWS warnings for all 15 NH zones (794 warnings) give how
 
 ## 2026-10-13: The address must be in New Hampshire
 Everything the app knows (warnings, town outlines, fire and hospital sites) is NH data, so an address that geocodes out of state is refused rather than saved with nothing around it. The Town box is part of the lookup, and a street the map does not know falls back to the town centre and says so.
+
+## 2026-10-13: Wind Advisory arms the watch; prompts stay with warnings
+Joining ten winters of NWS events to three years of DOE EAGLE-I county outages showed the four-warning arming set was armed for 44% of outages hitting 10% of a county. Adding Wind Advisory raised that to 58% (and 81% of those hitting 25%) for 190 instead of 106 hours on watch per county per year. Winter Weather Advisory added little for much more watch time, so it stays out. The resident's storm prompt is sent only for warnings, so prompt load is unchanged at about five a winter. Numbers in docs/backtest.md.

@@ -69,7 +69,7 @@ stateDiagram-v2
   resolved --> normal: warning ends
 ```
 
-The server never knows the power is out. It infers it from two signals agreeing: an active NWS warning over the household's zone, and the phone at the house going silent. Either alone does nothing. Both together for 20 minutes start a clock from the shortest backup among the household's devices.
+The server never knows the power is out. It infers it from two signals agreeing: an active NWS warning (or Wind Advisory) over the household's zone, and the phone at the house going silent. Either alone does nothing. Both together for 20 minutes start a clock from the shortest backup among the household's devices.
 
 **The risk score** decides how fast and how wide the ladder goes. It is built from named factors: cannot leave the house unassisted (+3), no backup power (+3), lives alone (+2), cannot reach the backup (+2), no reply to the storm prompt (+2), age 75–84 (+1) or 85+ (+2), replied ready to the storm prompt (−2). 3 or more is **Check**: the first alert goes out as soon as the outage is inferred and the town volunteer is included. 6 or more is **Check first**: everyone is alerted at once and the message leads with 911 guidance. Unable to leave and alone is always Check first. The People tab shows every factor, and the recommended contact escalates with the tier: first family contact, then the resident, then 911 with the nearest fire and police station and their drive times. The weights are our judgment, not a validated scale.
 
@@ -84,7 +84,7 @@ Storm replay fakes the storm, not the system: it changes the alert, the heartbea
 
 ## Backtest
 
-`npm run backtest` replays ten winters of real NWS warnings for all fifteen New Hampshire forecast zones (794 warnings, 2016–2026, Iowa Environmental Mesonet archive). An NH-01 household would be put on watch about 5.4 times a winter, for about 97 hours in total, and the storm prompt would go out a median 16.7 hours before the hazard begins (87% of warnings give six hours or more). Details, limits and method in [docs/backtest.md](docs/backtest.md). It does not measure outage detection; that needs outage ground truth, which is the next step.
+`npm run backtest` replays ten winters of real NWS events for all fifteen New Hampshire forecast zones (2016–2026, Iowa Environmental Mesonet archive), and `npm run backtest:outages` joins them to three years of real outages (DOE EAGLE-I county counts, 2023–2025). With the current arming set, Pilot Light's watch was armed at the start of 58% of outages that hit 10% or more of a county and 81% of those that hit 25%, including all twelve largest storms of the period; it misses most small outages, which happen outside any NWS product. An NH-01 household is on watch about 12 times a winter (168 hours) and the resident is asked the storm-prompt question about 5 times, with a median 16.7 hours of notice. The backtest changed the design: Wind Advisory was added to the arming set because it lifted coverage of major outages from 44% to 58%. Details, limits and method in [docs/backtest.md](docs/backtest.md).
 
 ## Code map
 
@@ -114,6 +114,7 @@ Storm replay fakes the storm, not the system: it changes the alert, the heartbea
 | [NWS Alerts API](https://www.weather.gov/documentation/services-web-api) `alerts/active?area=NH` | Live trigger, polled every 60 s |
 | NWS `points/{lat},{lng}` | Household's forecast zone, resolved at save |
 | [Iowa Environmental Mesonet](https://mesonet.agron.iastate.edu/vtec/) VTEC archive | Ten winters of warnings for the backtest; the replayed Dec 28, 2025 Ossipee warning |
+| [DOE / ORNL EAGLE-I](https://figshare.com/articles/dataset/24237376) | County outage counts every 15 minutes, 2023–2025, for the outage backtest |
 | [NH GRANIT](https://nhgeodata.unh.edu/hosting/rest/services/Hosted) Political_Boundaries, NH_CAI_Locations | Town outlines; fire, police, hospital and urgent-care sites. Pulled once by `scripts/fetch-granit.mjs` into `public/data/` |
 | [OpenFreeMap](https://openfreemap.org) | Street map tiles (dark style); falls back to town outlines offline |
 | [OSRM](https://project-osrm.org) public router | Drive times to the nearest help; falls back to a straight-line estimate |
@@ -136,6 +137,7 @@ Storm replay fakes the storm, not the system: it changes the alert, the heartbea
 npm test             # rules, risk score and auth helpers, against fixtures
 npm run test:replay  # the full chain against Postgres with simulated transport
 npm run backtest     # ten winters of NH warnings
+npm run backtest:outages  # joined to three years of real outages
 npm run lint && npm run typecheck && npm run build
 ```
 

@@ -6,12 +6,22 @@
 // agreeing: an active NWS warning over the household's zone, and the household
 // phone going silent. Either one alone does nothing.
 
+// Events that arm the watch. The four warnings were the original set; Wind
+// Advisory was added after the backtest against DOE EAGLE-I outage records
+// (docs/backtest.md): it lifts coverage of outages hitting 10%+ of a county
+// from 44% to 61% for about three times the hours on watch.
 export const WARNING_EVENTS = [
   "Winter Storm Warning",
   "Ice Storm Warning",
   "High Wind Warning",
   "Blizzard Warning",
+  "Wind Advisory",
 ] as const;
+
+// Events worth asking the resident about. An advisory arms the silent-phone
+// watch but does not send a storm prompt, so prompt load stays at the
+// warnings' five or so a winter.
+export const PROMPT_EVENTS = ["Winter Storm Warning", "Ice Storm Warning", "High Wind Warning", "Blizzard Warning"] as const;
 
 import type { Tier } from "./risk";
 
