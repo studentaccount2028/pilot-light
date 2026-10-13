@@ -28,3 +28,10 @@ export function isAdmin(req: NextRequest): boolean {
     tokenMatches(req.nextUrl.searchParams.get("key"))
   );
 }
+
+// Admin only when a token is configured and presented. isAdmin() is open in
+// local development so /replay works without setup; ownership checks must
+// not inherit that, or every household would be readable in dev.
+export function isAdminStrict(req: NextRequest): boolean {
+  return adminConfigured() && isAdmin(req);
+}

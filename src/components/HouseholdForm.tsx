@@ -284,6 +284,10 @@ export function HouseholdForm({ id }: { id?: string }) {
         body: JSON.stringify(body),
       });
       const json = await res.json().catch(() => ({}));
+      if (res.status === 401) {
+        router.push(`/login?next=${encodeURIComponent(id ? `/h/${id}/edit` : "/h/new")}`);
+        return;
+      }
       if (!res.ok) throw new Error(json.error ?? "Could not save. Please try again.");
       router.push(`/h/${json.id}`);
     } catch (err) {

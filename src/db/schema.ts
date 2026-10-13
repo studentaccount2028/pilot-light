@@ -62,7 +62,7 @@ export const households = pgTable("households", {
   livesAlone: boolean("lives_alone"),
   canLeaveUnassisted: boolean("can_leave_unassisted"),
   canReachBackup: boolean("can_reach_backup"),
-  ownerUserId: text("owner_user_id"),
+  ownerUserId: uuid("owner_user_id"),
   createdAt: ts("created_at").notNull().defaultNow(),
 });
 
@@ -202,6 +202,34 @@ export const appClock = pgTable("app_clock", {
   scenarioId: text("scenario_id"),
   householdId: uuid("household_id"),
   prevLastHeartbeatAt: ts("prev_last_heartbeat_at"),
+});
+
+// Login: an email, a session, and the one-time links that open sessions.
+export const users = pgTable("users", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  email: text("email").notNull().unique(),
+  createdAt: ts("created_at").notNull().defaultNow(),
+});
+
+export const sessions = pgTable(
+  "sessions",
+  {
+    tokenHash: text("token_hash").primaryKey(),
+    userId: uuid("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    expiresAt: ts("expires_at").notNull(),
+    createdAt: ts("created_at").notNull().defaultNow(),
+  },
+  (t) => [index("sessions_user").on(t.userId)],
+);
+
+export const loginTokens = pgTable("login_tokens", {
+  tokenHash: text("token_hash").primaryKey(),
+  email: text("email").notNull(),
+  expiresAt: ts("expires_at").notNull(),
+  usedAt: ts("used_at"),
+  createdAt: ts("created_at").notNull().defaultNow(),
 });
 
 export type Household = typeof households.$inferSelect;

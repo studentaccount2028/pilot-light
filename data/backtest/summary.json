@@ -1,0 +1,308 @@
+{
+  "source": "Iowa Environmental Mesonet VTEC archive (NWS Gray ME and Burlington VT products), zones NHZ001-NHZ015, 2016-07-01 to 2026-07-01",
+  "qualifyingEvents": [
+    "WS.W",
+    "IS.W",
+    "HW.W",
+    "BZ.W"
+  ],
+  "winters": 10,
+  "totalWarnings": 794,
+  "byEvent": {
+    "Winter Storm Warning": 713,
+    "High Wind Warning": 67,
+    "Blizzard Warning": 14
+  },
+  "lead": {
+    "medianHours": 16.7,
+    "p10Hours": 3.8,
+    "p90Hours": 27,
+    "underOneHour": 65,
+    "atLeastSixHours": 694
+  },
+  "duration": {
+    "medianHours": 19,
+    "p90Hours": 30
+  },
+  "nh01": {
+    "zones": [
+      "NHZ004",
+      "NHZ006",
+      "NHZ009",
+      "NHZ010",
+      "NHZ012",
+      "NHZ013",
+      "NHZ014"
+    ],
+    "warningsPerZonePerWinter": 5.4,
+    "hoursUnderWarningPerZonePerWinter": 97.2
+  },
+  "perSeason": [
+    {
+      "season": "2016-17",
+      "warnings": 95,
+      "carroll": 8
+    },
+    {
+      "season": "2017-18",
+      "warnings": 137,
+      "carroll": 8
+    },
+    {
+      "season": "2018-19",
+      "warnings": 94,
+      "carroll": 6
+    },
+    {
+      "season": "2019-20",
+      "warnings": 64,
+      "carroll": 5
+    },
+    {
+      "season": "2020-21",
+      "warnings": 68,
+      "carroll": 6
+    },
+    {
+      "season": "2021-22",
+      "warnings": 76,
+      "carroll": 5
+    },
+    {
+      "season": "2022-23",
+      "warnings": 88,
+      "carroll": 8
+    },
+    {
+      "season": "2023-24",
+      "warnings": 59,
+      "carroll": 4
+    },
+    {
+      "season": "2024-25",
+      "warnings": 55,
+      "carroll": 4
+    },
+    {
+      "season": "2025-26",
+      "warnings": 58,
+      "carroll": 7
+    }
+  ],
+  "perZone": [
+    {
+      "zone": "NHZ001",
+      "name": "Northern Coos",
+      "nh01": false,
+      "warnings": 52,
+      "perWinter": 5.2,
+      "hoursUnderWarningPerWinter": 106.8,
+      "medianLeadHours": 18.5,
+      "medianDurationHours": 20.1,
+      "byEvent": {
+        "Winter Storm Warning": 48,
+        "High Wind Warning": 4
+      }
+    },
+    {
+      "zone": "NHZ002",
+      "name": "Southern Coos",
+      "nh01": false,
+      "warnings": 54,
+      "perWinter": 5.4,
+      "hoursUnderWarningPerWinter": 109.3,
+      "medianLeadHours": 18.3,
+      "medianDurationHours": 20,
+      "byEvent": {
+        "Winter Storm Warning": 50,
+        "High Wind Warning": 4
+      }
+    },
+    {
+      "zone": "NHZ003",
+      "name": "Northern Grafton",
+      "nh01": false,
+      "warnings": 52,
+      "perWinter": 5.2,
+      "hoursUnderWarningPerWinter": 102,
+      "medianLeadHours": 17.7,
+      "medianDurationHours": 19.6,
+      "byEvent": {
+        "Winter Storm Warning": 48,
+        "High Wind Warning": 4
+      }
+    },
+    {
+      "zone": "NHZ004",
+      "name": "Northern Carroll",
+      "nh01": true,
+      "warnings": 68,
+      "perWinter": 6.8,
+      "hoursUnderWarningPerWinter": 128.7,
+      "medianLeadHours": 15.7,
+      "medianDurationHours": 19.1,
+      "byEvent": {
+        "Winter Storm Warning": 66,
+        "High Wind Warning": 2
+      }
+    },
+    {
+      "zone": "NHZ005",
+      "name": "Southern Grafton",
+      "nh01": false,
+      "warnings": 52,
+      "perWinter": 5.2,
+      "hoursUnderWarningPerWinter": 98.1,
+      "medianLeadHours": 16.5,
+      "medianDurationHours": 19.2,
+      "byEvent": {
+        "Winter Storm Warning": 50,
+        "High Wind Warning": 2
+      }
+    },
+    {
+      "zone": "NHZ006",
+      "name": "Southern Carroll",
+      "nh01": true,
+      "warnings": 61,
+      "perWinter": 6.1,
+      "hoursUnderWarningPerWinter": 114.4,
+      "medianLeadHours": 16.3,
+      "medianDurationHours": 18.6,
+      "byEvent": {
+        "Winter Storm Warning": 59,
+        "High Wind Warning": 2
+      }
+    },
+    {
+      "zone": "NHZ007",
+      "name": "Sullivan",
+      "nh01": false,
+      "warnings": 51,
+      "perWinter": 5.1,
+      "hoursUnderWarningPerWinter": 99.7,
+      "medianLeadHours": 16.3,
+      "medianDurationHours": 19,
+      "byEvent": {
+        "Winter Storm Warning": 47,
+        "High Wind Warning": 4
+      }
+    },
+    {
+      "zone": "NHZ008",
+      "name": "Merrimack",
+      "nh01": false,
+      "warnings": 55,
+      "perWinter": 5.5,
+      "hoursUnderWarningPerWinter": 110.9,
+      "medianLeadHours": 16.2,
+      "medianDurationHours": 19,
+      "byEvent": {
+        "Winter Storm Warning": 51,
+        "High Wind Warning": 4
+      }
+    },
+    {
+      "zone": "NHZ009",
+      "name": "Belknap",
+      "nh01": true,
+      "warnings": 54,
+      "perWinter": 5.4,
+      "hoursUnderWarningPerWinter": 104.7,
+      "medianLeadHours": 16.3,
+      "medianDurationHours": 19,
+      "byEvent": {
+        "Winter Storm Warning": 51,
+        "High Wind Warning": 3
+      }
+    },
+    {
+      "zone": "NHZ010",
+      "name": "Strafford",
+      "nh01": true,
+      "warnings": 55,
+      "perWinter": 5.5,
+      "hoursUnderWarningPerWinter": 99.2,
+      "medianLeadHours": 15.8,
+      "medianDurationHours": 18.7,
+      "byEvent": {
+        "Winter Storm Warning": 47,
+        "Blizzard Warning": 2,
+        "High Wind Warning": 6
+      }
+    },
+    {
+      "zone": "NHZ011",
+      "name": "Cheshire",
+      "nh01": false,
+      "warnings": 49,
+      "perWinter": 4.9,
+      "hoursUnderWarningPerWinter": 96.5,
+      "medianLeadHours": 16.7,
+      "medianDurationHours": 19,
+      "byEvent": {
+        "Winter Storm Warning": 45,
+        "High Wind Warning": 4
+      }
+    },
+    {
+      "zone": "NHZ012",
+      "name": "Eastern Hillsborough",
+      "nh01": true,
+      "warnings": 44,
+      "perWinter": 4.4,
+      "hoursUnderWarningPerWinter": 74.7,
+      "medianLeadHours": 17.6,
+      "medianDurationHours": 17.4,
+      "byEvent": {
+        "Winter Storm Warning": 37,
+        "Blizzard Warning": 3,
+        "High Wind Warning": 4
+      }
+    },
+    {
+      "zone": "NHZ013",
+      "name": "Interior Rockingham",
+      "nh01": true,
+      "warnings": 48,
+      "perWinter": 4.8,
+      "hoursUnderWarningPerWinter": 82.6,
+      "medianLeadHours": 16.5,
+      "medianDurationHours": 17.6,
+      "byEvent": {
+        "Winter Storm Warning": 39,
+        "Blizzard Warning": 3,
+        "High Wind Warning": 6
+      }
+    },
+    {
+      "zone": "NHZ014",
+      "name": "Coastal Rockingham",
+      "nh01": true,
+      "warnings": 49,
+      "perWinter": 4.9,
+      "hoursUnderWarningPerWinter": 76.2,
+      "medianLeadHours": 16.7,
+      "medianDurationHours": 14.7,
+      "byEvent": {
+        "Winter Storm Warning": 30,
+        "Blizzard Warning": 6,
+        "High Wind Warning": 13
+      }
+    },
+    {
+      "zone": "NHZ015",
+      "name": "Western and Central Hillsborough",
+      "nh01": false,
+      "warnings": 50,
+      "perWinter": 5,
+      "hoursUnderWarningPerWinter": 98.1,
+      "medianLeadHours": 16.6,
+      "medianDurationHours": 18.6,
+      "byEvent": {
+        "Winter Storm Warning": 45,
+        "High Wind Warning": 5
+      }
+    }
+  ]
+}

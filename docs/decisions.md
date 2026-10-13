@@ -61,3 +61,12 @@ The spec said to store only a device class and a battery figure. The risk score 
 
 ## 2026-10-13: A replayed warning applies only to the replayed household
 The archived warning covers seven forecast zones. Without this rule, running the demo would put every real household in those zones on watch and could send them real messages.
+
+## 2026-10-13: Magic-link login, and unowned households stay open by link
+A household made while signed in belongs to that account; only that account (or the admin token) can open it. The seeded demo household and any made before login existed have no owner and stay open by their unguessable link, so the demo and the replay keep working. Email goes through Resend when a key is set; without one the link is printed to the server log and, outside production, shown on the page. Heartbeats, Twilio webhooks and the cron route stay unauthenticated: the phone at the house and Twilio hold no session.
+
+## 2026-10-13: The backtest measures cost and notice, not detection
+Ten winters of archived NWS warnings for all 15 NH zones (794 warnings) give how often a watch arms and how much notice the storm prompt gets. They cannot say whether an outage would have been caught, because the archive has no outages in it. The DOE EAGLE-I county outage records (15-minute counts) are the ground truth for that and are being pulled for New Hampshire; the join is the next step and the training data for an outage-risk model. There were no Ice Storm Warnings in NH in those ten years: NWS Gray issues Winter Storm Warnings for ice, which is why the engine's filter keeps that event.
+
+## 2026-10-13: The address must be in New Hampshire
+Everything the app knows (warnings, town outlines, fire and hospital sites) is NH data, so an address that geocodes out of state is refused rather than saved with nothing around it. The Town box is part of the lookup, and a street the map does not know falls back to the town centre and says so.

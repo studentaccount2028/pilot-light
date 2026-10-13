@@ -9,6 +9,7 @@ import { DeviceList } from "./DeviceList";
 import { EventLog } from "./EventLog";
 import { HouseholdMap } from "./HouseholdMap";
 import { IconBolt, IconChevron, IconClock, IconGear, IconHome, IconHouse, IconMessage, IconMore, IconPeople, IconPhone, IconPin, IconPlay } from "./icons";
+import { AccountRow } from "./AccountRow";
 import { NearbyList } from "./NearbyList";
 import { scrollAppToTop } from "./Phone";
 import { RiskCard, TierChip } from "./RiskCard";
@@ -217,6 +218,7 @@ export function HouseholdView({
               {utility.outageMapUrl && <InfoRow icon={<IconBolt className="h-5 w-5" />} label="Outages" value={`${utility.name} outage information`} href={utility.outageMapUrl} />}
               {!framed && <InfoRow icon={<IconGear className="h-5 w-5" />} label="Devices, contacts, address" value="Edit household" href={`/h/${h.id}/edit`} internal />}
               {!framed && <InfoRow icon={<IconPlay className="h-4 w-4" />} label="Demo" value="Storm replay" href="/replay" internal />}
+              {!framed && <AccountRow />}
             </ul>
             <p className="mt-6 text-[13px] leading-relaxed text-muted">Pilot Light makes sure someone checks. It is not a medical device and it does not replace 911.</p>
           </div>

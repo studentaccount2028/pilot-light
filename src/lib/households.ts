@@ -166,7 +166,7 @@ async function validate(input: HouseholdInput) {
   };
 }
 
-export async function saveHousehold(input: HouseholdInput, existingId?: string): Promise<string> {
+export async function saveHousehold(input: HouseholdInput, existingId?: string, ownerUserId?: string): Promise<string> {
   const v = await validate(input);
   return db.transaction(async (tx) => {
     let id = existingId;
@@ -174,7 +174,7 @@ export async function saveHousehold(input: HouseholdInput, existingId?: string):
       const updated = await tx.update(households).set(v.household).where(eq(households.id, id)).returning({ id: households.id });
       if (updated.length === 0) throw new ValidationError("That household no longer exists.");
     } else {
-      [{ id }] = await tx.insert(households).values(v.household).returning({ id: households.id });
+      [{ id }] = await tx.insert(households).values({ ...v.household, ownerUserId: ownerUserId ?? null }).returning({ id: households.id });
       await tx.insert(householdState).values({ householdId: id });
     }
 

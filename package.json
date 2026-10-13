@@ -16,7 +16,9 @@
     "setup": "npm run db:migrate && npm run db:seed",
     "replay": "tsx scripts/replay.ts",
     "test": "tsx --test tests/*.test.ts",
-    "test:replay": "TWILIO_DRY_RUN=1 tsx scripts/replay.ts --assert --speed 3000"
+    "test:replay": "TWILIO_DRY_RUN=1 tsx scripts/replay.ts --assert --speed 3000",
+    "backtest": "node scripts/backtest.mjs",
+    "twilio:check": "tsx scripts/twilio-check.ts"
   },
   "dependencies": {
     "drizzle-orm": "^0.45.4",
