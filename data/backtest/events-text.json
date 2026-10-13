@@ -1,0 +1,5000 @@
+{
+ "33007|Winter Storm Warning|2019-01-01T02:00:00.000Z": {
+  "productId": "201812310802-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 6,
+  "gustMph": 35
+ },
+ "33007|Winter Storm Warning|2019-01-09T00:00:00.000Z": {
+  "productId": "201901082312-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2019-01-20T00:00:00.000Z": {
+  "productId": "201901182030-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2019-01-30T00:00:00.000Z": {
+  "productId": "201901282012-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33007|Wind Advisory|2019-02-08T20:00:00.000Z": {
+  "productId": "201902080759-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Winter Storm Warning|2019-02-13T00:00:00.000Z": {
+  "productId": "201902112004-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33007|Wind Advisory|2019-02-25T05:00:00.000Z": {
+  "productId": "201902242000-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 57
+ },
+ "33007|Winter Storm Warning|2019-03-22T12:00:00.000Z": {
+  "productId": "201903220714-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33007|Wind Advisory|2019-11-01T06:00:00.000Z": {
+  "productId": "201910301930-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Winter Storm Warning|2019-11-11T18:00:00.000Z": {
+  "productId": "201911110818-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33007|Wind Advisory|2019-12-15T12:00:00.000Z": {
+  "productId": "201912150836-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Winter Storm Warning|2019-12-30T18:00:00.000Z": {
+  "productId": "201912300845-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2020-01-12T02:00:00.000Z": {
+  "productId": "202001110834-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2020-01-16T14:12:00.000Z": {
+  "productId": "202001161412-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 3,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2020-01-18T23:00:00.000Z": {
+  "productId": "202001182011-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2020-02-06T12:00:00.000Z": {
+  "productId": "202002052022-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 16,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2020-02-27T04:00:00.000Z": {
+  "productId": "202002260853-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 35
+ },
+ "33007|Wind Advisory|2020-03-04T11:00:00.000Z": {
+  "productId": "202003031951-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Winter Storm Warning|2020-04-09T12:00:00.000Z": {
+  "productId": "202004081949-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2020-12-05T15:00:00.000Z": {
+  "productId": "202012042106-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2021-01-02T05:00:00.000Z": {
+  "productId": "202101010813-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2021-01-16T12:00:00.000Z": {
+  "productId": "202101152120-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 40
+ },
+ "33007|Winter Storm Warning|2021-02-02T03:00:00.000Z": {
+  "productId": "202101312025-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2021-02-16T04:00:00.000Z": {
+  "productId": "202102150859-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33007|Wind Advisory|2021-03-02T06:00:00.000Z": {
+  "productId": "202103010823-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Wind Advisory|2021-03-29T08:00:00.000Z": {
+  "productId": "202103281950-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33007|Wind Advisory|2021-12-03T14:42:00.000Z": {
+  "productId": "202112031442-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Wind Advisory|2021-12-17T08:00:00.000Z": {
+  "productId": "202112162014-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Winter Storm Warning|2021-12-18T18:00:00.000Z": {
+  "productId": "202112172034-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2022-01-17T08:00:00.000Z": {
+  "productId": "202201160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 45
+ },
+ "33007|Wind Advisory|2022-01-17T12:00:00.000Z": {
+  "productId": "202201170116-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Winter Storm Warning|2022-02-03T18:00:00.000Z": {
+  "productId": "202202022054-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2022-02-25T10:00:00.000Z": {
+  "productId": "202202242010-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2022-03-12T11:00:00.000Z": {
+  "productId": "202203111906-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 40
+ },
+ "33007|Wind Advisory|2022-04-08T01:00:00.000Z": {
+  "productId": "202204071910-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Wind Advisory|2022-04-19T08:00:00.000Z": {
+  "productId": "202204181955-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Wind Advisory|2022-11-26T00:00:00.000Z": {
+  "productId": "202211252001-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33007|Wind Advisory|2022-11-30T18:00:00.000Z": {
+  "productId": "202211300854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33007|Wind Advisory|2022-12-01T14:00:00.000Z": {
+  "productId": "202212010835-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Winter Storm Warning|2022-12-16T15:00:00.000Z": {
+  "productId": "202212151341-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": null
+ },
+ "33007|High Wind Warning|2022-12-23T06:00:00.000Z": {
+  "productId": "202212220827-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33007|Winter Storm Warning|2023-01-26T00:00:00.000Z": {
+  "productId": "202301242059-KGYX-WWUS41-WSWGYX",
+  "iceIn": 1,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2023-02-23T00:00:00.000Z": {
+  "productId": "202302220850-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2023-03-04T09:00:00.000Z": {
+  "productId": "202303031713-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33007|Wind Advisory|2023-03-06T05:00:00.000Z": {
+  "productId": "202303060244-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Wind Advisory|2023-03-26T00:00:00.000Z": {
+  "productId": "202303251932-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Wind Advisory|2023-09-16T14:00:00.000Z": {
+  "productId": "202309151524-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Winter Storm Warning|2023-12-03T18:00:00.000Z": {
+  "productId": "202312030832-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2023-12-11T06:00:00.000Z": {
+  "productId": "202312100806-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 40
+ },
+ "33007|Wind Advisory|2023-12-18T12:00:00.000Z": {
+  "productId": "202312171944-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|High Wind Warning|2024-01-10T03:00:00.000Z": {
+  "productId": "202401090926-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": 60
+ },
+ "33007|Wind Advisory|2024-01-13T09:00:00.000Z": {
+  "productId": "202401120827-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33007|Wind Advisory|2024-02-28T22:00:00.000Z": {
+  "productId": "202402272056-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Winter Storm Warning|2024-03-10T03:00:00.000Z": {
+  "productId": "202403092010-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 40
+ },
+ "33007|Wind Advisory|2024-03-11T12:00:00.000Z": {
+  "productId": "202403101854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Winter Storm Warning|2024-03-23T06:00:00.000Z": {
+  "productId": "202403220722-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": 35
+ },
+ "33007|Winter Storm Warning|2024-04-03T18:00:00.000Z": {
+  "productId": "202404021932-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 20,
+  "gustMph": 45
+ },
+ "33007|Wind Advisory|2024-10-12T10:17:00.000Z": {
+  "productId": "202410121017-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33007|Wind Advisory|2024-11-08T21:00:00.000Z": {
+  "productId": "202411081915-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33007|Wind Advisory|2025-01-02T14:00:00.000Z": {
+  "productId": "202501020712-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33007|Wind Advisory|2025-02-13T22:00:00.000Z": {
+  "productId": "202502130811-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Winter Storm Warning|2025-02-16T04:00:00.000Z": {
+  "productId": "202502150757-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33007|Wind Advisory|2025-02-17T14:00:00.000Z": {
+  "productId": "202502161824-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33007|Wind Advisory|2025-03-07T09:00:00.000Z": {
+  "productId": "202503061959-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33007|Wind Advisory|2025-03-08T16:00:00.000Z": {
+  "productId": "202503080832-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Wind Advisory|2025-03-17T00:07:00.000Z": {
+  "productId": "202503170007-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Wind Advisory|2025-04-20T12:00:00.000Z": {
+  "productId": "202504200713-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33007|Wind Advisory|2025-06-20T12:00:00.000Z": {
+  "productId": "202506200608-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33007|Wind Advisory|2025-12-19T13:00:00.000Z": {
+  "productId": "202512181802-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33007|Wind Advisory|2025-12-30T00:00:00.000Z": {
+  "productId": "202512291722-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33007|Winter Storm Warning|2019-11-24T15:00:00.000Z": {
+  "productId": "201911232046-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": 35
+ },
+ "33007|Winter Storm Warning|2020-03-23T23:17:00.000Z": {
+  "productId": "202003232317-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 6,
+  "gustMph": null
+ },
+ "33007|Wind Advisory|2020-12-25T06:00:00.000Z": {
+  "productId": "202012242039-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Wind Advisory|2021-03-28T13:00:00.000Z": {
+  "productId": "202103280728-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Winter Storm Warning|2021-04-16T02:00:00.000Z": {
+  "productId": "202104150714-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33007|Wind Advisory|2021-11-12T11:00:00.000Z": {
+  "productId": "202111112347-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Wind Advisory|2022-02-23T21:00:00.000Z": {
+  "productId": "202202230816-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33007|Wind Advisory|2022-03-07T04:00:00.000Z": {
+  "productId": "202203061956-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Wind Advisory|2023-02-16T03:00:00.000Z": {
+  "productId": "202302150826-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33007|Winter Storm Warning|2024-01-09T22:00:00.000Z": {
+  "productId": "202401091011-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 17,
+  "gustMph": null
+ },
+ "33007|Winter Storm Warning|2024-11-28T15:00:00.000Z": {
+  "productId": "202411272035-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2019-01-09T00:00:00.000Z": {
+  "productId": "201901082312-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2019-01-20T00:00:00.000Z": {
+  "productId": "201901182030-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2019-01-29T18:00:00.000Z": {
+  "productId": "201901282012-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33009|Wind Advisory|2019-02-08T20:00:00.000Z": {
+  "productId": "201902080759-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Winter Storm Warning|2019-02-13T00:00:00.000Z": {
+  "productId": "201902112004-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33009|Wind Advisory|2019-02-25T05:00:00.000Z": {
+  "productId": "201902242000-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 57
+ },
+ "33009|Wind Advisory|2019-11-01T06:00:00.000Z": {
+  "productId": "201910301930-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Wind Advisory|2019-12-15T12:00:00.000Z": {
+  "productId": "201912150836-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Winter Storm Warning|2019-12-30T08:45:00.000Z": {
+  "productId": "201912300845-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2020-01-16T13:48:00.000Z": {
+  "productId": "202001161348-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 3,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2020-02-06T12:00:00.000Z": {
+  "productId": "202002052022-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2020-02-27T04:00:00.000Z": {
+  "productId": "202002260853-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 35
+ },
+ "33009|Wind Advisory|2020-03-04T11:00:00.000Z": {
+  "productId": "202003040809-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Winter Storm Warning|2020-03-23T23:17:00.000Z": {
+  "productId": "202003232317-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 6,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2020-04-09T15:25:00.000Z": {
+  "productId": "202004091525-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2020-12-05T15:00:00.000Z": {
+  "productId": "202012042106-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2020-12-17T14:21:00.000Z": {
+  "productId": "202012171421-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 4,
+  "gustMph": null
+ },
+ "33009|Wind Advisory|2020-12-25T06:00:00.000Z": {
+  "productId": "202012242039-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Winter Storm Warning|2021-02-01T22:00:00.000Z": {
+  "productId": "202101312025-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2021-02-16T04:00:00.000Z": {
+  "productId": "202102150859-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33009|Wind Advisory|2021-03-02T06:00:00.000Z": {
+  "productId": "202103010823-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Wind Advisory|2021-03-28T13:00:00.000Z": {
+  "productId": "202103280728-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Winter Storm Warning|2021-04-16T02:00:00.000Z": {
+  "productId": "202104150714-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33009|Wind Advisory|2021-11-12T11:00:00.000Z": {
+  "productId": "202111112347-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Wind Advisory|2021-12-03T14:42:00.000Z": {
+  "productId": "202112031442-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Wind Advisory|2021-12-17T08:00:00.000Z": {
+  "productId": "202112162014-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Winter Storm Warning|2021-12-18T18:00:00.000Z": {
+  "productId": "202112172034-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2022-01-17T08:00:00.000Z": {
+  "productId": "202201160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 45
+ },
+ "33009|Wind Advisory|2022-01-17T12:00:00.000Z": {
+  "productId": "202201170116-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Winter Storm Warning|2022-02-03T18:00:00.000Z": {
+  "productId": "202202022054-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2022-02-25T10:00:00.000Z": {
+  "productId": "202202242010-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2022-03-12T11:00:00.000Z": {
+  "productId": "202203111906-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 40
+ },
+ "33009|Wind Advisory|2022-04-08T01:00:00.000Z": {
+  "productId": "202204071910-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Wind Advisory|2022-04-19T08:00:00.000Z": {
+  "productId": "202204181955-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Wind Advisory|2022-11-26T00:00:00.000Z": {
+  "productId": "202211252001-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33009|Wind Advisory|2022-11-30T18:00:00.000Z": {
+  "productId": "202211300854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33009|Wind Advisory|2022-12-01T14:00:00.000Z": {
+  "productId": "202212010835-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Winter Storm Warning|2022-12-16T06:00:00.000Z": {
+  "productId": "202212151341-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": null
+ },
+ "33009|High Wind Warning|2022-12-23T06:00:00.000Z": {
+  "productId": "202212220827-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33009|Winter Storm Warning|2023-01-26T00:00:00.000Z": {
+  "productId": "202301242059-KGYX-WWUS41-WSWGYX",
+  "iceIn": 1,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33009|Wind Advisory|2023-02-16T03:00:00.000Z": {
+  "productId": "202302150826-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Winter Storm Warning|2023-02-23T00:00:00.000Z": {
+  "productId": "202302220850-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2023-03-04T03:00:00.000Z": {
+  "productId": "202303030807-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 35
+ },
+ "33009|Winter Storm Warning|2023-03-14T00:00:00.000Z": {
+  "productId": "202303131928-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 40
+ },
+ "33009|Wind Advisory|2023-03-26T00:00:00.000Z": {
+  "productId": "202303251932-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Wind Advisory|2023-09-16T14:00:00.000Z": {
+  "productId": "202309151524-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|High Wind Warning|2024-01-10T03:00:00.000Z": {
+  "productId": "202401090926-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": 60
+ },
+ "33009|Wind Advisory|2024-01-13T09:00:00.000Z": {
+  "productId": "202401120827-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33009|Wind Advisory|2024-02-28T22:00:00.000Z": {
+  "productId": "202402272056-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Winter Storm Warning|2024-03-10T03:00:00.000Z": {
+  "productId": "202403092010-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 40
+ },
+ "33009|Wind Advisory|2024-03-11T12:00:00.000Z": {
+  "productId": "202403101854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Winter Storm Warning|2024-03-23T06:00:00.000Z": {
+  "productId": "202403220722-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": 35
+ },
+ "33009|Winter Storm Warning|2024-04-03T18:00:00.000Z": {
+  "productId": "202404021932-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 20,
+  "gustMph": 45
+ },
+ "33009|Wind Advisory|2024-10-12T10:17:00.000Z": {
+  "productId": "202410121017-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33009|Winter Storm Warning|2024-11-28T12:00:00.000Z": {
+  "productId": "202411272035-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 11,
+  "gustMph": null
+ },
+ "33009|Wind Advisory|2025-01-02T14:00:00.000Z": {
+  "productId": "202501020712-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33009|Wind Advisory|2025-02-13T22:00:00.000Z": {
+  "productId": "202502130811-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Winter Storm Warning|2025-02-16T00:00:00.000Z": {
+  "productId": "202502142008-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33009|Wind Advisory|2025-02-17T14:00:00.000Z": {
+  "productId": "202502161824-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33009|Wind Advisory|2025-03-07T09:00:00.000Z": {
+  "productId": "202503061959-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33009|Wind Advisory|2025-03-17T00:07:00.000Z": {
+  "productId": "202503170007-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Wind Advisory|2025-04-20T12:00:00.000Z": {
+  "productId": "202504200713-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33009|Wind Advisory|2025-06-20T12:00:00.000Z": {
+  "productId": "202506200608-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33009|Wind Advisory|2025-12-19T13:00:00.000Z": {
+  "productId": "202512181802-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33009|Winter Storm Warning|2025-12-29T03:00:00.000Z": {
+  "productId": "202512281957-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.5,
+  "snowIn": 1,
+  "gustMph": null
+ },
+ "33009|Wind Advisory|2025-12-30T00:00:00.000Z": {
+  "productId": "202512291722-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33003|Winter Storm Warning|2019-01-09T00:00:00.000Z": {
+  "productId": "201901082312-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2019-01-20T00:00:00.000Z": {
+  "productId": "201901182030-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2019-01-29T18:00:00.000Z": {
+  "productId": "201901282012-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2019-02-08T20:00:00.000Z": {
+  "productId": "201902080759-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2019-02-13T00:00:00.000Z": {
+  "productId": "201902112004-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2019-02-24T12:00:00.000Z": {
+  "productId": "201902230811-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": 30
+ },
+ "33003|Wind Advisory|2019-02-25T05:00:00.000Z": {
+  "productId": "201902242000-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 57
+ },
+ "33003|Wind Advisory|2019-02-26T07:24:00.000Z": {
+  "productId": "201902260724-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Wind Advisory|2019-11-01T06:00:00.000Z": {
+  "productId": "201910301930-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2019-11-24T15:00:00.000Z": {
+  "productId": "201911232046-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": 35
+ },
+ "33003|Wind Advisory|2019-12-15T12:00:00.000Z": {
+  "productId": "201912142017-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2019-12-30T08:45:00.000Z": {
+  "productId": "201912300845-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2020-01-16T13:48:00.000Z": {
+  "productId": "202001161348-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 3,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2020-01-18T23:00:00.000Z": {
+  "productId": "202001182011-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2020-02-06T12:00:00.000Z": {
+  "productId": "202002052022-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2020-02-27T04:00:00.000Z": {
+  "productId": "202002260853-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 35
+ },
+ "33003|Wind Advisory|2020-03-04T11:00:00.000Z": {
+  "productId": "202003031951-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2020-03-23T20:00:00.000Z": {
+  "productId": "202003230750-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2020-04-09T15:25:00.000Z": {
+  "productId": "202004091525-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2020-04-13T17:30:00.000Z": {
+  "productId": "202004131730-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33003|Wind Advisory|2020-05-09T14:00:00.000Z": {
+  "productId": "202005090024-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Wind Advisory|2020-05-12T14:07:00.000Z": {
+  "productId": "202005121407-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33003|Wind Advisory|2020-10-07T18:00:00.000Z": {
+  "productId": "202010070812-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33003|Wind Advisory|2020-11-02T15:00:00.000Z": {
+  "productId": "202011020058-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Wind Advisory|2020-11-30T23:03:00.000Z": {
+  "productId": "202011302303-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2020-12-05T15:00:00.000Z": {
+  "productId": "202012042106-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2020-12-17T14:21:00.000Z": {
+  "productId": "202012171421-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 4,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2020-12-25T09:00:00.000Z": {
+  "productId": "202012242039-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2021-01-02T05:00:00.000Z": {
+  "productId": "202101010813-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2021-01-16T12:00:00.000Z": {
+  "productId": "202101160813-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2021-01-24T11:50:00.000Z": {
+  "productId": "202101241150-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33003|Winter Storm Warning|2021-02-01T22:00:00.000Z": {
+  "productId": "202101312025-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2021-02-16T04:00:00.000Z": {
+  "productId": "202102150859-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2021-03-02T06:00:00.000Z": {
+  "productId": "202103010823-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|High Wind Warning|2021-03-02T08:21:00.000Z": {
+  "productId": "202103012002-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 65
+ },
+ "33003|Wind Advisory|2021-03-04T20:00:00.000Z": {
+  "productId": "202103040817-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Wind Advisory|2021-03-13T01:00:00.000Z": {
+  "productId": "202103120818-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Wind Advisory|2021-03-29T08:00:00.000Z": {
+  "productId": "202103280728-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2021-04-16T02:00:00.000Z": {
+  "productId": "202104150714-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2021-12-03T14:42:00.000Z": {
+  "productId": "202112031442-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Wind Advisory|2021-12-17T08:00:00.000Z": {
+  "productId": "202112162014-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2021-12-18T18:00:00.000Z": {
+  "productId": "202112172034-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2022-01-17T06:00:00.000Z": {
+  "productId": "202201160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 45
+ },
+ "33003|Winter Storm Warning|2022-01-29T12:00:00.000Z": {
+  "productId": "202201280911-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 13,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2022-02-03T18:00:00.000Z": {
+  "productId": "202202022054-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2022-02-25T10:00:00.000Z": {
+  "productId": "202202242010-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2022-03-07T04:00:00.000Z": {
+  "productId": "202203061956-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Wind Advisory|2022-03-08T17:05:00.000Z": {
+  "productId": "202203081705-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2022-03-12T11:00:00.000Z": {
+  "productId": "202203111906-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 40
+ },
+ "33003|Wind Advisory|2022-03-13T06:28:00.000Z": {
+  "productId": "202203130628-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Wind Advisory|2022-11-26T00:00:00.000Z": {
+  "productId": "202211252001-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33003|Wind Advisory|2022-11-30T18:00:00.000Z": {
+  "productId": "202211300854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33003|Wind Advisory|2022-12-01T14:00:00.000Z": {
+  "productId": "202212010835-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2022-12-16T15:00:00.000Z": {
+  "productId": "202212151341-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2022-12-23T06:00:00.000Z": {
+  "productId": "202212221651-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2023-01-20T00:00:00.000Z": {
+  "productId": "202301192012-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2023-01-23T03:39:00.000Z": {
+  "productId": "202301230339-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": 35
+ },
+ "33003|Winter Storm Warning|2023-01-26T00:00:00.000Z": {
+  "productId": "202301242059-KGYX-WWUS41-WSWGYX",
+  "iceIn": 1,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2023-02-16T03:00:00.000Z": {
+  "productId": "202302150826-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2023-02-23T00:00:00.000Z": {
+  "productId": "202302220850-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2023-02-28T09:00:00.000Z": {
+  "productId": "202302272007-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2023-03-04T06:00:00.000Z": {
+  "productId": "202303030807-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 35
+ },
+ "33003|Winter Storm Warning|2023-03-14T00:00:00.000Z": {
+  "productId": "202303131928-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 40
+ },
+ "33003|Wind Advisory|2023-09-16T14:00:00.000Z": {
+  "productId": "202309151524-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2023-12-03T18:00:00.000Z": {
+  "productId": "202312030832-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2023-12-18T13:57:00.000Z": {
+  "productId": "202312181357-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2024-01-07T00:14:00.000Z": {
+  "productId": "202401070014-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2024-01-09T22:00:00.000Z": {
+  "productId": "202401091011-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2024-02-28T22:00:00.000Z": {
+  "productId": "202402272056-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2024-03-10T03:00:00.000Z": {
+  "productId": "202403092010-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 40
+ },
+ "33003|Wind Advisory|2024-03-11T12:00:00.000Z": {
+  "productId": "202403101854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2024-03-23T06:00:00.000Z": {
+  "productId": "202403220722-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": 35
+ },
+ "33003|Winter Storm Warning|2024-04-03T18:00:00.000Z": {
+  "productId": "202404021932-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 20,
+  "gustMph": 45
+ },
+ "33003|Wind Advisory|2024-10-12T10:17:00.000Z": {
+  "productId": "202410121017-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33003|Wind Advisory|2024-11-08T21:00:00.000Z": {
+  "productId": "202411081915-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33003|Winter Storm Warning|2024-11-28T12:00:00.000Z": {
+  "productId": "202411272035-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 11,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2025-01-02T14:00:00.000Z": {
+  "productId": "202501020712-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33003|Wind Advisory|2025-02-13T22:00:00.000Z": {
+  "productId": "202502130811-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2025-02-16T00:00:00.000Z": {
+  "productId": "202502142008-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2025-02-17T14:00:00.000Z": {
+  "productId": "202502161824-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33003|Wind Advisory|2025-03-07T09:00:00.000Z": {
+  "productId": "202503061959-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33003|Wind Advisory|2025-04-08T20:00:00.000Z": {
+  "productId": "202504080642-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Wind Advisory|2025-04-20T12:00:00.000Z": {
+  "productId": "202504200713-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33003|Wind Advisory|2025-06-20T12:00:00.000Z": {
+  "productId": "202506200608-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33003|Wind Advisory|2025-11-04T12:00:00.000Z": {
+  "productId": "202511031705-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33003|Winter Storm Warning|2025-12-02T13:00:00.000Z": {
+  "productId": "202512011736-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2025-12-19T13:00:00.000Z": {
+  "productId": "202512181802-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33003|Winter Storm Warning|2025-12-23T18:00:00.000Z": {
+  "productId": "202512231726-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2025-12-29T03:00:00.000Z": {
+  "productId": "202512281957-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.5,
+  "snowIn": 1,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2025-12-30T00:00:00.000Z": {
+  "productId": "202512291722-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33009|Winter Storm Warning|2019-01-09T13:07:00.000Z": {
+  "productId": "201901091307-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 3,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2019-02-12T21:00:00.000Z": {
+  "productId": "201902120825-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.1,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33009|Wind Advisory|2019-04-03T16:00:00.000Z": {
+  "productId": "201904021901-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33009|Winter Storm Warning|2020-03-23T20:00:00.000Z": {
+  "productId": "202003231826-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33009|Wind Advisory|2020-10-07T18:00:00.000Z": {
+  "productId": "202010070812-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33009|Wind Advisory|2020-11-02T15:00:00.000Z": {
+  "productId": "202011020058-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Winter Storm Warning|2020-12-17T03:00:00.000Z": {
+  "productId": "202012160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": 35
+ },
+ "33009|Wind Advisory|2020-12-25T09:00:00.000Z": {
+  "productId": "202012242039-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Wind Advisory|2021-03-29T08:00:00.000Z": {
+  "productId": "202103280728-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Winter Storm Warning|2022-01-17T06:00:00.000Z": {
+  "productId": "202201160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 45
+ },
+ "33009|Winter Storm Warning|2022-02-25T06:00:00.000Z": {
+  "productId": "202202240812-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2023-01-23T00:00:00.000Z": {
+  "productId": "202301220851-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2024-01-07T00:00:00.000Z": {
+  "productId": "202401060850-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 6,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2025-02-09T00:00:00.000Z": {
+  "productId": "202502080746-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33009|Winter Storm Warning|2025-03-29T18:44:00.000Z": {
+  "productId": "202503291844-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.5,
+  "snowIn": 1,
+  "gustMph": null
+ },
+ "33009|Wind Advisory|2025-11-06T03:00:00.000Z": {
+  "productId": "202511051722-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33009|Winter Storm Warning|2025-12-02T13:00:00.000Z": {
+  "productId": "202512011736-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2019-01-09T13:07:00.000Z": {
+  "productId": "201901091307-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 3,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2019-02-12T21:00:00.000Z": {
+  "productId": "201902120825-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.1,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2019-04-03T16:00:00.000Z": {
+  "productId": "201904021901-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33003|Wind Advisory|2020-09-30T09:17:00.000Z": {
+  "productId": "202009300917-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Winter Storm Warning|2020-12-17T03:00:00.000Z": {
+  "productId": "202012160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": 35
+ },
+ "33003|Winter Storm Warning|2022-02-25T06:00:00.000Z": {
+  "productId": "202202240812-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2022-03-12T22:22:00.000Z": {
+  "productId": "202203122222-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33003|Winter Storm Warning|2022-12-16T06:00:00.000Z": {
+  "productId": "202212151341-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2023-01-23T00:00:00.000Z": {
+  "productId": "202301220851-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2023-03-04T03:00:00.000Z": {
+  "productId": "202303030807-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 35
+ },
+ "33003|Winter Storm Warning|2023-03-14T09:00:00.000Z": {
+  "productId": "202303130726-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 45
+ },
+ "33003|Winter Storm Warning|2024-01-07T00:00:00.000Z": {
+  "productId": "202401060850-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 35
+ },
+ "33003|Winter Storm Warning|2025-01-19T21:00:00.000Z": {
+  "productId": "202501190823-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33003|Winter Storm Warning|2025-02-09T00:00:00.000Z": {
+  "productId": "202502080746-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33003|Wind Advisory|2025-02-18T07:50:00.000Z": {
+  "productId": "202502180750-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33003|Wind Advisory|2025-11-06T03:00:00.000Z": {
+  "productId": "202511051722-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Wind Advisory|2019-01-01T12:35:00.000Z": {
+  "productId": "201901011235-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2019-01-20T00:00:00.000Z": {
+  "productId": "201901182030-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": null
+ },
+ "33019|Winter Storm Warning|2019-01-29T18:00:00.000Z": {
+  "productId": "201901282012-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33019|Wind Advisory|2019-02-08T20:00:00.000Z": {
+  "productId": "201902080759-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2019-02-12T21:00:00.000Z": {
+  "productId": "201902120825-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.1,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33019|High Wind Warning|2019-02-25T10:00:00.000Z": {
+  "productId": "201902242000-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 58
+ },
+ "33019|Wind Advisory|2019-04-03T16:00:00.000Z": {
+  "productId": "201904021901-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33019|Wind Advisory|2019-11-01T06:00:00.000Z": {
+  "productId": "201910301930-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2019-12-01T21:00:00.000Z": {
+  "productId": "201912010904-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33019|Wind Advisory|2019-12-15T12:00:00.000Z": {
+  "productId": "201912150836-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2019-12-30T00:00:00.000Z": {
+  "productId": "201912291023-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.1,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33019|Wind Advisory|2020-01-12T11:00:00.000Z": {
+  "productId": "202001120234-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Wind Advisory|2020-03-04T11:00:00.000Z": {
+  "productId": "202003040809-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2020-03-23T20:00:00.000Z": {
+  "productId": "202003230750-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33019|Wind Advisory|2020-04-09T22:00:00.000Z": {
+  "productId": "202004091922-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Wind Advisory|2020-04-13T16:00:00.000Z": {
+  "productId": "202004121919-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Wind Advisory|2020-10-07T18:00:00.000Z": {
+  "productId": "202010070812-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33019|Wind Advisory|2020-11-02T15:00:00.000Z": {
+  "productId": "202011020058-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2020-12-05T15:00:00.000Z": {
+  "productId": "202012042106-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": null
+ },
+ "33019|Winter Storm Warning|2020-12-17T03:00:00.000Z": {
+  "productId": "202012160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": 35
+ },
+ "33019|Wind Advisory|2020-12-25T09:00:00.000Z": {
+  "productId": "202012242039-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2021-02-01T20:00:00.000Z": {
+  "productId": "202101312025-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": 35
+ },
+ "33019|Wind Advisory|2021-03-02T06:00:00.000Z": {
+  "productId": "202103010823-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Wind Advisory|2021-03-26T19:00:00.000Z": {
+  "productId": "202103260731-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Wind Advisory|2021-03-29T08:00:00.000Z": {
+  "productId": "202103280728-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2021-04-16T02:00:00.000Z": {
+  "productId": "202104150714-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33019|Winter Storm Warning|2021-12-18T18:00:00.000Z": {
+  "productId": "202112172034-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33019|Winter Storm Warning|2022-01-17T06:00:00.000Z": {
+  "productId": "202201160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 45
+ },
+ "33019|Winter Storm Warning|2022-02-04T00:00:00.000Z": {
+  "productId": "202202030913-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.2,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33019|Winter Storm Warning|2022-02-25T06:00:00.000Z": {
+  "productId": "202202240812-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33019|Wind Advisory|2022-03-08T02:00:00.000Z": {
+  "productId": "202203072021-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2022-03-12T11:00:00.000Z": {
+  "productId": "202203111906-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 40
+ },
+ "33019|Wind Advisory|2022-11-30T18:00:00.000Z": {
+  "productId": "202211300854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33019|Wind Advisory|2022-12-01T14:00:00.000Z": {
+  "productId": "202212010835-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2022-12-16T06:00:00.000Z": {
+  "productId": "202212151341-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": null
+ },
+ "33019|Wind Advisory|2022-12-23T06:00:00.000Z": {
+  "productId": "202212221651-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2023-01-23T00:00:00.000Z": {
+  "productId": "202301220851-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33019|Winter Storm Warning|2023-01-25T20:00:00.000Z": {
+  "productId": "202301242059-KGYX-WWUS41-WSWGYX",
+  "iceIn": 1,
+  "snowIn": 10,
+  "gustMph": 40
+ },
+ "33019|Winter Storm Warning|2023-02-23T00:00:00.000Z": {
+  "productId": "202302221957-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33019|Winter Storm Warning|2023-03-04T03:00:00.000Z": {
+  "productId": "202303030807-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 35
+ },
+ "33019|Winter Storm Warning|2023-03-14T00:00:00.000Z": {
+  "productId": "202303130726-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": 40
+ },
+ "33019|Wind Advisory|2023-03-15T08:00:00.000Z": {
+  "productId": "202303150739-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 46
+ },
+ "33019|Winter Storm Warning|2024-01-07T00:00:00.000Z": {
+  "productId": "202401060850-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 35
+ },
+ "33019|Wind Advisory|2024-01-10T03:00:00.000Z": {
+  "productId": "202401090926-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": 55
+ },
+ "33019|Wind Advisory|2024-02-16T09:00:00.000Z": {
+  "productId": "202402152008-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Wind Advisory|2024-02-28T22:00:00.000Z": {
+  "productId": "202402272056-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Wind Advisory|2024-03-11T12:00:00.000Z": {
+  "productId": "202403101854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2024-03-23T04:00:00.000Z": {
+  "productId": "202403221813-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 35
+ },
+ "33019|Winter Storm Warning|2024-04-03T18:00:00.000Z": {
+  "productId": "202404021932-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 45
+ },
+ "33019|Winter Storm Warning|2024-11-28T12:00:00.000Z": {
+  "productId": "202411272035-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 11,
+  "gustMph": null
+ },
+ "33019|Wind Advisory|2025-01-02T14:00:00.000Z": {
+  "productId": "202501011918-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2025-01-19T21:00:00.000Z": {
+  "productId": "202501190823-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33019|Winter Storm Warning|2025-02-09T00:00:00.000Z": {
+  "productId": "202502080746-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33019|Wind Advisory|2025-02-13T22:00:00.000Z": {
+  "productId": "202502130811-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33019|Wind Advisory|2025-02-14T05:17:00.000Z": {
+  "productId": "202502140517-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Wind Advisory|2025-02-14T08:52:00.000Z": {
+  "productId": "202502140852-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33019|Winter Storm Warning|2025-02-16T00:00:00.000Z": {
+  "productId": "202502142008-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.2,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33019|High Wind Warning|2025-02-17T14:00:00.000Z": {
+  "productId": "202502161824-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33019|Wind Advisory|2025-02-18T02:58:00.000Z": {
+  "productId": "202502180258-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Wind Advisory|2025-03-07T05:00:00.000Z": {
+  "productId": "202503061959-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33019|Wind Advisory|2025-03-17T00:07:00.000Z": {
+  "productId": "202503170007-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2025-03-29T04:00:00.000Z": {
+  "productId": "202503281924-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.75,
+  "snowIn": 1,
+  "gustMph": null
+ },
+ "33019|Wind Advisory|2025-06-20T12:00:00.000Z": {
+  "productId": "202506200608-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33019|Wind Advisory|2025-11-06T03:00:00.000Z": {
+  "productId": "202511051722-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2025-12-02T13:00:00.000Z": {
+  "productId": "202512011736-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33019|Wind Advisory|2025-12-19T13:00:00.000Z": {
+  "productId": "202512181802-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33019|Winter Storm Warning|2025-12-29T03:00:00.000Z": {
+  "productId": "202512281957-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.5,
+  "snowIn": 1,
+  "gustMph": null
+ },
+ "33019|Wind Advisory|2025-12-30T00:00:00.000Z": {
+  "productId": "202512291722-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33013|Wind Advisory|2019-01-01T12:00:00.000Z": {
+  "productId": "201901010841-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Winter Storm Warning|2019-01-20T00:00:00.000Z": {
+  "productId": "201901182030-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": null
+ },
+ "33013|Winter Storm Warning|2019-01-29T18:00:00.000Z": {
+  "productId": "201901282012-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33013|Wind Advisory|2019-02-08T20:00:00.000Z": {
+  "productId": "201902080759-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Winter Storm Warning|2019-02-12T21:00:00.000Z": {
+  "productId": "201902120825-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.1,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33013|High Wind Warning|2019-02-25T10:00:00.000Z": {
+  "productId": "201902242000-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 58
+ },
+ "33013|Wind Advisory|2019-02-26T07:24:00.000Z": {
+  "productId": "201902260724-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2019-04-03T16:00:00.000Z": {
+  "productId": "201904021901-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33013|Wind Advisory|2019-10-17T05:12:00.000Z": {
+  "productId": "201910170512-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2019-11-01T06:00:00.000Z": {
+  "productId": "201910311846-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Winter Storm Warning|2019-12-01T21:00:00.000Z": {
+  "productId": "201912010904-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33013|Wind Advisory|2019-12-15T12:00:00.000Z": {
+  "productId": "201912142017-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Winter Storm Warning|2019-12-30T00:00:00.000Z": {
+  "productId": "201912291023-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.1,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33013|Wind Advisory|2020-01-12T11:00:00.000Z": {
+  "productId": "202001120234-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2020-03-04T11:00:00.000Z": {
+  "productId": "202003031951-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Winter Storm Warning|2020-03-23T20:00:00.000Z": {
+  "productId": "202003230750-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33013|Wind Advisory|2020-04-09T22:00:00.000Z": {
+  "productId": "202004091922-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2020-04-13T16:00:00.000Z": {
+  "productId": "202004121919-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2020-05-09T14:00:00.000Z": {
+  "productId": "202005090024-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2020-09-30T09:17:00.000Z": {
+  "productId": "202009300917-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2020-10-07T18:00:00.000Z": {
+  "productId": "202010070812-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33013|Wind Advisory|2020-11-02T15:00:00.000Z": {
+  "productId": "202011020058-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2020-11-30T23:03:00.000Z": {
+  "productId": "202011302303-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Winter Storm Warning|2020-12-05T15:00:00.000Z": {
+  "productId": "202012042106-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": null
+ },
+ "33013|Winter Storm Warning|2020-12-17T03:00:00.000Z": {
+  "productId": "202012160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": 35
+ },
+ "33013|Wind Advisory|2020-12-25T09:00:00.000Z": {
+  "productId": "202012242039-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2021-01-24T11:50:00.000Z": {
+  "productId": "202101241150-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33013|Winter Storm Warning|2021-02-01T20:00:00.000Z": {
+  "productId": "202101312025-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": 35
+ },
+ "33013|Wind Advisory|2021-03-02T06:00:00.000Z": {
+  "productId": "202103010823-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2021-03-13T01:00:00.000Z": {
+  "productId": "202103120818-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2021-03-26T19:00:00.000Z": {
+  "productId": "202103260731-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2021-03-29T08:00:00.000Z": {
+  "productId": "202103280728-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Winter Storm Warning|2021-04-16T02:00:00.000Z": {
+  "productId": "202104150714-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33013|Winter Storm Warning|2021-12-18T18:00:00.000Z": {
+  "productId": "202112172034-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33013|Winter Storm Warning|2022-01-17T06:00:00.000Z": {
+  "productId": "202201160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 45
+ },
+ "33013|Winter Storm Warning|2022-01-29T12:00:00.000Z": {
+  "productId": "202201280911-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 13,
+  "gustMph": null
+ },
+ "33013|Winter Storm Warning|2022-02-04T00:00:00.000Z": {
+  "productId": "202202030913-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.2,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33013|Winter Storm Warning|2022-02-25T06:00:00.000Z": {
+  "productId": "202202240812-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33013|Wind Advisory|2022-03-08T02:00:00.000Z": {
+  "productId": "202203072021-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2022-03-08T17:05:00.000Z": {
+  "productId": "202203081705-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2022-03-12T22:22:00.000Z": {
+  "productId": "202203122222-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33013|Wind Advisory|2022-11-30T18:00:00.000Z": {
+  "productId": "202211300854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33013|Wind Advisory|2022-12-01T14:00:00.000Z": {
+  "productId": "202212010835-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Winter Storm Warning|2022-12-16T06:00:00.000Z": {
+  "productId": "202212151951-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": null
+ },
+ "33013|Wind Advisory|2022-12-23T06:00:00.000Z": {
+  "productId": "202212221651-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Winter Storm Warning|2023-01-20T00:00:00.000Z": {
+  "productId": "202301190815-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33013|Winter Storm Warning|2023-01-23T00:00:00.000Z": {
+  "productId": "202301220851-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33013|Winter Storm Warning|2023-01-25T20:00:00.000Z": {
+  "productId": "202301242059-KGYX-WWUS41-WSWGYX",
+  "iceIn": 1,
+  "snowIn": 10,
+  "gustMph": 40
+ },
+ "33013|Winter Storm Warning|2023-02-23T00:00:00.000Z": {
+  "productId": "202302221957-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33013|Winter Storm Warning|2023-02-28T08:04:00.000Z": {
+  "productId": "202302280804-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33013|Winter Storm Warning|2023-03-04T03:00:00.000Z": {
+  "productId": "202303030807-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 35
+ },
+ "33013|Winter Storm Warning|2023-03-14T00:00:00.000Z": {
+  "productId": "202303130726-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": 40
+ },
+ "33013|Wind Advisory|2023-03-15T08:00:00.000Z": {
+  "productId": "202303150739-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 46
+ },
+ "33013|Wind Advisory|2023-12-18T13:57:00.000Z": {
+  "productId": "202312181357-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Winter Storm Warning|2024-01-07T00:00:00.000Z": {
+  "productId": "202401060850-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 35
+ },
+ "33013|Wind Advisory|2024-01-10T03:00:00.000Z": {
+  "productId": "202401090926-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": 55
+ },
+ "33013|Wind Advisory|2024-02-16T09:00:00.000Z": {
+  "productId": "202402152008-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2024-02-28T22:00:00.000Z": {
+  "productId": "202402272056-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2024-03-11T12:00:00.000Z": {
+  "productId": "202403101854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Winter Storm Warning|2024-03-23T04:00:00.000Z": {
+  "productId": "202403221813-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 35
+ },
+ "33013|Winter Storm Warning|2024-04-03T18:00:00.000Z": {
+  "productId": "202404021932-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 45
+ },
+ "33013|Wind Advisory|2025-01-02T14:00:00.000Z": {
+  "productId": "202501011918-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2025-01-09T04:36:00.000Z": {
+  "productId": "202501081950-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Winter Storm Warning|2025-01-19T21:00:00.000Z": {
+  "productId": "202501190823-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33013|Winter Storm Warning|2025-02-09T00:00:00.000Z": {
+  "productId": "202502080746-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33013|Wind Advisory|2025-02-13T22:00:00.000Z": {
+  "productId": "202502130811-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33013|Wind Advisory|2025-02-14T05:17:00.000Z": {
+  "productId": "202502140517-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2025-02-14T08:52:00.000Z": {
+  "productId": "202502140852-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33013|Winter Storm Warning|2025-02-16T00:00:00.000Z": {
+  "productId": "202502142008-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.2,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33013|High Wind Warning|2025-02-17T14:00:00.000Z": {
+  "productId": "202502161824-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33013|Wind Advisory|2025-02-18T02:58:00.000Z": {
+  "productId": "202502180258-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2025-03-07T05:00:00.000Z": {
+  "productId": "202503061959-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33013|Wind Advisory|2025-03-08T00:00:00.000Z": {
+  "productId": "202503072325-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2025-03-17T00:07:00.000Z": {
+  "productId": "202503170007-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Winter Storm Warning|2025-03-29T04:00:00.000Z": {
+  "productId": "202503281924-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.75,
+  "snowIn": 1,
+  "gustMph": null
+ },
+ "33013|Wind Advisory|2025-04-08T20:00:00.000Z": {
+  "productId": "202504080642-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Wind Advisory|2025-04-20T12:00:00.000Z": {
+  "productId": "202504200713-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33013|Wind Advisory|2025-06-20T12:00:00.000Z": {
+  "productId": "202506200608-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33013|Wind Advisory|2025-11-04T12:00:00.000Z": {
+  "productId": "202511031705-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33013|Wind Advisory|2025-11-06T03:00:00.000Z": {
+  "productId": "202511051722-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Winter Storm Warning|2025-12-02T13:00:00.000Z": {
+  "productId": "202512011736-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33013|Wind Advisory|2025-12-19T13:00:00.000Z": {
+  "productId": "202512180458-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33013|Winter Storm Warning|2025-12-29T03:00:00.000Z": {
+  "productId": "202512281957-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.5,
+  "snowIn": 1,
+  "gustMph": null
+ },
+ "33013|Wind Advisory|2025-12-30T00:00:00.000Z": {
+  "productId": "202512291722-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33001|Wind Advisory|2019-01-01T12:00:00.000Z": {
+  "productId": "201901010841-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Winter Storm Warning|2019-01-20T00:00:00.000Z": {
+  "productId": "201901182030-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": null
+ },
+ "33001|Winter Storm Warning|2019-01-29T18:00:00.000Z": {
+  "productId": "201901282012-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33001|Wind Advisory|2019-02-08T20:00:00.000Z": {
+  "productId": "201902080759-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Winter Storm Warning|2019-02-12T21:00:00.000Z": {
+  "productId": "201902120825-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.1,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33001|High Wind Warning|2019-02-25T10:00:00.000Z": {
+  "productId": "201902242000-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 58
+ },
+ "33001|Wind Advisory|2019-02-26T07:24:00.000Z": {
+  "productId": "201902260724-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Wind Advisory|2019-04-03T16:00:00.000Z": {
+  "productId": "201904021901-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33001|Wind Advisory|2019-10-17T05:12:00.000Z": {
+  "productId": "201910170512-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Wind Advisory|2019-11-01T06:00:00.000Z": {
+  "productId": "201910301930-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Wind Advisory|2019-12-15T12:00:00.000Z": {
+  "productId": "201912142017-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Winter Storm Warning|2019-12-30T08:45:00.000Z": {
+  "productId": "201912300845-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33001|Winter Storm Warning|2020-01-16T13:48:00.000Z": {
+  "productId": "202001161348-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 3,
+  "gustMph": null
+ },
+ "33001|Wind Advisory|2020-03-04T11:00:00.000Z": {
+  "productId": "202003031951-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Winter Storm Warning|2020-03-23T20:00:00.000Z": {
+  "productId": "202003230750-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33001|Wind Advisory|2020-04-13T17:30:00.000Z": {
+  "productId": "202004131730-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33001|Wind Advisory|2020-05-09T14:00:00.000Z": {
+  "productId": "202005090024-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Wind Advisory|2020-09-30T09:17:00.000Z": {
+  "productId": "202009300917-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Wind Advisory|2020-10-07T18:00:00.000Z": {
+  "productId": "202010070812-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33001|Wind Advisory|2020-11-02T15:00:00.000Z": {
+  "productId": "202011020058-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Wind Advisory|2020-11-30T23:03:00.000Z": {
+  "productId": "202011302303-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Winter Storm Warning|2020-12-05T15:00:00.000Z": {
+  "productId": "202012042106-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": null
+ },
+ "33001|Winter Storm Warning|2020-12-17T03:00:00.000Z": {
+  "productId": "202012160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": 35
+ },
+ "33001|Wind Advisory|2020-12-25T09:00:00.000Z": {
+  "productId": "202012242039-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Wind Advisory|2021-01-24T11:50:00.000Z": {
+  "productId": "202101241150-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33001|Winter Storm Warning|2021-02-01T20:00:00.000Z": {
+  "productId": "202101312025-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": 35
+ },
+ "33001|Wind Advisory|2021-03-02T06:00:00.000Z": {
+  "productId": "202103010823-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Wind Advisory|2021-03-13T01:00:00.000Z": {
+  "productId": "202103120818-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Wind Advisory|2021-03-29T08:00:00.000Z": {
+  "productId": "202103280728-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Winter Storm Warning|2021-04-16T02:00:00.000Z": {
+  "productId": "202104150714-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33001|Winter Storm Warning|2021-12-18T18:00:00.000Z": {
+  "productId": "202112172034-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33001|Winter Storm Warning|2022-01-17T06:00:00.000Z": {
+  "productId": "202201160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 45
+ },
+ "33001|Winter Storm Warning|2022-01-29T12:00:00.000Z": {
+  "productId": "202201280911-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 13,
+  "gustMph": null
+ },
+ "33001|Winter Storm Warning|2022-02-04T00:00:00.000Z": {
+  "productId": "202202030913-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.2,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33001|Winter Storm Warning|2022-02-25T06:00:00.000Z": {
+  "productId": "202202240812-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33001|Wind Advisory|2022-03-08T17:05:00.000Z": {
+  "productId": "202203081705-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Wind Advisory|2022-03-12T22:22:00.000Z": {
+  "productId": "202203122222-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33001|Wind Advisory|2022-11-30T18:00:00.000Z": {
+  "productId": "202211300854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33001|Wind Advisory|2022-12-01T14:00:00.000Z": {
+  "productId": "202212010835-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Winter Storm Warning|2022-12-16T06:00:00.000Z": {
+  "productId": "202212151341-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": null
+ },
+ "33001|Wind Advisory|2022-12-23T06:00:00.000Z": {
+  "productId": "202212221651-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Winter Storm Warning|2023-01-20T00:00:00.000Z": {
+  "productId": "202301190815-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33001|Winter Storm Warning|2023-01-23T00:00:00.000Z": {
+  "productId": "202301220851-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33001|Winter Storm Warning|2023-01-25T20:00:00.000Z": {
+  "productId": "202301242059-KGYX-WWUS41-WSWGYX",
+  "iceIn": 1,
+  "snowIn": 10,
+  "gustMph": 40
+ },
+ "33001|Winter Storm Warning|2023-02-23T00:00:00.000Z": {
+  "productId": "202302221957-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33001|Winter Storm Warning|2023-02-28T08:04:00.000Z": {
+  "productId": "202302280804-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33001|Winter Storm Warning|2023-03-04T03:00:00.000Z": {
+  "productId": "202303030807-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 35
+ },
+ "33001|Winter Storm Warning|2023-03-14T09:00:00.000Z": {
+  "productId": "202303130726-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 45
+ },
+ "33001|Wind Advisory|2023-12-18T13:57:00.000Z": {
+  "productId": "202312181357-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Winter Storm Warning|2024-01-07T00:00:00.000Z": {
+  "productId": "202401060850-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 35
+ },
+ "33001|Wind Advisory|2024-01-10T03:00:00.000Z": {
+  "productId": "202401090926-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": 55
+ },
+ "33001|Wind Advisory|2024-02-28T22:00:00.000Z": {
+  "productId": "202402272056-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Wind Advisory|2024-03-11T12:00:00.000Z": {
+  "productId": "202403101854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Winter Storm Warning|2024-03-23T04:00:00.000Z": {
+  "productId": "202403221813-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 35
+ },
+ "33001|Winter Storm Warning|2024-04-03T18:00:00.000Z": {
+  "productId": "202404021932-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 20,
+  "gustMph": 45
+ },
+ "33001|Wind Advisory|2025-01-02T14:00:00.000Z": {
+  "productId": "202501011918-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Wind Advisory|2025-01-09T04:36:00.000Z": {
+  "productId": "202501081950-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Winter Storm Warning|2025-01-19T21:00:00.000Z": {
+  "productId": "202501190823-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33001|Winter Storm Warning|2025-02-09T00:00:00.000Z": {
+  "productId": "202502080746-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33001|Wind Advisory|2025-02-13T22:00:00.000Z": {
+  "productId": "202502130811-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33001|Wind Advisory|2025-02-14T05:17:00.000Z": {
+  "productId": "202502140517-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Wind Advisory|2025-02-14T08:52:00.000Z": {
+  "productId": "202502140852-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33001|Winter Storm Warning|2025-02-16T00:00:00.000Z": {
+  "productId": "202502142008-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.2,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33001|Wind Advisory|2025-02-17T14:00:00.000Z": {
+  "productId": "202502161824-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33001|Wind Advisory|2025-03-07T09:00:00.000Z": {
+  "productId": "202503061959-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33001|Wind Advisory|2025-03-17T00:07:00.000Z": {
+  "productId": "202503170007-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Wind Advisory|2025-04-08T20:00:00.000Z": {
+  "productId": "202504080642-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Wind Advisory|2025-04-20T12:00:00.000Z": {
+  "productId": "202504200713-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33001|Wind Advisory|2025-06-20T12:00:00.000Z": {
+  "productId": "202506200608-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33001|Wind Advisory|2025-11-04T12:00:00.000Z": {
+  "productId": "202511031705-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33001|Wind Advisory|2025-11-06T03:00:00.000Z": {
+  "productId": "202511051722-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Winter Storm Warning|2025-12-02T13:00:00.000Z": {
+  "productId": "202512011736-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33001|Wind Advisory|2025-12-19T13:00:00.000Z": {
+  "productId": "202512180458-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33001|Winter Storm Warning|2025-12-29T03:00:00.000Z": {
+  "productId": "202512281957-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.5,
+  "snowIn": 1,
+  "gustMph": null
+ },
+ "33001|Wind Advisory|2025-12-30T00:00:00.000Z": {
+  "productId": "202512291722-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33017|Wind Advisory|2019-01-01T12:00:00.000Z": {
+  "productId": "201901010841-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Winter Storm Warning|2019-01-20T00:00:00.000Z": {
+  "productId": "201901182030-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": null
+ },
+ "33017|Winter Storm Warning|2019-01-29T18:00:00.000Z": {
+  "productId": "201901282012-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33017|Wind Advisory|2019-02-08T20:00:00.000Z": {
+  "productId": "201902080759-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Winter Storm Warning|2019-02-12T21:00:00.000Z": {
+  "productId": "201902120825-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.1,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33017|High Wind Warning|2019-02-25T10:00:00.000Z": {
+  "productId": "201902242000-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 58
+ },
+ "33017|Wind Advisory|2019-02-26T07:24:00.000Z": {
+  "productId": "201902260724-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Winter Storm Warning|2019-03-04T01:00:00.000Z": {
+  "productId": "201903031934-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33017|Wind Advisory|2019-04-03T16:00:00.000Z": {
+  "productId": "201904021901-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33017|Wind Advisory|2019-10-17T03:00:00.000Z": {
+  "productId": "201910161909-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|High Wind Warning|2019-10-17T07:30:00.000Z": {
+  "productId": "201910170730-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33017|Wind Advisory|2019-10-17T10:04:00.000Z": {
+  "productId": "201910171004-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2019-11-01T06:00:00.000Z": {
+  "productId": "201910311846-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Winter Storm Warning|2019-12-01T21:00:00.000Z": {
+  "productId": "201912010904-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33017|Wind Advisory|2019-12-15T12:00:00.000Z": {
+  "productId": "201912142017-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Winter Storm Warning|2019-12-30T08:45:00.000Z": {
+  "productId": "201912300845-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33017|Wind Advisory|2020-03-04T11:00:00.000Z": {
+  "productId": "202003031951-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Winter Storm Warning|2020-03-23T20:00:00.000Z": {
+  "productId": "202003230750-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33017|Wind Advisory|2020-04-13T16:00:00.000Z": {
+  "productId": "202004121919-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2020-05-09T14:00:00.000Z": {
+  "productId": "202005090024-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2020-09-30T09:17:00.000Z": {
+  "productId": "202009300917-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2020-10-07T18:00:00.000Z": {
+  "productId": "202010070812-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33017|Wind Advisory|2020-11-02T15:00:00.000Z": {
+  "productId": "202011020058-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2020-11-30T21:00:00.000Z": {
+  "productId": "202011301523-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Winter Storm Warning|2020-12-05T15:00:00.000Z": {
+  "productId": "202012042106-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": null
+ },
+ "33017|Winter Storm Warning|2020-12-17T03:00:00.000Z": {
+  "productId": "202012160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": 35
+ },
+ "33017|Wind Advisory|2020-12-25T06:00:00.000Z": {
+  "productId": "202012242039-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2021-01-24T11:50:00.000Z": {
+  "productId": "202101241150-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33017|Winter Storm Warning|2021-02-01T20:00:00.000Z": {
+  "productId": "202101312025-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": 35
+ },
+ "33017|Wind Advisory|2021-03-02T06:00:00.000Z": {
+  "productId": "202103010823-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2021-03-13T01:00:00.000Z": {
+  "productId": "202103120818-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2021-03-29T08:00:00.000Z": {
+  "productId": "202103280728-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2021-10-27T09:52:00.000Z": {
+  "productId": "202110270952-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33017|Winter Storm Warning|2021-12-18T18:00:00.000Z": {
+  "productId": "202112172034-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33017|Winter Storm Warning|2022-01-17T06:00:00.000Z": {
+  "productId": "202201162042-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": 45
+ },
+ "33017|Winter Storm Warning|2022-01-29T12:00:00.000Z": {
+  "productId": "202201280911-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 13,
+  "gustMph": null
+ },
+ "33017|Winter Storm Warning|2022-02-04T00:00:00.000Z": {
+  "productId": "202202030913-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.2,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33017|Winter Storm Warning|2022-02-25T06:00:00.000Z": {
+  "productId": "202202240812-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33017|Wind Advisory|2022-03-08T17:05:00.000Z": {
+  "productId": "202203081705-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2022-03-12T22:22:00.000Z": {
+  "productId": "202203122222-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33017|Wind Advisory|2022-10-14T07:00:00.000Z": {
+  "productId": "202210131931-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33017|Wind Advisory|2022-11-30T18:00:00.000Z": {
+  "productId": "202211300854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33017|High Wind Warning|2022-12-23T06:00:00.000Z": {
+  "productId": "202212220827-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33017|Winter Storm Warning|2023-01-20T00:00:00.000Z": {
+  "productId": "202301190815-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33017|Winter Storm Warning|2023-01-23T00:00:00.000Z": {
+  "productId": "202301220851-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33017|Winter Storm Warning|2023-01-25T20:00:00.000Z": {
+  "productId": "202301242059-KGYX-WWUS41-WSWGYX",
+  "iceIn": 1,
+  "snowIn": 10,
+  "gustMph": 40
+ },
+ "33017|Winter Storm Warning|2023-02-23T00:00:00.000Z": {
+  "productId": "202302221957-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33017|Winter Storm Warning|2023-02-28T09:00:00.000Z": {
+  "productId": "202302272007-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33017|Winter Storm Warning|2023-03-04T03:00:00.000Z": {
+  "productId": "202303030807-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 35
+ },
+ "33017|Winter Storm Warning|2023-03-14T09:00:00.000Z": {
+  "productId": "202303130726-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2023-12-18T12:00:00.000Z": {
+  "productId": "202312171944-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33017|High Wind Warning|2023-12-18T13:57:00.000Z": {
+  "productId": "202312181357-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33017|Wind Advisory|2023-12-18T19:57:00.000Z": {
+  "productId": "202312181957-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Winter Storm Warning|2024-01-07T00:00:00.000Z": {
+  "productId": "202401060850-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 35
+ },
+ "33017|Wind Advisory|2024-01-10T03:00:00.000Z": {
+  "productId": "202401090926-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": 55
+ },
+ "33017|Wind Advisory|2024-02-28T22:00:00.000Z": {
+  "productId": "202402272056-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2024-03-11T12:00:00.000Z": {
+  "productId": "202403101854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Winter Storm Warning|2024-03-23T04:00:00.000Z": {
+  "productId": "202403221813-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 35
+ },
+ "33017|Winter Storm Warning|2024-04-03T18:00:00.000Z": {
+  "productId": "202404021932-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 20,
+  "gustMph": 45
+ },
+ "33017|Wind Advisory|2024-12-11T21:00:00.000Z": {
+  "productId": "202412102029-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2025-01-02T14:00:00.000Z": {
+  "productId": "202501011918-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2025-01-09T04:36:00.000Z": {
+  "productId": "202501081950-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Winter Storm Warning|2025-01-19T21:00:00.000Z": {
+  "productId": "202501190823-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33017|Winter Storm Warning|2025-02-09T00:00:00.000Z": {
+  "productId": "202502080746-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33017|Wind Advisory|2025-02-13T22:00:00.000Z": {
+  "productId": "202502130811-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33017|Wind Advisory|2025-02-14T05:17:00.000Z": {
+  "productId": "202502140517-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2025-02-14T08:52:00.000Z": {
+  "productId": "202502140852-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33017|Winter Storm Warning|2025-02-16T00:00:00.000Z": {
+  "productId": "202502142008-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.2,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33017|Wind Advisory|2025-02-17T14:00:00.000Z": {
+  "productId": "202502161824-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33017|Wind Advisory|2025-03-07T09:00:00.000Z": {
+  "productId": "202503061959-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33017|Wind Advisory|2025-04-08T20:00:00.000Z": {
+  "productId": "202504080642-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2025-04-20T12:00:00.000Z": {
+  "productId": "202504200713-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33017|Wind Advisory|2025-06-20T12:00:00.000Z": {
+  "productId": "202506200608-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33017|Wind Advisory|2025-11-04T12:00:00.000Z": {
+  "productId": "202511031705-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33017|Wind Advisory|2025-11-06T03:00:00.000Z": {
+  "productId": "202511051722-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Winter Storm Warning|2025-12-02T13:00:00.000Z": {
+  "productId": "202512011736-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33017|Wind Advisory|2025-12-19T13:00:00.000Z": {
+  "productId": "202512180458-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33017|Wind Advisory|2025-12-30T01:24:00.000Z": {
+  "productId": "202512300124-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Wind Advisory|2019-01-01T12:00:00.000Z": {
+  "productId": "201901010841-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Winter Storm Warning|2019-01-20T00:00:00.000Z": {
+  "productId": "201901182030-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": null
+ },
+ "33005|Winter Storm Warning|2019-01-29T18:00:00.000Z": {
+  "productId": "201901282012-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33005|Wind Advisory|2019-02-08T20:00:00.000Z": {
+  "productId": "201902080759-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Winter Storm Warning|2019-02-12T21:00:00.000Z": {
+  "productId": "201902120825-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.1,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33005|High Wind Warning|2019-02-25T10:00:00.000Z": {
+  "productId": "201902242000-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 58
+ },
+ "33005|Wind Advisory|2019-02-26T07:24:00.000Z": {
+  "productId": "201902260724-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Wind Advisory|2019-04-03T16:00:00.000Z": {
+  "productId": "201904021901-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33005|Wind Advisory|2019-11-01T06:00:00.000Z": {
+  "productId": "201910311846-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Winter Storm Warning|2019-12-01T21:00:00.000Z": {
+  "productId": "201911302023-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33005|Wind Advisory|2019-12-15T12:00:00.000Z": {
+  "productId": "201912150836-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Winter Storm Warning|2019-12-30T00:00:00.000Z": {
+  "productId": "201912290851-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 6,
+  "gustMph": null
+ },
+ "33005|Wind Advisory|2020-01-12T11:00:00.000Z": {
+  "productId": "202001120234-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Wind Advisory|2020-03-04T11:00:00.000Z": {
+  "productId": "202003040809-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Winter Storm Warning|2020-03-23T20:00:00.000Z": {
+  "productId": "202003230750-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33005|Wind Advisory|2020-04-09T22:00:00.000Z": {
+  "productId": "202004091922-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Wind Advisory|2020-04-13T16:00:00.000Z": {
+  "productId": "202004121919-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Wind Advisory|2020-05-09T14:00:00.000Z": {
+  "productId": "202005090024-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Wind Advisory|2020-10-07T18:00:00.000Z": {
+  "productId": "202010070812-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33005|Wind Advisory|2020-11-02T15:00:00.000Z": {
+  "productId": "202011020058-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Wind Advisory|2020-11-30T23:03:00.000Z": {
+  "productId": "202011302303-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Winter Storm Warning|2020-12-05T15:00:00.000Z": {
+  "productId": "202012042106-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": null
+ },
+ "33005|Winter Storm Warning|2020-12-17T03:00:00.000Z": {
+  "productId": "202012160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": 35
+ },
+ "33005|Wind Advisory|2020-12-25T06:00:00.000Z": {
+  "productId": "202012242039-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Winter Storm Warning|2021-02-01T20:00:00.000Z": {
+  "productId": "202101312025-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": 35
+ },
+ "33005|Wind Advisory|2021-03-02T06:00:00.000Z": {
+  "productId": "202103010823-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Wind Advisory|2021-03-26T19:00:00.000Z": {
+  "productId": "202103260731-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Wind Advisory|2021-03-29T08:00:00.000Z": {
+  "productId": "202103280728-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Winter Storm Warning|2021-04-16T02:00:00.000Z": {
+  "productId": "202104150714-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33005|Winter Storm Warning|2021-12-18T18:00:00.000Z": {
+  "productId": "202112172034-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33005|Winter Storm Warning|2022-01-17T06:00:00.000Z": {
+  "productId": "202201160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 45
+ },
+ "33005|Winter Storm Warning|2022-01-29T12:00:00.000Z": {
+  "productId": "202201282021-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": 35
+ },
+ "33005|Winter Storm Warning|2022-02-04T00:00:00.000Z": {
+  "productId": "202202030913-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.2,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33005|Wind Advisory|2022-02-18T03:00:00.000Z": {
+  "productId": "202202161923-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Winter Storm Warning|2022-02-25T06:00:00.000Z": {
+  "productId": "202202240812-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33005|Wind Advisory|2022-03-08T02:00:00.000Z": {
+  "productId": "202203072021-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Wind Advisory|2022-03-12T22:22:00.000Z": {
+  "productId": "202203122222-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33005|Wind Advisory|2022-11-30T18:00:00.000Z": {
+  "productId": "202211300854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33005|Wind Advisory|2022-12-01T14:00:00.000Z": {
+  "productId": "202212010835-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Winter Storm Warning|2022-12-16T06:00:00.000Z": {
+  "productId": "202212151341-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": null
+ },
+ "33005|Wind Advisory|2022-12-23T06:00:00.000Z": {
+  "productId": "202212221651-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Winter Storm Warning|2023-01-23T00:00:00.000Z": {
+  "productId": "202301220851-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33005|Winter Storm Warning|2023-03-04T03:00:00.000Z": {
+  "productId": "202303030807-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 35
+ },
+ "33005|Winter Storm Warning|2023-03-14T00:00:00.000Z": {
+  "productId": "202303130726-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": 40
+ },
+ "33005|Wind Advisory|2023-03-15T08:00:00.000Z": {
+  "productId": "202303150739-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 46
+ },
+ "33005|Wind Advisory|2023-12-18T12:00:00.000Z": {
+  "productId": "202312180042-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33005|Winter Storm Warning|2024-01-07T00:00:00.000Z": {
+  "productId": "202401060850-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 35
+ },
+ "33005|Wind Advisory|2024-01-10T03:00:00.000Z": {
+  "productId": "202401090926-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": 55
+ },
+ "33005|Winter Storm Warning|2024-01-28T18:00:00.000Z": {
+  "productId": "202401280742-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33005|Wind Advisory|2024-02-16T09:00:00.000Z": {
+  "productId": "202402152008-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Wind Advisory|2024-02-28T22:00:00.000Z": {
+  "productId": "202402272056-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Wind Advisory|2024-03-11T12:00:00.000Z": {
+  "productId": "202403101854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Winter Storm Warning|2024-03-23T04:00:00.000Z": {
+  "productId": "202403221813-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.25,
+  "snowIn": 9,
+  "gustMph": 35
+ },
+ "33005|Winter Storm Warning|2024-04-03T18:00:00.000Z": {
+  "productId": "202404021932-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 45
+ },
+ "33005|Wind Advisory|2025-01-02T14:00:00.000Z": {
+  "productId": "202501011918-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Winter Storm Warning|2025-01-19T21:00:00.000Z": {
+  "productId": "202501190823-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33005|Wind Advisory|2025-01-29T18:00:00.000Z": {
+  "productId": "202501291529-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33005|Winter Storm Warning|2025-02-09T00:00:00.000Z": {
+  "productId": "202502080746-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33005|Wind Advisory|2025-02-13T22:00:00.000Z": {
+  "productId": "202502130811-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33005|Wind Advisory|2025-02-14T05:17:00.000Z": {
+  "productId": "202502140517-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Wind Advisory|2025-02-14T08:52:00.000Z": {
+  "productId": "202502140852-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33005|Winter Storm Warning|2025-02-16T00:00:00.000Z": {
+  "productId": "202502142008-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.2,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33005|High Wind Warning|2025-02-17T14:00:00.000Z": {
+  "productId": "202502161824-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33005|Wind Advisory|2025-02-18T02:58:00.000Z": {
+  "productId": "202502180258-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Wind Advisory|2025-03-07T05:00:00.000Z": {
+  "productId": "202503061959-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33005|Wind Advisory|2025-03-17T00:07:00.000Z": {
+  "productId": "202503170007-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Winter Storm Warning|2025-03-29T04:00:00.000Z": {
+  "productId": "202503281924-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.75,
+  "snowIn": null,
+  "gustMph": null
+ },
+ "33005|Wind Advisory|2025-06-20T12:00:00.000Z": {
+  "productId": "202506200608-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33005|Wind Advisory|2025-11-06T03:00:00.000Z": {
+  "productId": "202511051722-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Winter Storm Warning|2025-12-02T13:00:00.000Z": {
+  "productId": "202512011736-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33005|Wind Advisory|2025-12-19T13:00:00.000Z": {
+  "productId": "202512181802-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33005|Wind Advisory|2025-12-30T01:24:00.000Z": {
+  "productId": "202512300124-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2019-01-01T12:00:00.000Z": {
+  "productId": "201901010841-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Winter Storm Warning|2019-01-20T00:00:00.000Z": {
+  "productId": "201901182030-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": null
+ },
+ "33011|Wind Advisory|2019-02-08T20:00:00.000Z": {
+  "productId": "201902080759-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Winter Storm Warning|2019-02-12T21:00:00.000Z": {
+  "productId": "201902120825-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.1,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33011|High Wind Warning|2019-02-25T10:00:00.000Z": {
+  "productId": "201902242000-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 58
+ },
+ "33011|Wind Advisory|2019-02-26T07:24:00.000Z": {
+  "productId": "201902260724-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Winter Storm Warning|2019-03-04T01:00:00.000Z": {
+  "productId": "201903031934-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33011|Wind Advisory|2019-04-03T16:00:00.000Z": {
+  "productId": "201904021901-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33011|Wind Advisory|2019-10-17T05:12:00.000Z": {
+  "productId": "201910170512-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2019-11-01T06:00:00.000Z": {
+  "productId": "201910311846-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Winter Storm Warning|2019-12-01T21:00:00.000Z": {
+  "productId": "201911302023-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33011|Wind Advisory|2019-12-15T12:00:00.000Z": {
+  "productId": "201912142017-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2020-01-12T11:00:00.000Z": {
+  "productId": "202001120234-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2020-03-04T11:00:00.000Z": {
+  "productId": "202003031951-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Winter Storm Warning|2020-03-23T20:00:00.000Z": {
+  "productId": "202003230750-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33011|Wind Advisory|2020-04-09T22:00:00.000Z": {
+  "productId": "202004091922-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2020-04-13T16:00:00.000Z": {
+  "productId": "202004121919-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2020-05-09T14:00:00.000Z": {
+  "productId": "202005090024-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2020-09-30T09:17:00.000Z": {
+  "productId": "202009300917-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2020-10-07T18:00:00.000Z": {
+  "productId": "202010070812-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33011|Wind Advisory|2020-11-02T15:00:00.000Z": {
+  "productId": "202011020058-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2020-11-30T23:03:00.000Z": {
+  "productId": "202011302303-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Winter Storm Warning|2020-12-05T15:00:00.000Z": {
+  "productId": "202012042106-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": null
+ },
+ "33011|Winter Storm Warning|2020-12-17T03:00:00.000Z": {
+  "productId": "202012160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": 35
+ },
+ "33011|Wind Advisory|2020-12-25T06:00:00.000Z": {
+  "productId": "202012242039-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2021-01-24T11:50:00.000Z": {
+  "productId": "202101241150-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33011|Winter Storm Warning|2021-02-01T20:00:00.000Z": {
+  "productId": "202101312025-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": 35
+ },
+ "33011|Wind Advisory|2021-03-02T06:00:00.000Z": {
+  "productId": "202103010823-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2021-03-13T01:00:00.000Z": {
+  "productId": "202103120818-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2021-03-26T19:00:00.000Z": {
+  "productId": "202103260731-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2021-03-29T08:00:00.000Z": {
+  "productId": "202103280728-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2021-10-27T09:52:00.000Z": {
+  "productId": "202110270952-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33011|Winter Storm Warning|2021-12-18T18:00:00.000Z": {
+  "productId": "202112172034-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33011|Winter Storm Warning|2022-01-17T06:00:00.000Z": {
+  "productId": "202201162042-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": 45
+ },
+ "33011|Winter Storm Warning|2022-01-29T12:00:00.000Z": {
+  "productId": "202201280911-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 13,
+  "gustMph": null
+ },
+ "33011|Winter Storm Warning|2022-02-04T00:00:00.000Z": {
+  "productId": "202202030913-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.2,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33011|Wind Advisory|2022-02-18T03:00:00.000Z": {
+  "productId": "202202161923-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Winter Storm Warning|2022-02-25T06:00:00.000Z": {
+  "productId": "202202240812-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33011|Wind Advisory|2022-03-08T02:00:00.000Z": {
+  "productId": "202203072021-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2022-03-12T22:22:00.000Z": {
+  "productId": "202203122222-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33011|Wind Advisory|2022-11-30T18:00:00.000Z": {
+  "productId": "202211300854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33011|Wind Advisory|2022-12-01T14:00:00.000Z": {
+  "productId": "202212010835-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2022-12-23T06:00:00.000Z": {
+  "productId": "202212221651-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Winter Storm Warning|2023-01-23T00:00:00.000Z": {
+  "productId": "202301220851-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33011|Winter Storm Warning|2023-03-04T03:00:00.000Z": {
+  "productId": "202303030807-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 35
+ },
+ "33011|Winter Storm Warning|2023-03-14T09:00:00.000Z": {
+  "productId": "202303130726-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": 40
+ },
+ "33011|Wind Advisory|2023-03-15T08:00:00.000Z": {
+  "productId": "202303150739-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 46
+ },
+ "33011|Wind Advisory|2023-12-18T12:00:00.000Z": {
+  "productId": "202312180042-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33011|Winter Storm Warning|2024-01-07T00:00:00.000Z": {
+  "productId": "202401060850-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 35
+ },
+ "33011|Wind Advisory|2024-01-10T03:00:00.000Z": {
+  "productId": "202401090926-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": 55
+ },
+ "33011|Wind Advisory|2024-02-16T09:00:00.000Z": {
+  "productId": "202402152008-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2024-02-28T22:00:00.000Z": {
+  "productId": "202402272056-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2024-03-11T12:00:00.000Z": {
+  "productId": "202403101854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Winter Storm Warning|2024-04-03T18:00:00.000Z": {
+  "productId": "202404021932-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 45
+ },
+ "33011|Wind Advisory|2024-12-11T21:00:00.000Z": {
+  "productId": "202412110826-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2025-01-02T14:00:00.000Z": {
+  "productId": "202501011918-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2025-01-09T04:36:00.000Z": {
+  "productId": "202501081950-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Winter Storm Warning|2025-01-19T21:00:00.000Z": {
+  "productId": "202501190823-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33011|Wind Advisory|2025-01-29T18:00:00.000Z": {
+  "productId": "202501291529-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33011|Winter Storm Warning|2025-02-09T00:00:00.000Z": {
+  "productId": "202502080746-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33011|Wind Advisory|2025-02-13T22:00:00.000Z": {
+  "productId": "202502130811-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33011|Wind Advisory|2025-02-14T05:17:00.000Z": {
+  "productId": "202502140517-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2025-02-14T08:52:00.000Z": {
+  "productId": "202502140852-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33011|Winter Storm Warning|2025-02-16T00:00:00.000Z": {
+  "productId": "202502142008-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.2,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33011|High Wind Warning|2025-02-17T14:00:00.000Z": {
+  "productId": "202502161824-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33011|Wind Advisory|2025-02-18T02:58:00.000Z": {
+  "productId": "202502180258-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2025-03-07T05:00:00.000Z": {
+  "productId": "202503061959-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33011|Wind Advisory|2025-03-17T00:07:00.000Z": {
+  "productId": "202503170007-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2025-04-08T20:00:00.000Z": {
+  "productId": "202504080642-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2025-04-20T12:00:00.000Z": {
+  "productId": "202504200713-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33011|Wind Advisory|2025-06-20T12:00:00.000Z": {
+  "productId": "202506200608-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33011|Wind Advisory|2025-11-04T12:00:00.000Z": {
+  "productId": "202511031705-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33011|Wind Advisory|2025-11-06T03:00:00.000Z": {
+  "productId": "202511051722-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Winter Storm Warning|2025-12-02T13:00:00.000Z": {
+  "productId": "202512011736-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33011|Wind Advisory|2025-12-19T13:00:00.000Z": {
+  "productId": "202512180458-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33011|Wind Advisory|2025-12-30T01:33:00.000Z": {
+  "productId": "202512300133-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33015|Wind Advisory|2019-01-01T12:00:00.000Z": {
+  "productId": "201901010841-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Winter Storm Warning|2019-01-20T00:00:00.000Z": {
+  "productId": "201901182030-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": null
+ },
+ "33015|Wind Advisory|2019-02-08T20:00:00.000Z": {
+  "productId": "201902080759-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Winter Storm Warning|2019-02-12T21:00:00.000Z": {
+  "productId": "201902120825-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.1,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33015|High Wind Warning|2019-02-25T10:00:00.000Z": {
+  "productId": "201902242000-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 58
+ },
+ "33015|Wind Advisory|2019-02-26T07:24:00.000Z": {
+  "productId": "201902260724-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Winter Storm Warning|2019-03-04T01:00:00.000Z": {
+  "productId": "201903031934-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33015|Wind Advisory|2019-04-03T16:00:00.000Z": {
+  "productId": "201904021901-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33015|Wind Advisory|2019-10-17T03:00:00.000Z": {
+  "productId": "201910161909-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|High Wind Warning|2019-10-17T07:30:00.000Z": {
+  "productId": "201910170730-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33015|Wind Advisory|2019-11-01T06:00:00.000Z": {
+  "productId": "201910311846-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Winter Storm Warning|2019-12-01T21:00:00.000Z": {
+  "productId": "201912010904-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33015|Wind Advisory|2019-12-15T12:00:00.000Z": {
+  "productId": "201912142017-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2020-01-12T11:00:00.000Z": {
+  "productId": "202001120234-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2020-03-04T11:00:00.000Z": {
+  "productId": "202003031951-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Winter Storm Warning|2020-03-23T20:00:00.000Z": {
+  "productId": "202003230750-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33015|Wind Advisory|2020-04-09T22:00:00.000Z": {
+  "productId": "202004091922-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2020-04-13T16:00:00.000Z": {
+  "productId": "202004121919-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2020-05-09T14:00:00.000Z": {
+  "productId": "202005090024-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2020-09-30T09:17:00.000Z": {
+  "productId": "202009300917-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2020-10-07T18:00:00.000Z": {
+  "productId": "202010070812-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33015|Wind Advisory|2020-11-02T15:00:00.000Z": {
+  "productId": "202011020058-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2020-11-30T21:00:00.000Z": {
+  "productId": "202011301523-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Winter Storm Warning|2020-12-05T15:00:00.000Z": {
+  "productId": "202012042106-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": null
+ },
+ "33015|Winter Storm Warning|2020-12-17T03:00:00.000Z": {
+  "productId": "202012160828-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": 35
+ },
+ "33015|Wind Advisory|2020-12-25T06:00:00.000Z": {
+  "productId": "202012242039-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2021-01-24T11:50:00.000Z": {
+  "productId": "202101241150-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 40
+ },
+ "33015|Winter Storm Warning|2021-02-01T20:00:00.000Z": {
+  "productId": "202101312025-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 14,
+  "gustMph": 35
+ },
+ "33015|Wind Advisory|2021-03-02T06:00:00.000Z": {
+  "productId": "202103010823-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2021-03-13T01:00:00.000Z": {
+  "productId": "202103120818-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2021-03-29T08:00:00.000Z": {
+  "productId": "202103280728-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2021-10-27T09:52:00.000Z": {
+  "productId": "202110270952-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33015|Winter Storm Warning|2021-12-18T18:00:00.000Z": {
+  "productId": "202112172034-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33015|Winter Storm Warning|2022-01-07T06:00:00.000Z": {
+  "productId": "202201061959-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": 35
+ },
+ "33015|Winter Storm Warning|2022-01-29T12:00:00.000Z": {
+  "productId": "202201280911-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 13,
+  "gustMph": null
+ },
+ "33015|Winter Storm Warning|2022-02-04T00:00:00.000Z": {
+  "productId": "202202030913-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.2,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33015|Wind Advisory|2022-02-18T03:00:00.000Z": {
+  "productId": "202202161923-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Winter Storm Warning|2022-02-25T06:00:00.000Z": {
+  "productId": "202202240812-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": null
+ },
+ "33015|Wind Advisory|2022-03-08T02:00:00.000Z": {
+  "productId": "202203072021-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2022-03-08T17:05:00.000Z": {
+  "productId": "202203081705-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2022-03-12T22:22:00.000Z": {
+  "productId": "202203122222-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33015|Wind Advisory|2022-10-14T07:00:00.000Z": {
+  "productId": "202210131931-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33015|Wind Advisory|2022-11-30T18:00:00.000Z": {
+  "productId": "202211300854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33015|High Wind Warning|2022-12-23T06:00:00.000Z": {
+  "productId": "202212220827-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33015|Winter Storm Warning|2023-01-23T00:00:00.000Z": {
+  "productId": "202301220851-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 6,
+  "gustMph": 40
+ },
+ "33015|Winter Storm Warning|2023-02-28T08:04:00.000Z": {
+  "productId": "202302280804-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33015|Winter Storm Warning|2023-03-04T03:00:00.000Z": {
+  "productId": "202303030807-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 35
+ },
+ "33015|Winter Storm Warning|2023-03-14T09:00:00.000Z": {
+  "productId": "202303130726-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 12,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2023-12-18T12:00:00.000Z": {
+  "productId": "202312171944-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33015|Winter Storm Warning|2024-01-07T00:00:00.000Z": {
+  "productId": "202401060850-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 35
+ },
+ "33015|Wind Advisory|2024-01-10T03:00:00.000Z": {
+  "productId": "202401090926-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": 55
+ },
+ "33015|Wind Advisory|2024-02-16T09:00:00.000Z": {
+  "productId": "202402152008-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2024-02-28T22:00:00.000Z": {
+  "productId": "202402272056-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2024-03-11T12:00:00.000Z": {
+  "productId": "202403101854-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Winter Storm Warning|2024-04-03T18:00:00.000Z": {
+  "productId": "202404021932-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": 55
+ },
+ "33015|Wind Advisory|2024-12-11T21:00:00.000Z": {
+  "productId": "202412102029-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2025-01-02T14:00:00.000Z": {
+  "productId": "202501011918-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2025-01-09T04:36:00.000Z": {
+  "productId": "202501081950-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Winter Storm Warning|2025-01-19T21:00:00.000Z": {
+  "productId": "202501190823-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33015|Wind Advisory|2025-01-29T18:00:00.000Z": {
+  "productId": "202501291529-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33015|Winter Storm Warning|2025-02-09T00:00:00.000Z": {
+  "productId": "202502080746-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33015|Wind Advisory|2025-02-13T22:00:00.000Z": {
+  "productId": "202502130811-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33015|Wind Advisory|2025-02-14T05:17:00.000Z": {
+  "productId": "202502140517-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2025-02-14T08:52:00.000Z": {
+  "productId": "202502140852-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33015|Winter Storm Warning|2025-02-16T00:00:00.000Z": {
+  "productId": "202502142008-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.2,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33015|High Wind Warning|2025-02-17T14:00:00.000Z": {
+  "productId": "202502161824-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33015|Wind Advisory|2025-02-18T02:58:00.000Z": {
+  "productId": "202502180258-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2025-03-07T05:00:00.000Z": {
+  "productId": "202503061959-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33015|Wind Advisory|2025-03-17T00:07:00.000Z": {
+  "productId": "202503170007-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2025-04-08T20:00:00.000Z": {
+  "productId": "202504080642-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2025-04-20T12:00:00.000Z": {
+  "productId": "202504200713-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33015|Wind Advisory|2025-06-20T12:00:00.000Z": {
+  "productId": "202506200608-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33015|Wind Advisory|2025-11-04T12:00:00.000Z": {
+  "productId": "202511031705-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33015|Wind Advisory|2025-11-06T03:00:00.000Z": {
+  "productId": "202511051722-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Winter Storm Warning|2025-12-02T13:00:00.000Z": {
+  "productId": "202512011736-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 9,
+  "gustMph": null
+ },
+ "33015|Wind Advisory|2025-12-19T13:00:00.000Z": {
+  "productId": "202512180458-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2025-12-30T01:24:00.000Z": {
+  "productId": "202512300124-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2019-01-24T13:00:00.000Z": {
+  "productId": "201901232032-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 57
+ },
+ "33015|Wind Advisory|2019-10-17T10:04:00.000Z": {
+  "productId": "201910171004-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2019-11-01T10:00:00.000Z": {
+  "productId": "201910311846-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2020-02-27T10:00:00.000Z": {
+  "productId": "202002260846-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33015|Wind Advisory|2020-11-16T00:00:00.000Z": {
+  "productId": "202011142034-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33015|Winter Storm Warning|2020-12-06T00:00:00.000Z": {
+  "productId": "202012050915-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": 45
+ },
+ "33015|High Wind Warning|2020-12-25T09:00:00.000Z": {
+  "productId": "202012241433-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33015|Wind Advisory|2021-01-16T14:00:00.000Z": {
+  "productId": "202101160858-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2021-04-16T12:00:00.000Z": {
+  "productId": "202104160717-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2021-10-26T22:00:00.000Z": {
+  "productId": "202110260745-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2021-10-27T15:17:00.000Z": {
+  "productId": "202110271517-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 48
+ },
+ "33015|Wind Advisory|2021-11-12T16:00:00.000Z": {
+  "productId": "202111120835-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|High Wind Warning|2022-01-17T10:00:00.000Z": {
+  "productId": "202201160931-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 65
+ },
+ "33015|Wind Advisory|2023-04-30T22:00:00.000Z": {
+  "productId": "202304300725-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33015|Wind Advisory|2023-11-27T09:00:00.000Z": {
+  "productId": "202311262007-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2023-12-11T06:00:00.000Z": {
+  "productId": "202312100756-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2023-12-18T19:57:00.000Z": {
+  "productId": "202312181957-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2024-01-10T11:55:00.000Z": {
+  "productId": "202401101155-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 60
+ },
+ "33015|Wind Advisory|2024-01-13T09:00:00.000Z": {
+  "productId": "202401120821-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2024-03-10T07:00:00.000Z": {
+  "productId": "202403092010-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2024-04-12T11:00:00.000Z": {
+  "productId": "202404112341-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 45
+ },
+ "33015|High Wind Warning|2024-12-11T23:00:00.000Z": {
+  "productId": "202412110826-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 55
+ },
+ "33015|Wind Advisory|2024-12-12T01:48:00.000Z": {
+  "productId": "202412120148-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ },
+ "33015|Wind Advisory|2025-05-22T18:00:00.000Z": {
+  "productId": "202505211942-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 47
+ },
+ "33011|Winter Storm Warning|2019-12-30T00:00:00.000Z": {
+  "productId": "201912290851-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 6,
+  "gustMph": null
+ },
+ "33011|Winter Storm Warning|2021-04-16T02:00:00.000Z": {
+  "productId": "202104150714-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 10,
+  "gustMph": null
+ },
+ "33011|Winter Storm Warning|2022-12-16T06:00:00.000Z": {
+  "productId": "202212151951-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": null
+ },
+ "33011|Winter Storm Warning|2023-02-28T08:04:00.000Z": {
+  "productId": "202302280804-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 7,
+  "gustMph": null
+ },
+ "33011|Winter Storm Warning|2023-03-14T00:00:00.000Z": {
+  "productId": "202303130726-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 18,
+  "gustMph": 40
+ },
+ "33011|Winter Storm Warning|2024-01-28T18:00:00.000Z": {
+  "productId": "202401280742-KGYX-WWUS41-WSWGYX",
+  "iceIn": null,
+  "snowIn": 8,
+  "gustMph": null
+ },
+ "33011|Winter Storm Warning|2024-03-23T04:00:00.000Z": {
+  "productId": "202403221813-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.25,
+  "snowIn": 9,
+  "gustMph": 35
+ },
+ "33011|Winter Storm Warning|2025-03-29T04:00:00.000Z": {
+  "productId": "202503281924-KGYX-WWUS41-WSWGYX",
+  "iceIn": 0.75,
+  "snowIn": null,
+  "gustMph": null
+ },
+ "33011|Wind Advisory|2025-12-30T01:24:00.000Z": {
+  "productId": "202512300124-KGYX-WWUS71-NPWGYX",
+  "iceIn": null,
+  "snowIn": null,
+  "gustMph": 50
+ }
+}

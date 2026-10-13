@@ -41,3 +41,4 @@ yarn-error.log*
 next-env.d.ts
 !.env.example
 data/backtest/eaglei.log
+data/backtest/events-text-raw.json

@@ -168,6 +168,18 @@ const result = {
 };
 writeFileSync(path.join(DIR, "outages-summary.json"), JSON.stringify(result, null, 2));
 
+// Training data for the outage-risk model: one row per county-level arming
+// event, labelled 1 if an outage episode began in its window. Peak share is
+// the largest episode in the window, for a severity target later.
+const labeled = countyWarnings.map((w) => {
+  const hits = episodes.filter((e) => e.fips === w.fips && e.start >= w.onset - 60 * 60_000 && e.start <= w.expires + LOOKAHEAD_MS);
+  const peak = hits.reduce((m, e) => Math.max(m, e.peak / (customers[e.fips] ?? Infinity)), 0);
+  const d = new Date(w.onset);
+  return [w.fips, COUNTY_NAME[w.fips], JSON.stringify(w.event), new Date(w.onset).toISOString(), hours(w.expires - w.onset), d.getUTCMonth() + 1, d.getUTCHours(), hits.length > 0 ? 1 : 0, Math.round(peak * 1000) / 1000].join(",");
+});
+writeFileSync(path.join(DIR, "events-labeled.csv"), ["fips,county,event,onset,duration_hours,month,hour_utc,outage,peak_share", ...labeled].join("\n"));
+console.log(`Wrote ${labeled.length} labelled events (${labeled.filter((l) => l.split(",").slice(-2)[0] === "1").length} followed by an outage) to events-labeled.csv`);
+
 console.log(result.source);
 console.log(`Episodes (${result.episodeDefinition}): ${eps.length}`);
 console.log(`  under a qualifying warning when they began: ${covered.length} (${Math.round((100 * covered.length) / Math.max(1, eps.length))}%)`);

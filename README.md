@@ -84,7 +84,14 @@ Storm replay fakes the storm, not the system: it changes the alert, the heartbea
 
 ## Backtest
 
-`npm run backtest` replays ten winters of real NWS events for all fifteen New Hampshire forecast zones (2016–2026, Iowa Environmental Mesonet archive), and `npm run backtest:outages` joins them to three years of real outages (DOE EAGLE-I county counts, 2023–2025). With the current arming set, Pilot Light's watch was armed at the start of 58% of outages that hit 10% or more of a county and 81% of those that hit 25%, including all twelve largest storms of the period; it misses most small outages, which happen outside any NWS product. An NH-01 household is on watch about 12 times a winter (168 hours) and the resident is asked the storm-prompt question about 5 times, with a median 16.7 hours of notice. The backtest changed the design: Wind Advisory was added to the arming set because it lifted coverage of major outages from 44% to 58%. Details, limits and method in [docs/backtest.md](docs/backtest.md).
+`npm run backtest` replays ten winters of real NWS events for all fifteen New Hampshire forecast zones (2016–2026, Iowa Environmental Mesonet archive), and `npm run backtest:outages` joins them to seven years of real outages (DOE EAGLE-I county counts, 2019–2025; 804 outage episodes).
+
+- **Coverage.** Pilot Light's watch was armed at the start of 51% of outages that hit 10% or more of a county, 72% of those that hit 25%, and all twelve largest storms of the period. It misses most small outages, which happen outside any NWS product.
+- **Cost.** An NH-01 household is on watch about 12 times a winter (168 hours); the resident is asked the storm-prompt question about 5 times, with a median 16.7 hours of notice.
+- **It changed the design.** Wind Advisory was added to the arming set because it lifted coverage of major outages from 33% to 51%.
+- **An outage-risk model was trained and not shipped.** Logistic regression on 833 events from 141 storms, with forecast ice, gusts and snow read from the bulletin text: AUC 0.647 with folds split by storm, under the 0.65 bar we set beforehand. The code path is in place and stays off.
+
+Details, limits and method in [docs/backtest.md](docs/backtest.md).
 
 ## Code map
 
@@ -92,6 +99,7 @@ Storm replay fakes the storm, not the system: it changes the alert, the heartbea
 |---|---|
 | `src/lib/engine/rules.ts` | The outage rules as pure functions |
 | `src/lib/engine/risk.ts` | The risk score, tiers and recommended contact |
+| `src/lib/engine/outageRisk.ts`, `hazardText.ts` | Outage-risk model inference and the bulletin parser (off until a model passes validation) |
 | `src/lib/engine/tick.ts` | Loads households, applies the rules, sends the storm prompt, delivers alerts |
 | `src/lib/inbound.ts` | OK / HELP / CHECKED / STOP replies, the resident's YES and HELP, voice key presses |
 | `src/lib/nws.ts` | NWS alert poller, zone lookup, NH-only geocoding |
@@ -114,7 +122,7 @@ Storm replay fakes the storm, not the system: it changes the alert, the heartbea
 | [NWS Alerts API](https://www.weather.gov/documentation/services-web-api) `alerts/active?area=NH` | Live trigger, polled every 60 s |
 | NWS `points/{lat},{lng}` | Household's forecast zone, resolved at save |
 | [Iowa Environmental Mesonet](https://mesonet.agron.iastate.edu/vtec/) VTEC archive | Ten winters of warnings for the backtest; the replayed Dec 28, 2025 Ossipee warning |
-| [DOE / ORNL EAGLE-I](https://figshare.com/articles/dataset/24237376) | County outage counts every 15 minutes, 2023–2025, for the outage backtest |
+| [DOE / ORNL EAGLE-I](https://figshare.com/articles/dataset/24237376) | County outage counts every 15 minutes, 2019–2025, for the outage backtest and the risk model |
 | [NH GRANIT](https://nhgeodata.unh.edu/hosting/rest/services/Hosted) Political_Boundaries, NH_CAI_Locations | Town outlines; fire, police, hospital and urgent-care sites. Pulled once by `scripts/fetch-granit.mjs` into `public/data/` |
 | [OpenFreeMap](https://openfreemap.org) | Street map tiles (dark style); falls back to town outlines offline |
 | [OSRM](https://project-osrm.org) public router | Drive times to the nearest help; falls back to a straight-line estimate |
@@ -137,7 +145,8 @@ Storm replay fakes the storm, not the system: it changes the alert, the heartbea
 npm test             # rules, risk score and auth helpers, against fixtures
 npm run test:replay  # the full chain against Postgres with simulated transport
 npm run backtest     # ten winters of NH warnings
-npm run backtest:outages  # joined to three years of real outages
+npm run backtest:outages  # joined to seven years of real outages
+npm run train:outage      # train and validate the outage-risk model
 npm run lint && npm run typecheck && npm run build
 ```
 

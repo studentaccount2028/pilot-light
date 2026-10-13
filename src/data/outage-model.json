@@ -1,0 +1,115 @@
+{
+  "trainedAt": "2026-10-13",
+  "source": "DOE/ORNL EAGLE-I county outages 2023-2025 joined to NWS events (IEM VTEC archive)",
+  "rows": 833,
+  "rowsWithBulletinAmounts": 821,
+  "positives": 234,
+  "storms": 141,
+  "cvAuc": 0.647,
+  "cvMethod": "5-fold, grouped by storm (onset date)",
+  "brier": 0.192,
+  "baseRate": 0.281,
+  "calibration": [
+    {
+      "quintile": 1,
+      "n": 166,
+      "predicted": 17,
+      "observed": 19
+    },
+    {
+      "quintile": 2,
+      "n": 167,
+      "predicted": 22,
+      "observed": 17
+    },
+    {
+      "quintile": 3,
+      "n": 166,
+      "predicted": 27,
+      "observed": 24
+    },
+    {
+      "quintile": 4,
+      "n": 167,
+      "predicted": 32,
+      "observed": 34
+    },
+    {
+      "quintile": 5,
+      "n": 167,
+      "predicted": 41,
+      "observed": 46
+    }
+  ],
+  "events": [
+    "Winter Storm Warning",
+    "High Wind Warning",
+    "Blizzard Warning",
+    "Wind Advisory"
+  ],
+  "counties": [
+    "Belknap",
+    "Carroll",
+    "Cheshire",
+    "Coos",
+    "Grafton",
+    "Hillsborough",
+    "Merrimack",
+    "Rockingham",
+    "Strafford",
+    "Sullivan"
+  ],
+  "names": [
+    "intercept",
+    "event:Winter Storm Warning",
+    "event:High Wind Warning",
+    "event:Blizzard Warning",
+    "event:Wind Advisory",
+    "county:Belknap",
+    "county:Carroll",
+    "county:Cheshire",
+    "county:Coos",
+    "county:Grafton",
+    "county:Hillsborough",
+    "county:Merrimack",
+    "county:Rockingham",
+    "county:Strafford",
+    "county:Sullivan",
+    "duration_h/24",
+    "month_sin",
+    "month_cos",
+    "night_onset",
+    "ice_in",
+    "ice_known",
+    "gust_mph/10",
+    "gust_known",
+    "snow_in/10"
+  ],
+  "weights": [
+    -1.7759,
+    0.0584,
+    0.099,
+    0,
+    -0.3747,
+    0.0515,
+    0.2956,
+    -0.0858,
+    0.0485,
+    0.2416,
+    -0.2638,
+    -0.1824,
+    -0.3661,
+    -0.2596,
+    0.3032,
+    0.7759,
+    -0.2761,
+    -0.3634,
+    0.169,
+    0.0572,
+    0.0606,
+    0.218,
+    -0.0724,
+    0.0369
+  ],
+  "shipped": false
+}

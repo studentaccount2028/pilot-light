@@ -1,5 +1,5 @@
 {
-  "source": "DOE/ORNL EAGLE-I county outage counts (15 min), New Hampshire rows; years 2023, 2024, 2025",
+  "source": "DOE/ORNL EAGLE-I county outage counts (15 min), New Hampshire rows; years 2019, 2020, 2021, 2022, 2023, 2024, 2025",
   "episodeDefinition": "customers out >= 2% of the county's customers for >= 1 h (gaps up to 3 h bridged)",
   "counties": {
     "Belknap": 32434,
@@ -13,78 +13,78 @@
     "Strafford": 89738,
     "Sullivan": 20079
   },
-  "episodes": 366,
-  "episodesUnderWarningAtStart": 125,
-  "episodesWithinWarningWindow": 131,
-  "winterEpisodes": 219,
-  "winterEpisodesUnderWarningAtStart": 119,
-  "countyWarnings": 362,
-  "countyWarningsFollowedByEpisode": 107,
+  "episodes": 804,
+  "episodesUnderWarningAtStart": 255,
+  "episodesWithinWarningWindow": 278,
+  "winterEpisodes": 474,
+  "winterEpisodesUnderWarningAtStart": 239,
+  "countyWarnings": 833,
+  "countyWarningsFollowedByEpisode": 234,
   "bySize": [
     {
       "peakAtLeast": "2% of county",
-      "episodes": 366,
-      "underWarning": 125,
-      "winterEpisodes": 219,
-      "winterUnderWarning": 119
+      "episodes": 804,
+      "underWarning": 255,
+      "winterEpisodes": 474,
+      "winterUnderWarning": 239
     },
     {
       "peakAtLeast": "5% of county",
-      "episodes": 163,
-      "underWarning": 76,
-      "winterEpisodes": 115,
-      "winterUnderWarning": 74
+      "episodes": 360,
+      "underWarning": 155,
+      "winterEpisodes": 233,
+      "winterUnderWarning": 147
     },
     {
       "peakAtLeast": "10% of county",
-      "episodes": 80,
-      "underWarning": 46,
-      "winterEpisodes": 58,
-      "winterUnderWarning": 44
+      "episodes": 178,
+      "underWarning": 91,
+      "winterEpisodes": 116,
+      "winterUnderWarning": 85
     },
     {
       "peakAtLeast": "25% of county",
-      "episodes": 16,
-      "underWarning": 13,
-      "winterEpisodes": 15,
-      "winterUnderWarning": 13
+      "episodes": 32,
+      "underWarning": 23,
+      "winterEpisodes": 27,
+      "winterUnderWarning": 23
     }
   ],
   "ablation": [
     {
       "events": "warnings only (WS.W, IS.W, HW.W, BZ.W)",
-      "episodesCovered": "63 of 366",
-      "winterCovered": "63 of 219",
-      "bigCovered": "35 of 80",
-      "peakShareCovered": "45%",
-      "watchHoursPerCountyPerYear": 106
+      "episodesCovered": "117 of 804",
+      "winterCovered": "115 of 474",
+      "bigCovered": "58 of 178",
+      "peakShareCovered": "34%",
+      "watchHoursPerCountyPerYear": 102
     },
     {
       "events": "current: warnings + Wind Advisory",
-      "episodesCovered": "125 of 366",
-      "winterCovered": "119 of 219",
-      "bigCovered": "46 of 80",
-      "peakShareCovered": "59%",
-      "watchHoursPerCountyPerYear": 190
+      "episodesCovered": "255 of 804",
+      "winterCovered": "239 of 474",
+      "bigCovered": "91 of 178",
+      "peakShareCovered": "53%",
+      "watchHoursPerCountyPerYear": 177
     },
     {
       "events": "+ Winter Weather Advisory",
-      "episodesCovered": "139 of 366",
-      "winterCovered": "133 of 219",
-      "bigCovered": "49 of 80",
-      "peakShareCovered": "62%",
-      "watchHoursPerCountyPerYear": 336
+      "episodesCovered": "287 of 804",
+      "winterCovered": "271 of 474",
+      "bigCovered": "99 of 178",
+      "peakShareCovered": "56%",
+      "watchHoursPerCountyPerYear": 316
     },
     {
       "events": "+ Winter Storm Watch, High Wind Watch",
-      "episodesCovered": "139 of 366",
-      "winterCovered": "133 of 219",
-      "bigCovered": "49 of 80",
-      "peakShareCovered": "62%",
-      "watchHoursPerCountyPerYear": 336
+      "episodesCovered": "287 of 804",
+      "winterCovered": "271 of 474",
+      "bigCovered": "99 of 178",
+      "peakShareCovered": "56%",
+      "watchHoursPerCountyPerYear": 316
     }
   ],
-  "shareOfPeakCustomersOutUnderWarning": 59,
+  "shareOfPeakCustomersOutUnderWarning": 53,
   "largestEpisodes": [
     {
       "county": "Rockingham",
@@ -92,6 +92,15 @@
       "hours": 63.3,
       "peakCustomersOut": 64404,
       "share": "42%",
+      "underWarning": true,
+      "withinWindow": true
+    },
+    {
+      "county": "Rockingham",
+      "start": "2022-12-23T10:30:00.000Z",
+      "hours": 42,
+      "peakCustomersOut": 35505,
+      "share": "23%",
       "underWarning": true,
       "withinWindow": true
     },
@@ -123,11 +132,38 @@
       "withinWindow": true
     },
     {
+      "county": "Merrimack",
+      "start": "2022-12-23T12:00:00.000Z",
+      "hours": 56,
+      "peakCustomersOut": 28015,
+      "share": "24%",
+      "underWarning": true,
+      "withinWindow": true
+    },
+    {
+      "county": "Hillsborough",
+      "start": "2022-12-23T22:15:00.000Z",
+      "hours": 27.5,
+      "peakCustomersOut": 25082,
+      "share": "13%",
+      "underWarning": true,
+      "withinWindow": true
+    },
+    {
       "county": "Strafford",
       "start": "2024-04-04T08:30:00.000Z",
       "hours": 59,
       "peakCustomersOut": 24097,
       "share": "27%",
+      "underWarning": true,
+      "withinWindow": true
+    },
+    {
+      "county": "Rockingham",
+      "start": "2019-10-17T05:45:00.000Z",
+      "hours": 19.8,
+      "peakCustomersOut": 22977,
+      "share": "15%",
       "underWarning": true,
       "withinWindow": true
     },
@@ -155,42 +191,6 @@
       "hours": 34.8,
       "peakCustomersOut": 21826,
       "share": "11%",
-      "underWarning": true,
-      "withinWindow": true
-    },
-    {
-      "county": "Rockingham",
-      "start": "2023-01-23T06:30:00.000Z",
-      "hours": 41,
-      "peakCustomersOut": 21774,
-      "share": "14%",
-      "underWarning": true,
-      "withinWindow": true
-    },
-    {
-      "county": "Strafford",
-      "start": "2023-01-23T09:30:00.000Z",
-      "hours": 46.8,
-      "peakCustomersOut": 20731,
-      "share": "23%",
-      "underWarning": true,
-      "withinWindow": true
-    },
-    {
-      "county": "Belknap",
-      "start": "2024-04-04T06:45:00.000Z",
-      "hours": 87.3,
-      "peakCustomersOut": 20092,
-      "share": "62%",
-      "underWarning": true,
-      "withinWindow": true
-    },
-    {
-      "county": "Cheshire",
-      "start": "2023-03-14T08:15:00.000Z",
-      "hours": 68.8,
-      "peakCustomersOut": 19245,
-      "share": "53%",
       "underWarning": true,
       "withinWindow": true
     }

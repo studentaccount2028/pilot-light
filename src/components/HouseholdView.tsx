@@ -115,6 +115,20 @@ export function HouseholdView({
                 <span className="chip">{sum.lastHeard}</span>
                 <span className="chip">{sum.weather}</span>
               </p>
+              {data.outageRisk && !sum.counting && (
+                <div className="mt-3 rounded-lg border border-line bg-surface-2 p-3">
+                  <p className="flex items-baseline justify-between gap-3">
+                    <span className="text-[13px] font-medium text-muted">Chance this storm cuts power in the county</span>
+                    <span className="text-[20px] font-semibold tabular-nums tracking-[-0.02em]">{data.outageRisk.percent}%</span>
+                  </p>
+                  <div className="mt-2 h-1 overflow-hidden rounded-full bg-surface-3" role="presentation">
+                    <div className="h-full rounded-full bg-ink" style={{ width: `${data.outageRisk.percent}%` }} />
+                  </div>
+                  <p className="mt-2 text-[12px] leading-snug text-muted">
+                    {data.outageRisk.why} Typical for a warning: {data.outageRisk.baseRatePercent}%. Charge the backup now.
+                  </p>
+                </div>
+              )}
               {(sum.out || sum.helped) && (
                 <a href="tel:911" className="btn btn-danger mt-4 h-11 w-full text-[15px]">
                   <IconPhone className="h-5 w-5" />

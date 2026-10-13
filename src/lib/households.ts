@@ -19,6 +19,7 @@ import {
 import { getClock, simNow } from "./clock";
 import { ageFromBirthYear, recommendContact, TIER_RANK } from "./engine/risk";
 import { limitingDevice } from "./engine/rules";
+import { describeDrivers, outageRisk } from "./engine/outageRisk";
 import { riskFor } from "./riskFor";
 import { locateInNH, resolveZone } from "./nws";
 import { normalizePhone, transportMode } from "./twilio";
@@ -249,6 +250,18 @@ export async function getStatus(id: string) {
     .orderBy(desc(events.id))
     .limit(60);
 
+  // Chance this warning brings an outage to the county, from the trained model.
+  // Null when no warning is in force or the model did not pass validation.
+  const forecast = warning
+    ? outageRisk({
+        event: warning.event,
+        zone: base.household.nwsZone,
+        onset: warning.onset,
+        expires: warning.expires,
+        description: (warning.raw as { properties?: { description?: string } } | null)?.properties?.description ?? null,
+      })
+    : null;
+
   const limiting = limitingDevice(base.devices);
   const risk = riskFor(base.household, state, base.devices, state?.activeAlertId, now);
   return {
@@ -267,6 +280,7 @@ export async function getStatus(id: string) {
     warning: warning ?? null,
     alerts,
     events: log,
+    outageRisk: forecast ? { percent: Math.round(forecast.probability * 100), why: describeDrivers(forecast), auc: forecast.auc, baseRatePercent: Math.round(forecast.baseRate * 100) } : null,
     limitingDeviceId: limiting.device?.id ?? null,
     limitingHours: limiting.hours,
     clock: {

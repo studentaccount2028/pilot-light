@@ -98,6 +98,7 @@ export interface StatusDto {
   limitingHours: number;
   resident: { name: string | null; phone: string | null; age: number | null };
   risk: RiskDto;
+  outageRisk: { percent: number; why: string; auc: number; baseRatePercent: number } | null;
   clock: ClockDto;
   transport: "twilio" | "simulated";
 }
