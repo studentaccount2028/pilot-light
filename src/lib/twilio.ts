@@ -17,6 +17,12 @@ export function publicBaseUrl(): string | null {
   return url || null;
 }
 
+// The responder page a contact's texts link to, or null without a public URL.
+export function responderLink(linkKey: string): string | null {
+  const base = publicBaseUrl();
+  return base ? `${base}/r/${linkKey}` : null;
+}
+
 export { isE164, normalizePhone } from "./phone";
 
 async function twilioPost(resource: "Messages" | "Calls", form: Record<string, string>): Promise<string> {

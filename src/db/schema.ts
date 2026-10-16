@@ -62,6 +62,9 @@ export const households = pgTable("households", {
   livesAlone: boolean("lives_alone"),
   canLeaveUnassisted: boolean("can_leave_unassisted"),
   canReachBackup: boolean("can_reach_backup"),
+  // How a neighbor or EMS crew gets in: which door, where the key is, a dog,
+  // stairs. Shown only to this household's contacts and to EMS.
+  accessNotes: text("access_notes"),
   ownerUserId: uuid("owner_user_id"),
   createdAt: ts("created_at").notNull().defaultNow(),
 });
@@ -89,6 +92,13 @@ export const contacts = pgTable("contacts", {
   priority: integer("priority").notNull(), // 1-4
   isTownVolunteer: boolean("is_town_volunteer").notNull().default(false),
   active: boolean("active").notNull().default(true), // false after STOP
+  // Where they usually are (a town or an address), for the map and the drive
+  // time to the house. Optional; lat/lng are looked up from it at save.
+  place: text("place"),
+  lat: doublePrecision("lat"),
+  lng: doublePrecision("lng"),
+  // The secret in this contact's responder link (/r/<key>). Unguessable, one per contact.
+  linkKey: uuid("link_key").notNull().defaultRandom().unique(),
 });
 
 export const heartbeats = pgTable(
@@ -144,6 +154,10 @@ export const alertsSent = pgTable(
     sentAt: ts("sent_at"),
     ackAt: ts("ack_at"),
     ackBody: text("ack_body"),
+    // "OK 20": on the way, expected at this time. Null if no minutes were given.
+    etaAt: ts("eta_at"),
+    // HERE / CHECKED: reached the household in person.
+    arrivedAt: ts("arrived_at"),
   },
   (t) => [
     // The idempotency guard: one row per incident, threshold, contact and channel.
@@ -170,6 +184,27 @@ export const nwsAlerts = pgTable("nws_alerts", {
   // Injected by replay mode; the poller leaves these alone when it reconciles.
   replay: boolean("replay").notNull().default(false),
 });
+
+// What EMS has done about an incident, newest row wins. Families and
+// neighbors see the latest status, so they know a crew is coming.
+export const emsStatusEnum = pgEnum("ems_status", ["assigned", "en_route", "on_scene", "sheltered", "transported", "cleared"]);
+
+export const emsUpdates = pgTable(
+  "ems_updates",
+  {
+    id: bigserial("id", { mode: "number" }).primaryKey(),
+    householdId: uuid("household_id")
+      .notNull()
+      .references(() => households.id, { onDelete: "cascade" }),
+    // The incident this belongs to; matches household_state.outage_inferred_at.
+    incidentAt: ts("incident_at").notNull(),
+    status: emsStatusEnum("status").notNull(),
+    unit: text("unit"), // "Ossipee Rescue 2"
+    note: text("note"),
+    at: ts("at").notNull(), // app clock
+  },
+  (t) => [index("ems_updates_household").on(t.householdId, t.incidentAt, t.id.desc())],
+);
 
 export const replayScenarios = pgTable("replay_scenarios", {
   id: text("id").primaryKey(),
@@ -232,6 +267,52 @@ export const loginTokens = pgTable("login_tokens", {
   createdAt: ts("created_at").notNull().defaultNow(),
 });
 
+// The portable power module at the house: a battery pack with a cellular
+// radio that sits between the wall and the medical device. It reports wall
+// power, whether its battery is charging, how much is left, and battery health.
+export const sensors = pgTable(
+  "sensors",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    householdId: uuid("household_id")
+      .notNull()
+      .references(() => households.id, { onDelete: "cascade" }),
+    label: text("label").notNull(),
+    tokenHash: text("token_hash").notNull().unique(), // the module's secret, stored hashed
+    createdAt: ts("created_at").notNull().defaultNow(),
+    lastSeenAt: ts("last_seen_at"),
+  },
+  (t) => [index("sensors_household").on(t.householdId)],
+);
+
+// One report from a module. Every field but the time is optional, because
+// different boards can measure different things.
+export const sensorReadings = pgTable(
+  "sensor_readings",
+  {
+    id: bigserial("id", { mode: "number" }).primaryKey(),
+    sensorId: uuid("sensor_id")
+      .notNull()
+      .references(() => sensors.id, { onDelete: "cascade" }),
+    at: ts("at").notNull(),
+    mains: boolean("mains"), // wall power present
+    mainsVolts: doublePrecision("mains_volts"),
+    charging: boolean("charging"), // the module's battery is taking a charge
+    batteryPct: doublePrecision("battery_pct"), // state of charge, 0-100
+    batteryVolts: doublePrecision("battery_volts"),
+    capacityWh: doublePrecision("capacity_wh"), // usable capacity when new
+    healthPct: doublePrecision("health_pct"), // state of health, 0-100
+    cycles: integer("cycles"),
+    outputWatts: doublePrecision("output_watts"), // power going to the medical device
+    tempC: doublePrecision("temp_c"),
+    signalDbm: integer("signal_dbm"),
+    simulated: boolean("simulated").notNull().default(false),
+  },
+  (t) => [index("sensor_readings_sensor_at").on(t.sensorId, t.at.desc())],
+);
+
+export type Sensor = typeof sensors.$inferSelect;
+export type SensorReading = typeof sensorReadings.$inferSelect;
 export type Household = typeof households.$inferSelect;
 export type Device = typeof devices.$inferSelect;
 export type Contact = typeof contacts.$inferSelect;
@@ -239,6 +320,8 @@ export type HouseholdState = typeof householdState.$inferSelect;
 export type AlertSent = typeof alertsSent.$inferSelect;
 export type NwsAlert = typeof nwsAlerts.$inferSelect;
 export type AppClock = typeof appClock.$inferSelect;
+export type EmsUpdate = typeof emsUpdates.$inferSelect;
+export type EmsStatus = (typeof emsStatusEnum.enumValues)[number];
 export type Status = (typeof statusEnum.enumValues)[number];
 export type AlertKind = (typeof alertKindEnum.enumValues)[number];
 export type SendChannel = (typeof sendChannelEnum.enumValues)[number];

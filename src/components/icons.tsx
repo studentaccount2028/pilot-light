@@ -16,22 +16,12 @@ const base = {
   "aria-hidden": true,
 };
 
-// The brand mark. The only icon with colour.
-export function Flame({ className, ...p }: P) {
+// The brand mark: two slanted bars, drawn in the text colour.
+export function LogoMark({ className, ...p }: P) {
   return (
-    <svg viewBox="0 0 32 40" width={32} height={40} aria-hidden className={className} {...p}>
-      <defs>
-        <linearGradient id="pl-flame-outer" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0" stopColor="#ff5a1f" />
-          <stop offset="1" stopColor="#ffb347" />
-        </linearGradient>
-        <linearGradient id="pl-flame-inner" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0" stopColor="#ffd98a" />
-          <stop offset="1" stopColor="#fff6dc" />
-        </linearGradient>
-      </defs>
-      <path d="M16 1c1.5 6.5 10 11 10 22a10 10 0 0 1-20 0c0-4.5 2.2-7.3 4-9.5.6 2.8 2 4.5 3.5 5C13 13.5 12.5 6.5 16 1Z" fill="url(#pl-flame-outer)" />
-      <path d="M16.2 19c.8 3 4.3 4.8 4.3 9a4.5 4.5 0 0 1-9 0c0-2 1-3.4 1.9-4.4.4 1.3 1 2 1.7 2.3-.3-2.4-.2-4.9 1.1-6.9Z" fill="url(#pl-flame-inner)" />
+    <svg viewBox="0 0 96 132" width={96} height={132} fill="currentColor" aria-hidden className={className} {...p}>
+      <path d="M95 0V22C95 30 91 35 84 39L0 86V66C0 58 4 53 11 49Z" />
+      <path d="M90 56V72C90 80 86 85 79 89L0 132V116C0 109 4 105 11 101Z" />
     </svg>
   );
 }
@@ -86,6 +76,7 @@ export const IconMessage = icon(<path d="M7.8 19.7A8.5 8.5 0 1 0 4.3 16.2L3 21z"
 export const IconBolt = icon(<path d="M13 2.5 4.5 13.2a.5.5 0 0 0 .4.8H11l-1 7.5 8.5-10.7a.5.5 0 0 0-.4-.8H12z" />);
 export const IconCheck = icon(<path d="M20 6.5 9.5 17 4 11.5" />);
 export const IconChevron = icon(<path d="m9 6 6 6-6 6" />);
+export const IconClose = icon(<path d="M6 6l12 12M18 6 6 18" />);
 export const IconPin = icon(
   <>
     <path d="M19.5 10c0 4.7-5.2 9.6-7 11.1a.8.8 0 0 1-1 0c-1.8-1.5-7-6.4-7-11.1a7.5 7.5 0 0 1 15 0z" />

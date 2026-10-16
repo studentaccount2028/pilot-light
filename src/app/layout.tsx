@@ -1,11 +1,13 @@
 // AI-assisted: written with Claude Code from the team's build spec.
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import { ServiceWorker } from "@/components/ServiceWorker";
 import "./globals.css";
 
 // Inter, the typeface Linear uses, self-hosted by Next at build time.
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+// Outfit for the "pilot light" wordmark only.
+const outfit = Outfit({ subsets: ["latin"], weight: ["500"], variable: "--font-brand", display: "swap" });
 
 export const metadata: Metadata = {
   title: "Pilot Light",
@@ -25,7 +27,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <body>
         {children}
         <ServiceWorker />

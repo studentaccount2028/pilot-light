@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useAppClock, usePoll } from "@/lib/client/hooks";
+import { responderFor } from "@/lib/client/responders";
 import type { StatusDto } from "@/lib/client/types";
 import { EventLog } from "./EventLog";
 import { HouseholdView } from "./HouseholdView";
@@ -85,6 +86,7 @@ export function ReplayConsole({ adminKey }: { adminKey: string }) {
     const status = data.status;
     const running = data.replayActive;
     const inIncident = status?.state?.status === "probable_outage" || status?.state?.status === "countdown";
+    const helped = status?.state?.status === "resolved" && status.state.resolvedReason === "help";
     const live = data.transport === "twilio";
     body = (
       <div className="grid items-start gap-10 pt-8 lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-14">
@@ -153,7 +155,7 @@ export function ReplayConsole({ adminKey }: { adminKey: string }) {
               )}
             </button>
             {running && (
-              <button className="btn h-14" onClick={() => act("heartbeat")} disabled={busy !== null || !inIncident}>
+              <button className="btn h-14" onClick={() => act("heartbeat")} disabled={busy !== null || !(inIncident || helped)}>
                 Power back
               </button>
             )}
@@ -220,24 +222,34 @@ export function ReplayConsole({ adminKey }: { adminKey: string }) {
                 framed
                 banner={running ? `Storm replay · ${data.multiplier}x · simulated` : null}
                 contactActions={(c) => {
-                  const reached = status.alerts.some((a) => a.contactId === c.id && a.sid && ["h6", "h2", "h0"].includes(a.threshold));
-                  if (!running || !inIncident || !reached) return null;
+                  const r = responderFor(c, status.alerts);
+                  if (!running || !(inIncident || helped) || !r) return null;
                   return (
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="text-[13px] text-muted">Reply as them</span>
-                      <button className="btn btn-sm" onClick={() => act("reply", { contactId: c.id, word: c.isTownVolunteer ? "CHECKED" : "OK" })} disabled={busy !== null}>
-                        {c.isTownVolunteer ? "CHECKED" : "OK"}
-                      </button>
-                      <button className="btn btn-sm !bg-danger/10 !text-danger" onClick={() => act("reply", { contactId: c.id, word: "HELP" })} disabled={busy !== null}>
-                        HELP
-                      </button>
+                      {r.stage !== "arrived" && r.stage !== "on_way" && (
+                        // With a location the drive time sets the arrival; without one, they say 20 min.
+                        <button className="btn btn-sm" onClick={() => act("reply", { contactId: c.id, word: "OK", etaMinutes: c.lat != null ? null : 20 })} disabled={busy !== null}>
+                          {c.lat != null ? "On my way" : "OK 20 · on my way"}
+                        </button>
+                      )}
+                      {r.stage !== "arrived" && (
+                        <button className="btn btn-sm" onClick={() => act("reply", { contactId: c.id, word: "CHECKED" })} disabled={busy !== null}>
+                          {c.isTownVolunteer ? "CHECKED" : "HERE"}
+                        </button>
+                      )}
+                      {inIncident && (
+                        <button className="btn btn-sm !bg-danger/10 !text-danger" onClick={() => act("reply", { contactId: c.id, word: "HELP" })} disabled={busy !== null}>
+                          HELP
+                        </button>
+                      )}
                     </div>
                   );
                 }}
               />
             </Phone>
             <p className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 text-[14px]">
-              <Link className="link" href={`/h/${status.household.id}`}>
+              <Link className="link" href={`/h/${status.household.id}?from=replay${adminKey ? `&key=${encodeURIComponent(adminKey)}` : ""}`}>
                 Open full screen
               </Link>
               {status.household.shareWithTown && (
@@ -245,6 +257,21 @@ export function ReplayConsole({ adminKey }: { adminKey: string }) {
                   {status.household.town} roster
                 </Link>
               )}
+              {status.household.shareWithTown && (
+                <Link className="link" href={`/ems${adminKey ? `?key=${encodeURIComponent(adminKey)}` : ""}`}>
+                  EMS board
+                </Link>
+              )}
+            </p>
+            {/* What each person on the list sees when they tap the link in their text. */}
+            <p className="mt-2 flex flex-wrap justify-center gap-x-5 gap-y-2 text-[14px]">
+              {status.contacts
+                .filter((c) => c.linkKey && (!c.isTownVolunteer || status.household.shareWithTown))
+                .map((c) => (
+                  <Link key={c.id} className="link" href={`/r/${c.linkKey}`} target="_blank">
+                    {c.name.replace(/\s*\(.*?\)/, "")} view
+                  </Link>
+                ))}
             </p>
           </div>
         )}

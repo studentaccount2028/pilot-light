@@ -1,28 +1,33 @@
 // AI-assisted: written with Claude Code from the team's build spec.
 "use client";
 import type { ReactNode } from "react";
+import { fmtTime, responderFor } from "@/lib/client/responders";
 import type { AlertDto, ContactDto } from "@/lib/client/types";
 import { IconPhone } from "./icons";
 
 const KIND: Record<AlertDto["threshold"], string> = { h6: "6 h alert", h2: "2 h alert", h0: "0 h alert", help: "Help notice", all_clear: "All-clear" };
 
-type Light = "idle" | "sending" | "sent" | "ok" | "help" | "failed" | "off";
+type Light = "idle" | "sending" | "sent" | "ok" | "way" | "help" | "failed" | "off";
 const DOT: Record<Light, string> = {
   idle: "bg-surface-3",
   sending: "bg-warn animate-breathe",
   sent: "bg-warn",
   ok: "bg-ok",
+  way: "bg-ink animate-breathe",
   help: "bg-danger",
   failed: "bg-danger",
   off: "bg-surface-3",
 };
-const TEXT: Record<Light, string> = { idle: "text-muted", sending: "text-warn", sent: "text-warn", ok: "text-ok", help: "text-danger", failed: "text-danger", off: "text-muted" };
+const TEXT: Record<Light, string> = { idle: "text-muted", sending: "text-warn", sent: "text-warn", ok: "text-ok", way: "text-ink", help: "text-danger", failed: "text-danger", off: "text-muted" };
 
 function summarize(contact: ContactDto, alerts: AlertDto[]): { light: Light; text: string } {
   if (!contact.active) return { light: "off", text: "Opted out" };
   const mine = alerts.filter((a) => a.contactId === contact.id).sort((a, b) => (b.sentAt ?? "").localeCompare(a.sentAt ?? ""));
-  const ack = mine.filter((a) => a.ackAt).sort((a, b) => b.ackAt!.localeCompare(a.ackAt!))[0];
-  if (ack) return ack.ackBody === "HELP" ? { light: "help", text: "Replied HELP" } : { light: "ok", text: `Replied ${ack.ackBody}` };
+  const r = responderFor(contact, alerts);
+  if (r?.stage === "arrived") return { light: "ok", text: `Arrived ${fmtTime(r.arrivedAt!)}` };
+  if (r?.stage === "on_way") return { light: "way", text: `On the way · arrives ${fmtTime(r.etaAt!)}` };
+  if (r?.stage === "help") return { light: "help", text: "Replied HELP" };
+  if (r?.stage === "seen") return { light: "ok", text: `Saw the alert · replied OK ${fmtTime(r.seenAt!)}` };
   const sent = mine.find((a) => a.sid);
   if (sent) return { light: "sent", text: `${KIND[sent.threshold]} ${sent.channel === "sms" ? "texted" : "called"}` };
   if (mine.some((a) => a.lastError)) return { light: "failed", text: "Retrying" };

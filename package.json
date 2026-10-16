@@ -20,7 +20,8 @@
     "backtest": "node scripts/backtest.mjs",
     "twilio:check": "tsx scripts/twilio-check.ts",
     "backtest:outages": "node scripts/backtest-outages.mjs",
-    "train:outage": "node scripts/train-outage-model.mjs"
+    "train:outage": "node scripts/train-outage-model.mjs",
+    "sensor:sim": "tsx scripts/sensor-sim.ts"
   },
   "dependencies": {
     "drizzle-orm": "^0.45.4",

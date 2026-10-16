@@ -7,7 +7,7 @@ import { db } from "@/db/client";
 import { contacts, households } from "@/db/schema";
 import { isAdmin } from "@/lib/admin";
 import { getClock } from "@/lib/clock";
-import { tick } from "@/lib/engine/tick";
+import { evaluateHousehold, tick } from "@/lib/engine/tick";
 import { recordHeartbeat } from "@/lib/heartbeat";
 import { getStatus, isUuid } from "@/lib/households";
 import { bad, handle } from "@/lib/http";
@@ -37,6 +37,9 @@ async function snapshot(householdId: string | null) {
 
 export const GET = handle(async (req: NextRequest) => {
   if (!isAdmin(req)) return bad("Not authorized.", 401);
+  // Hosts without a worker or minute cron (Vercel Hobby): the console's poll drives the replay.
+  const clock = await getClock();
+  if (clock.replayActive && clock.householdId) await evaluateHousehold(clock.householdId);
   return NextResponse.json(await snapshot(req.nextUrl.searchParams.get("household")), { headers: { "Cache-Control": "no-store" } });
 });
 
@@ -65,7 +68,8 @@ export const POST = handle(async (req: NextRequest) => {
     if (!["OK", "HELP", "CHECKED"].includes(word) || !isUuid(body.contactId)) return bad("Unknown reply.");
     const [contact] = await db.select().from(contacts).where(eq(contacts.id, body.contactId));
     if (!contact) return bad("Unknown contact.");
-    await handleReply({ fromPhone: contact.phone, word, via: "simulated" });
+    const etaMinutes = Number.isFinite(body.etaMinutes) ? Number(body.etaMinutes) : null;
+    await handleReply({ fromPhone: contact.phone, word, via: "simulated", etaMinutes });
   } else {
     return bad("Unknown action.");
   }

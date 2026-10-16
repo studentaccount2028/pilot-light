@@ -35,6 +35,9 @@ const BOX: Record<Tone, string> = {
 export interface Summary {
   tone: Tone;
   counting: boolean;
+  // The battery clock is on screen: counting down, or after HELP, which stops
+  // the alerts but not the battery.
+  timed: boolean;
   out: boolean;
   helped: boolean;
   remainingMs: number | null;
@@ -64,18 +67,20 @@ export function summarize(data: StatusDto, nowMs: number): Summary {
   const tone = toneOf(data);
   const h = data.household;
   const counting = status === "probable_outage" || status === "countdown";
-  const zero = state?.countdownZeroAt ? Date.parse(state.countdownZeroAt) : null;
-  const remainingMs = counting && zero != null ? zero - nowMs : null;
-  const out = counting && remainingMs != null && remainingMs <= 0;
   const helped = status === "resolved" && state?.resolvedReason === "help";
+  const zero = state?.countdownZeroAt ? Date.parse(state.countdownZeroAt) : null;
+  const timed = (counting || helped) && zero != null;
+  const remainingMs = timed ? zero - nowMs : null;
+  const out = timed && remainingMs != null && remainingMs <= 0;
   const total = data.limitingHours * 3_600_000;
-  const fraction = counting && total > 0 && remainingMs != null ? Math.max(0, Math.min(1, remainingMs / total)) : 0;
+  const fraction = timed && total > 0 && remainingMs != null ? Math.max(0, Math.min(1, remainingMs / total)) : 0;
   const device = (data.devices.find((d) => d.id === data.limitingDeviceId)?.label ?? "backup power").replace(/^./, (c) => c.toLowerCase());
   const zone = h.zoneName ?? h.nwsZone;
 
   const base = {
     tone,
     counting,
+    timed,
     out,
     helped,
     remainingMs,
@@ -84,9 +89,15 @@ export function summarize(data: StatusDto, nowMs: number): Summary {
     weather: data.warning ? data.warning.event : "No storm warning",
   };
 
+  const t = Math.max(0, Math.floor((remainingMs ?? 0) / 1000));
+  const clockBoxes = [String(Math.floor(t / 3600)), String(Math.floor((t % 3600) / 60)).padStart(2, "0"), String(t % 60).padStart(2, "0")];
+  if (helped && timed) {
+    return out
+      ? { ...base, headline: "Help requested · backup has likely run out", band: { label: "Help requested · time left", boxes: clockBoxes }, statement: `${h.label} needs help and the backup has likely run out. Call 911 if no one is there yet.` }
+      : { ...base, headline: `Help requested · backup runs out in ${span(remainingMs ?? 0)}`, band: { label: "Help requested · time left", boxes: clockBoxes }, statement: `${h.label} needs help. The other contacts have been told. The ${device} is still on backup.` };
+  }
   if (counting) {
-    const t = Math.max(0, Math.floor((remainingMs ?? 0) / 1000));
-    const boxes = [String(Math.floor(t / 3600)), String(Math.floor((t % 3600) / 60)).padStart(2, "0"), String(t % 60).padStart(2, "0")];
+    const boxes = clockBoxes;
     return out
       ? { ...base, headline: "Backup has likely run out", band: { label: "Time left", boxes }, statement: `Call 911 if no one has reached ${h.label}. Every contact has been alerted.` }
       : { ...base, headline: `Backup runs out in ${span(remainingMs ?? 0)}`, band: { label: "Time left", boxes }, statement: `Power appears out at ${h.label}. The ${device} is on backup. Check with a call or a visit.` };

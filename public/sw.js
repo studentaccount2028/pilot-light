@@ -1,7 +1,7 @@
 // AI-assisted: written with Claude Code from the team's build spec.
 // Pilot Light service worker: offline shell, and a background heartbeat where
 // the browser supports Periodic Background Sync (Chrome on Android, installed).
-const CACHE = "pilot-light-shell-v1";
+const CACHE = "pilot-light-shell-v2";
 const OFFLINE_URL = "/offline.html";
 
 self.addEventListener("install", (event) => {

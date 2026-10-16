@@ -1,13 +1,38 @@
 // AI-assisted: written with Claude Code from the team's build spec.
 "use client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useAppClock, useHeartbeat, usePendingCount, usePoll } from "@/lib/client/hooks";
 import type { StatusDto } from "@/lib/client/types";
 import { HouseholdView } from "./HouseholdView";
+import { IconClose } from "./icons";
 import { PhoneStage } from "./Phone";
 import { rememberHousehold } from "./RecentHousehold";
 import { TopBar } from "./TopBar";
+
+// Pinned to the corner of the window, outside the phone frame on a computer.
+// Esc does the same.
+export function ExitFullScreen({ href }: { href: string }) {
+  const router = useRouter();
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") router.push(href);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [href, router]);
+  return (
+    <Link
+      href={href}
+      className="fixed left-3 top-3 z-[60] flex h-10 items-center gap-2 rounded-full border border-line bg-surface/95 pl-3 pr-4 text-[14px] font-semibold shadow-lg backdrop-blur hover:bg-surface-2 sm:left-5 sm:top-5"
+    >
+      <IconClose className="h-4 w-4" />
+      Exit full screen
+      <kbd className="ml-1 hidden rounded border border-line px-1.5 text-[11px] font-medium text-muted sm:inline">Esc</kbd>
+    </Link>
+  );
+}
 
 export function StatusScreen({ id }: { id: string }) {
   const { data, error, stale, reload, fetchedAt } = usePoll<StatusDto>(`/api/households/${id}/status`, 2000);

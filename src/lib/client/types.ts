@@ -22,6 +22,7 @@ export interface HouseholdDto {
   livesAlone: boolean | null;
   canLeaveUnassisted: boolean | null;
   canReachBackup: boolean | null;
+  accessNotes: string | null;
 }
 
 export type Tier = "stable" | "check" | "check_first";
@@ -52,6 +53,18 @@ export interface ContactDto {
   priority: number;
   isTownVolunteer: boolean;
   active: boolean;
+  place: string | null;
+  lat: number | null;
+  lng: number | null;
+  linkKey?: string; // the contact's responder page, /r/<linkKey>
+}
+
+export interface RouteDto {
+  contactId: string;
+  coords: [number, number][];
+  minutes: number;
+  miles: number;
+  estimated: boolean;
 }
 
 export interface AlertDto {
@@ -63,6 +76,8 @@ export interface AlertDto {
   sentAt: string | null;
   ackAt: string | null;
   ackBody: string | null;
+  etaAt: string | null;
+  arrivedAt: string | null;
   lastError: string | null;
 }
 

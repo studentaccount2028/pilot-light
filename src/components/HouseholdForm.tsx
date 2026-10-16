@@ -24,6 +24,11 @@ interface ContactRow {
   phone: string;
   channel: Channel;
   isTownVolunteer: boolean;
+  // Where they live, for the map and the drive time. lat/lng are kept from the
+  // last save until the place is edited, so it is only looked up again then.
+  place: string;
+  lat?: number | null;
+  lng?: number | null;
   test?: string;
 }
 interface Place {
@@ -78,7 +83,7 @@ const newDevice = (preset = "o2_portable"): DeviceRow => {
   const p = presetByKey(preset)!;
   return { key: nextKey++, preset, label: p.label, backupHours: p.backupHours == null ? "" : String(p.backupHours) };
 };
-const newContact = (): ContactRow => ({ key: nextKey++, name: "", phone: "", channel: "sms", isTownVolunteer: false });
+const newContact = (): ContactRow => ({ key: nextKey++, name: "", phone: "", channel: "sms", isTownVolunteer: false, place: "" });
 
 export function HouseholdForm({ id }: { id?: string }) {
   const router = useRouter();
@@ -99,6 +104,7 @@ export function HouseholdForm({ id }: { id?: string }) {
   const [livesAlone, setLivesAlone] = useState<YesNo>(null);
   const [canLeave, setCanLeave] = useState<YesNo>(null);
   const [canReach, setCanReach] = useState<YesNo>(null);
+  const [accessNotes, setAccessNotes] = useState("");
   const [devices, setDevices] = useState<DeviceRow[]>(() => [newDevice()]);
   const [contacts, setContacts] = useState<ContactRow[]>(() => [newContact()]);
   const [lookup, setLookup] = useState<{ busy: boolean; error: string | null }>({ busy: false, error: null });
@@ -130,6 +136,7 @@ export function HouseholdForm({ id }: { id?: string }) {
         setLivesAlone(h.livesAlone);
         setCanLeave(h.canLeaveUnassisted);
         setCanReach(h.canReachBackup);
+        setAccessNotes(h.accessNotes ?? "");
         setDevices(
           (json.devices as DeviceDto[]).map((d) => ({
             key: nextKey++,
@@ -145,7 +152,7 @@ export function HouseholdForm({ id }: { id?: string }) {
             backupHours: d.backupHours == null ? "" : String(d.backupHours),
           })),
         );
-        setContacts((json.contacts as ContactDto[]).map((c) => ({ key: nextKey++, id: c.id, name: c.name, phone: c.phone, channel: c.channel, isTownVolunteer: c.isTownVolunteer })));
+        setContacts((json.contacts as ContactDto[]).map((c) => ({ key: nextKey++, id: c.id, name: c.name, phone: c.phone, channel: c.channel, isTownVolunteer: c.isTownVolunteer, place: c.place ?? "", lat: c.lat, lng: c.lng })));
       } catch (err) {
         setLoadError(err instanceof Error ? err.message : "Could not load the household.");
       } finally {
@@ -275,8 +282,9 @@ export function HouseholdForm({ id }: { id?: string }) {
         livesAlone,
         canLeaveUnassisted: canLeave,
         canReachBackup: canReach,
+        accessNotes,
         devices: devices.map((d) => ({ id: d.id, type: presetByKey(d.preset)!.type, label: d.label, backupHours: d.backupHours === "" ? null : Number(d.backupHours) })),
-        contacts: contacts.map((c) => ({ id: c.id, name: c.name, phone: c.phone, channel: c.channel, isTownVolunteer: c.isTownVolunteer })),
+        contacts: contacts.map((c) => ({ id: c.id, name: c.name, phone: c.phone, channel: c.channel, isTownVolunteer: c.isTownVolunteer, place: c.place, lat: c.lat, lng: c.lng })),
       };
       const res = await fetch(id ? `/api/households/${id}` : "/api/households", {
         method: id ? "PUT" : "POST",
@@ -430,6 +438,17 @@ export function HouseholdForm({ id }: { id?: string }) {
         <YesNoField label="Do they live alone?" value={livesAlone} onChange={setLivesAlone} />
         <YesNoField label="Can they leave the house without help?" hint="For example, walk to a neighbor or get to a car." value={canLeave} onChange={setCanLeave} />
         <YesNoField label="Do they know where the backup is, and can they get to it?" hint="A battery pack, spare oxygen tank or generator they can reach and switch on themselves." value={canReach} onChange={setCanReach} />
+        <label className="block">
+          <span className="label">How does someone get in? (optional)</span>
+          <textarea
+            className="field min-h-[84px] py-3"
+            value={accessNotes}
+            onChange={(e) => setAccessNotes(e.target.value)}
+            placeholder="Side door off the driveway. Key in the lockbox, code 4412. Friendly dog. Bedroom is upstairs."
+            maxLength={300}
+          />
+          <span className="hint block">Shown only to the people on this list and to the EMS crew during an outage.</span>
+        </label>
         <div className="rounded-xl border border-line p-4">
           <label className="block">
             <span className="label">Their phone number (optional)</span>
@@ -515,6 +534,11 @@ export function HouseholdForm({ id }: { id?: string }) {
                 {(phoneBad || phoneMissing) && <span className="mt-1 block text-sm font-semibold text-danger">Enter the full number with area code, for example 603 555 0123.</span>}
               </label>
               <label className="block">
+                <span className="label">Where they live (optional)</span>
+                <input className="field" value={c.place} onChange={(e) => patchContact(c.key, { place: e.target.value, lat: null, lng: null })} placeholder="Town or address, like Wolfeboro" maxLength={120} autoComplete="off" />
+                <span className="hint block">Puts them on the map, with their drive time to the house when they reply that they are on the way.</span>
+              </label>
+              <label className="block">
                 <span className="label">How to reach them</span>
                 <select className="field" value={c.channel} onChange={(e) => patchContact(c.key, { channel: e.target.value as Channel })}>
                   <option value="sms">Text message</option>
@@ -560,10 +584,10 @@ export function HouseholdForm({ id }: { id?: string }) {
         <label className="flex min-h-12 cursor-pointer items-start gap-3">
           <input type="checkbox" className="mt-1 check" checked={share} onChange={(e) => setShare(e.target.checked)} />
           <span>
-            <span className="font-semibold">Share with the {town.trim() || "town"} volunteer roster</span>
+            <span className="font-semibold">Share with {town.trim() || "the town"}&apos;s volunteers and local EMS</span>
             <span className="hint block">
-              The town&apos;s volunteer coordinator can then see this household&apos;s address, device and hours remaining during an outage, and a town volunteer is
-              texted at zero hours. You can switch this off at any time.
+              The town&apos;s volunteer coordinator and the EMS board can then see this household&apos;s address, devices, entry notes and hours remaining during an outage, and
+              a town volunteer is texted at zero hours. You can switch this off at any time.
             </span>
           </span>
         </label>

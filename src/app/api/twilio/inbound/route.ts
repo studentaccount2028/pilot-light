@@ -1,7 +1,7 @@
 // AI-assisted: written with Claude Code from the team's build spec.
 // Twilio SMS webhook. Replies with TwiML; an empty <Response/> sends nothing.
 import type { NextRequest } from "next/server";
-import { handleReply, parseReply } from "@/lib/inbound";
+import { handleReply, parseEtaMinutes, parseReply } from "@/lib/inbound";
 import { publicBaseUrl, validateSignature } from "@/lib/twilio";
 
 function twiml(message: string | null) {
@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
   }
   if (!params.From) return twiml(null);
   try {
-    return twiml(await handleReply({ fromPhone: params.From, word: parseReply(params.Body ?? ""), via: "sms" }));
+    return twiml(await handleReply({ fromPhone: params.From, word: parseReply(params.Body ?? ""), via: "sms", etaMinutes: parseEtaMinutes(params.Body ?? "") }));
   } catch (err) {
     console.error(err);
     return twiml("Pilot Light could not process that reply. Call 911 for any emergency.");

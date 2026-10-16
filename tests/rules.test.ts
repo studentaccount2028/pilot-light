@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { activeThreshold, channelsFor, decide, findActiveWarning, isSilent, limitingDevice, recipientsFor, type AlertLike, type StateLike } from "../src/lib/engine/rules";
-import { parseDigit, parseReply } from "../src/lib/inbound";
+import { parseDigit, parseEtaMinutes, parseReply } from "../src/lib/inbound";
 import { formatRemaining, thresholdSms, voiceTwiml } from "../src/lib/messages";
 import { alertRow } from "../src/lib/nws";
 import { expectedSignature, normalizePhone, validateSignature } from "../src/lib/twilio";
@@ -132,6 +132,13 @@ test("replies: words and key presses", () => {
   assert.equal(parseDigit("1"), "OK");
   assert.equal(parseDigit("2"), "HELP");
   assert.equal(parseDigit("9"), "OTHER");
+  assert.equal(parseReply("OK 20"), "OK");
+  assert.equal(parseReply("on my way, 15 min"), "OK");
+  assert.equal(parseReply("here"), "CHECKED");
+  assert.equal(parseEtaMinutes("OK 20"), 20);
+  assert.equal(parseEtaMinutes("omw 1.5 hours"), 90);
+  assert.equal(parseEtaMinutes("ok"), null);
+  assert.equal(parseEtaMinutes("ok 0"), null);
 });
 
 test("phone numbers are E.164 or the save fails", () => {

@@ -21,7 +21,7 @@ import { logEvent } from "../events";
 import { allClearText, sayTwiml, stormPromptSms, stormPromptTwiml, thresholdSms, thresholdVoice, voiceTwiml } from "../messages";
 import { riskFor } from "../riskFor";
 import { TIER_LABEL, type Tier } from "./risk";
-import { placeCall, publicBaseUrl, sendSms, transportMode } from "../twilio";
+import { placeCall, publicBaseUrl, responderLink, sendSms, transportMode } from "../twilio";
 import { channelsFor, decide, findActiveWarning, limitingDevice, PROMPT_EVENTS, recipientsFor, WARNING_EVENTS, type Threshold } from "./rules";
 
 const MAX_ATTEMPTS = 5;
@@ -192,7 +192,7 @@ async function armThreshold(
       channel,
       body:
         channel === "sms"
-          ? thresholdSms(a.threshold, ctx, { volunteer: c.isTownVolunteer })
+          ? thresholdSms(a.threshold, ctx, { volunteer: c.isTownVolunteer, link: responderLink(c.linkKey) })
           : thresholdVoice(a.threshold, ctx, { volunteer: c.isTownVolunteer }),
     })),
   );

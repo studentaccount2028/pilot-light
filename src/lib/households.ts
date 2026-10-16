@@ -21,6 +21,7 @@ import { ageFromBirthYear, recommendContact, TIER_RANK } from "./engine/risk";
 import { limitingDevice } from "./engine/rules";
 import { describeDrivers, outageRisk } from "./engine/outageRisk";
 import { riskFor } from "./riskFor";
+import { locatePlace } from "./routes";
 import { locateInNH, resolveZone } from "./nws";
 import { normalizePhone, transportMode } from "./twilio";
 
@@ -45,6 +46,7 @@ export interface HouseholdInput {
   livesAlone?: unknown;
   canLeaveUnassisted?: unknown;
   canReachBackup?: unknown;
+  accessNotes?: unknown;
   devices?: unknown;
   contacts?: unknown;
 }
@@ -86,6 +88,10 @@ async function validate(input: HouseholdInput) {
     const phone = normalizePhone(typeof c.phone === "string" ? c.phone : "");
     if (!phone) throw new ValidationError(`${name}: enter the phone number with area code, for example +1 603 555 0123.`);
     if (c.channel !== "sms" && c.channel !== "voice" && c.channel !== "both") throw new ValidationError(`${name}: choose text, call or both.`);
+    const place = typeof c.place === "string" && c.place.trim() ? c.place.trim().slice(0, 120) : null;
+    const lat = Number(c.lat);
+    const lng = Number(c.lng);
+    const known = place && c.lat != null && c.lng != null && Number.isFinite(lat) && Number.isFinite(lng) && Math.abs(lat) <= 90 && Math.abs(lng) <= 180;
     return {
       id: isUuid(c.id) ? c.id : undefined,
       name,
@@ -93,8 +99,22 @@ async function validate(input: HouseholdInput) {
       channel: c.channel as "sms" | "voice" | "both",
       priority: i + 1, // order in the list is the priority
       isTownVolunteer: c.isTownVolunteer === true,
+      place,
+      lat: known ? lat : null,
+      lng: known ? lng : null,
     };
   });
+  // Put each contact on the map. One lookup at a time: Nominatim allows 1 a second.
+  let looked = false;
+  for (const c of contactRows) {
+    if (!c.place || c.lat != null) continue;
+    if (looked) await new Promise((r) => setTimeout(r, 1100));
+    looked = true;
+    const hit = await locatePlace(c.place);
+    if (!hit) throw new ValidationError(`${c.name}: we could not find "${c.place}" on the map. Try a town name, like Wolfeboro.`);
+    c.lat = hit.lat;
+    c.lng = hit.lng;
+  }
   if (new Set(contactRows.map((c) => c.phone)).size !== contactRows.length) {
     throw new ValidationError("Two contacts share a phone number. Each contact needs their own.");
   }
@@ -161,6 +181,7 @@ async function validate(input: HouseholdInput) {
       livesAlone: yesNo(input.livesAlone),
       canLeaveUnassisted: yesNo(input.canLeaveUnassisted),
       canReachBackup: yesNo(input.canReachBackup),
+      accessNotes: typeof input.accessNotes === "string" && input.accessNotes.trim() ? input.accessNotes.trim().slice(0, 300) : null,
     },
     deviceRows,
     contactRows,
@@ -191,7 +212,7 @@ export async function saveHousehold(input: HouseholdInput, existingId?: string, 
     const keepContacts = v.contactRows.flatMap((c) => (c.id ? [c.id] : []));
     await tx.delete(contacts).where(keepContacts.length ? and(eq(contacts.householdId, id), notInArray(contacts.id, keepContacts)) : eq(contacts.householdId, id));
     for (const c of v.contactRows) {
-      const values = { name: c.name, phone: c.phone, channel: c.channel, priority: c.priority, isTownVolunteer: c.isTownVolunteer };
+      const values = { name: c.name, phone: c.phone, channel: c.channel, priority: c.priority, isTownVolunteer: c.isTownVolunteer, place: c.place, lat: c.lat, lng: c.lng };
       const hit = c.id ? await tx.update(contacts).set(values).where(and(eq(contacts.id, c.id), eq(contacts.householdId, id))).returning({ id: contacts.id }) : [];
       if (hit.length === 0) await tx.insert(contacts).values({ householdId: id, ...values });
     }
@@ -237,6 +258,8 @@ export async function getStatus(id: string) {
           sentAt: alertsSent.sentAt,
           ackAt: alertsSent.ackAt,
           ackBody: alertsSent.ackBody,
+          etaAt: alertsSent.etaAt,
+          arrivedAt: alertsSent.arrivedAt,
           lastError: alertsSent.lastError,
         })
         .from(alertsSent)

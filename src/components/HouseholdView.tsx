@@ -2,15 +2,19 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState, type ReactNode } from "react";
-import type { ContactDto, NearbySiteDto, StatusDto } from "@/lib/client/types";
+import { leadResponder, minutesAway, respondersFor } from "@/lib/client/responders";
+import type { ContactDto, NearbySiteDto, RouteDto, StatusDto } from "@/lib/client/types";
 import { UTILITIES } from "@/lib/utilities";
 import { ContactLadder } from "./ContactLadder";
 import { DeviceList } from "./DeviceList";
 import { EventLog } from "./EventLog";
-import { HouseholdMap } from "./HouseholdMap";
-import { IconBolt, IconChevron, IconClock, IconGear, IconHome, IconHouse, IconMessage, IconMore, IconPeople, IconPhone, IconPin, IconPlay } from "./icons";
+import { HouseholdMap, type MapPerson } from "./HouseholdMap";
+import { IconBolt, IconChevron, IconClock, IconGear, IconHome, IconHouse, IconMore, IconPeople, IconPhone, IconPin, IconPlay } from "./icons";
 import { AccountRow } from "./AccountRow";
 import { NearbyList } from "./NearbyList";
+import { PowerCard, useSensors } from "./PowerCard";
+import { SensorSetup } from "./SensorSetup";
+import { ResponderCard } from "./ResponderCard";
 import { scrollAppToTop } from "./Phone";
 import { RiskCard, TierChip } from "./RiskCard";
 import { StatusBand, summarize, TONE_COLOR } from "./StatusCard";
@@ -43,6 +47,8 @@ export function HouseholdView({
   onChanged?: () => void;
 }) {
   const [tab, setTab] = useState<Tab>("home");
+  // The power module(s) at the house, if any are paired.
+  const { sensors, reload: reloadSensors } = useSensors(data.household.id);
   // Nearest fire, police and hospital with drive times. Looked up once per house.
   const [nearby, setNearby] = useState<NearbySiteDto[]>([]);
   const householdId = data.household.id;
@@ -56,6 +62,20 @@ export function HouseholdView({
       cancelled = true;
     };
   }, [householdId]);
+  // The road from each contact to the house. Looked up again only when someone moves.
+  const [routes, setRoutes] = useState<RouteDto[]>([]);
+  const placesKey = data.contacts.map((c) => `${c.id}:${c.lat},${c.lng}`).join("|");
+  useEffect(() => {
+    let cancelled = false;
+    if (!placesKey.match(/:-?\d/)) return;
+    fetch(`/api/households/${householdId}/routes`)
+      .then((r) => (r.ok ? r.json() : { routes: [] }))
+      .then((j) => !cancelled && setRoutes(j.routes ?? []))
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [householdId, placesKey]);
   const sum = summarize(data, nowMs);
   const utility = UTILITIES[data.household.utility];
   const h = data.household;
@@ -63,16 +83,43 @@ export function HouseholdView({
   const sent = data.alerts.filter((a) => a.sid && a.threshold !== "all_clear");
   const reached = new Set(sent.map((a) => a.contactId)).size;
   const replied = new Set(data.alerts.filter((a) => a.ackAt).map((a) => a.contactId)).size;
-  const peopleLine = reached === 0 ? `${data.contacts.length} ${data.contacts.length === 1 ? "person" : "people"} on the list` : `${reached} of ${data.contacts.length} alerted${replied ? ` · ${replied} replied` : ""}`;
-  const badge = sum.counting && reached > replied;
+  // Who is answering, like drivers in a ride app: the one closest to the door leads.
+  const responders = respondersFor(data.contacts, data.alerts);
+  const lead = leadResponder(responders);
+  const onWay = responders.filter((r) => r.stage === "on_way").length;
+  const arrived = responders.filter((r) => r.stage === "arrived").length;
+  const peopleLine =
+    reached === 0
+      ? `${data.contacts.length} ${data.contacts.length === 1 ? "person" : "people"} on the list`
+      : [`${reached} of ${data.contacts.length} alerted`, replied && `${replied} replied`, onWay && `${onWay} on the way`, arrived && `${arrived} arrived`].filter(Boolean).join(" · ");
+  const badge = (sum.counting || sum.helped) && reached > replied;
+  const enRoute = lead?.stage === "on_way" ? lead : null;
+  const enRouteMin = enRoute ? minutesAway(enRoute.etaAt!, nowMs) : null;
 
-  // The person to show on Home: whoever was alerted most recently, else the first on the list.
-  const latest = sent.slice().sort((x, y) => (y.sentAt ?? "").localeCompare(x.sentAt ?? ""))[0];
-  const lead = data.contacts.find((c) => c.id === latest?.contactId) ?? data.contacts[0];
-  const leadAlerts = lead ? data.alerts.filter((a) => a.contactId === lead.id) : [];
-  const leadAck = leadAlerts.find((a) => a.ackAt);
-  const leadSent = leadAlerts.some((a) => a.sid);
-  const leadLine = leadAck ? `Replied ${leadAck.ackBody}` : latest && lead && latest.contactId === lead.id ? (latest.channel === "sms" ? "Texted" : "Called") : "Not contacted";
+  // Everyone on the list who has a location, on the map. Whoever is on the way
+  // rides along their road toward the house as the arrival time nears.
+  const people: MapPerson[] = data.contacts.flatMap((c, i) => {
+    if (c.lat == null || c.lng == null || !c.active) return [];
+    const r = responders.find((x) => x.contact.id === c.id);
+    const stage = r?.stage ?? "idle";
+    const first = c.name.replace(/\(.*?\)/g, "").trim().split(/\s+/)[0] || c.name;
+    const route = routes.find((x) => x.contactId === c.id)?.coords ?? null;
+    let progress = 0;
+    let label = first;
+    if (stage === "on_way" && r?.seenAt && r.etaAt) {
+      const start = Date.parse(r.seenAt);
+      const end = Date.parse(r.etaAt);
+      progress = end > start ? Math.max(0, Math.min(1, (nowMs - start) / (end - start))) : 1;
+      const left = minutesAway(r.etaAt, nowMs);
+      label = left != null ? `${first} · ${left} min` : `${first} · arriving`;
+    } else if (stage === "arrived") label = `${first} · here`;
+    else if (stage === "help") label = `${first} · HELP`;
+    else if (stage === "seen") label = `${first} · replied`;
+    else if (stage === "alerted") label = `${first} · alerted`;
+    // Arrived: beside the house, fanned out so two people don't overlap.
+    const at = stage === "arrived" ? { lat: h.lat + 0.0012, lng: h.lng + 0.002 * (i - 1) } : { lat: c.lat, lng: c.lng };
+    return [{ id: c.id, initials: initialsOf(c.name), name: c.name, ...at, stage, label, route, progress }];
+  });
 
   const go = (t: Tab) => {
     setTab(t);
@@ -85,8 +132,17 @@ export function HouseholdView({
         {tab === "home" && (
           <div className="space-y-2.5 bg-bg pb-3">
             <div className="overflow-hidden border-b border-line bg-surface">
-              <div className={framed ? "h-[340px]" : "h-[46dvh] min-h-[320px] sm:h-[340px]"}>
-                <HouseholdMap center={{ lat: h.lat, lng: h.lng }} town={h.town} points={[{ lat: h.lat, lng: h.lng, label: h.label, color: TONE_COLOR[sum.tone] }]} sites={nearby} />
+              <div className={`relative ${framed ? "h-[340px]" : "h-[46dvh] min-h-[320px] sm:h-[340px]"}`}>
+                <HouseholdMap center={{ lat: h.lat, lng: h.lng }} town={h.town} points={[{ lat: h.lat, lng: h.lng, label: h.label, color: TONE_COLOR[sum.tone] }]} sites={enRoute ? [] : nearby} people={people} legend={!(enRoute || lead?.stage === "arrived")} />
+                {(enRoute || lead?.stage === "arrived") && (
+                  <div className="pointer-events-none absolute inset-x-3 bottom-3 z-10 flex items-center gap-2.5 rounded-xl border border-line bg-surface/95 px-3.5 py-2.5 shadow-lg backdrop-blur">
+                    <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${enRoute ? "animate-breathe bg-ink" : "bg-ok"}`} />
+                    <span className="min-w-0 flex-1 truncate text-[14px] font-medium">
+                      {enRoute ? `${lead!.contact.name} is on the way` : `${lead!.contact.name} has arrived`}
+                    </span>
+                    <span className="shrink-0 text-[14px] font-semibold tabular-nums">{enRoute ? (enRouteMin != null ? `${enRouteMin} min` : "Due now") : "Here"}</span>
+                  </div>
+                )}
               </div>
               <div className="border-t border-line px-4 py-3 text-center">
                 <h1 className="text-[17px] font-semibold tracking-[-0.02em]">{sum.headline}</h1>
@@ -105,7 +161,7 @@ export function HouseholdView({
                   <IconMore className="h-5 w-5" />
                 </button>
               </div>
-              {sum.counting && (
+              {sum.timed && (
                 <div className="mt-3 h-1 overflow-hidden rounded-full bg-surface-3" role="presentation">
                   <div className={`h-full rounded-full ${sum.fraction < 0.5 ? "bg-danger" : "bg-ink"}`} style={{ width: `${sum.fraction * 100}%`, transition: "width 0.3s linear" }} />
                 </div>
@@ -115,7 +171,7 @@ export function HouseholdView({
                 <span className="chip">{sum.lastHeard}</span>
                 <span className="chip">{sum.weather}</span>
               </p>
-              {data.outageRisk && !sum.counting && (
+              {data.outageRisk && !sum.timed && (
                 <div className="mt-3 rounded-lg border border-line bg-surface-2 p-3">
                   <p className="flex items-baseline justify-between gap-3">
                     <span className="text-[13px] font-medium text-muted">Chance this storm cuts power in the county</span>
@@ -137,32 +193,11 @@ export function HouseholdView({
               )}
             </section>
 
-            {lead && (
-              <section className="mx-3 rounded-xl border border-line bg-surface p-4">
-                <div className="flex items-center justify-between gap-4">
-                  <div className="min-w-0">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full border border-line bg-surface-2 text-[15px] font-semibold">{initials(lead.name)}</div>
-                    <p className="mt-2 truncate text-[13px] font-medium text-ink-2">{lead.name}</p>
-                  </div>
-                  <div className="min-w-0 text-right">
-                    <p className={`text-[18px] font-semibold leading-tight tracking-[-0.02em] ${leadSent ? "" : "text-muted"}`}>{leadLine}</p>
-                    <p className="mt-0.5 text-[13px] text-muted">{peopleLine}</p>
-                  </div>
-                </div>
-                <div className="mt-4 flex gap-2">
-                  <a href={`sms:${lead.phone}`} className="flex h-11 flex-1 items-center justify-center gap-2 rounded-lg border border-line bg-surface-2 text-[14px] font-medium">
-                    <IconMessage className="h-5 w-5" />
-                    Send a message
-                  </a>
-                  <a href={`tel:${lead.phone}`} className="flex h-11 w-11 items-center justify-center rounded-lg border border-line bg-surface-2" aria-label={`Call ${lead.name}`}>
-                    <IconPhone className="h-5 w-5" />
-                  </a>
-                  <button onClick={() => go("people")} className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-lg border border-line bg-surface-2" aria-label="Everyone who gets contacted">
-                    <IconMore className="h-5 w-5" />
-                  </button>
-                </div>
-              </section>
-            )}
+            {sensors?.map((sensor) => (
+              <PowerCard key={sensor.id} sensor={sensor} nowMs={nowMs} />
+            ))}
+
+            {data.contacts.length > 0 && <ResponderCard responder={lead} fallback={data.contacts[0]} peopleLine={peopleLine} nowMs={nowMs} onMore={() => go("people")} />}
 
             {nearby.length > 0 && (
               <section className="mx-3 rounded-xl border border-line bg-surface px-4 pb-2 pt-4">
@@ -184,7 +219,7 @@ export function HouseholdView({
               <RiskCard risk={data.risk} residentName={data.resident.name} nearby={nearby} />
             </div>
             <h2 className="h-section mt-7">Who gets contacted</h2>
-            <p className="mt-1 text-[13px] leading-snug text-muted">They reply OK or HELP by text, or press 1 or 2 on a call.</p>
+            <p className="mt-1 text-[13px] leading-snug text-muted">They reply OK with their minutes away (OK 20), HERE when they arrive, or HELP. On a call, 1 or 2.</p>
             <div className="mt-3">
               <ContactLadder contacts={data.contacts} alerts={data.alerts} actions={contactActions} />
             </div>
@@ -213,6 +248,12 @@ export function HouseholdView({
             <p className="mt-2 text-[15px] text-muted">{h.address}</p>
 
             <div className="mt-6">{housePhone}</div>
+
+            {!framed && sensors && (
+              <div className="mt-6">
+                <SensorSetup householdId={h.id} sensors={sensors} onChanged={reloadSensors} />
+              </div>
+            )}
 
             {nearby.length > 0 && (
               <div className="mt-6">
@@ -262,15 +303,6 @@ export function HouseholdView({
   );
 }
 
-const initials = (name: string) =>
-  name
-    .replace(/\(.*?\)/g, "")
-    .trim()
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((w) => w[0]?.toUpperCase() ?? "")
-    .join("") || "?";
-
 function InfoRow({ icon, label, value, href, internal }: { icon: ReactNode; label: string; value: string; href?: string; internal?: boolean }) {
   const body = (
     <>
@@ -298,3 +330,12 @@ function InfoRow({ icon, label, value, href, internal }: { icon: ReactNode; labe
     </li>
   );
 }
+
+const initialsOf = (name: string) =>
+  name
+    .replace(/\(.*?\)/g, "")
+    .trim()
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((w) => w[0]?.toUpperCase() ?? "")
+    .join("") || "?";

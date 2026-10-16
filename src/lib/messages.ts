@@ -31,26 +31,34 @@ export function formatRemaining(ms: number): string {
 //   stable       what is known, and "reply OK when you've spoken to them"
 //   check        the reason, and "please call now"
 //   check first  911 guidance leads, before anything else
-export function thresholdSms(threshold: Threshold, ctx: MessageContext, opts: { volunteer: boolean }): string {
+// The responder page for this contact, when a public URL is configured.
+function detailsLine(link: string | null | undefined): string {
+  return link ? ` What to do: ${link}` : "";
+}
+
+export function thresholdSms(threshold: Threshold, ctx: MessageContext, opts: { volunteer: boolean; link?: string | null }): string {
   const who = ctx.residentName?.trim() || "them";
   const tier = ctx.tier ?? "stable";
   const reason = ctx.reason ? ` ${ctx.reason}` : "";
   // A volunteer does not have the resident's number or address; family does.
   const reach = opts.volunteer ? ` Address: ${ctx.address}.${ctx.residentPhone ? ` Phone: ${ctx.residentPhone}.` : ""}` : "";
-  const replies = opts.volunteer ? "Reply CHECKED once you have checked in person, HELP if help is needed." : "Reply OK once you have reached them, HELP if help is needed.";
+  const replies = opts.volunteer
+    ? "Reply OK and your minutes away if you're heading there (OK 20), CHECKED once you have checked in person, HELP if help is needed."
+    : "Reply OK once you've seen this, with your minutes away if you're going (OK 20), HERE when you arrive, HELP if help is needed.";
 
+  const details = detailsLine(opts.link);
   if (threshold === "h0") {
-    return `PILOT LIGHT: Backup power for ${ctx.deviceLabel} at ${ctx.label}, ${ctx.town} has likely run out. If you cannot reach ${who}, call 911 now.${reach} ${replies}`;
+    return `PILOT LIGHT: Backup power for ${ctx.deviceLabel} at ${ctx.label}, ${ctx.town} has likely run out. If you cannot reach ${who}, call 911 now.${reach} ${replies}${details}`;
   }
   const left = `${ctx.deviceLabel} has ${formatRemaining(ctx.remainingMs)} of backup.`;
   if (tier === "check_first") {
-    return `PILOT LIGHT: Call ${who} now; if no answer in 10 minutes, call 911. Power appears out at ${ctx.label}, ${ctx.town}.${reason} ${left}${reach} Reply HELP to alert everyone immediately.`;
+    return `PILOT LIGHT: Call ${who} now; if no answer in 10 minutes, call 911. Power appears out at ${ctx.label}, ${ctx.town}.${reason} ${left}${reach} Reply HELP to alert everyone immediately.${details}`;
   }
   if (tier === "check") {
-    return `PILOT LIGHT: Power appears out at ${ctx.label}, ${ctx.town}.${reason} Please call ${who} now. ${left}${reach} ${replies} Call 911 for any emergency.`;
+    return `PILOT LIGHT: Power appears out at ${ctx.label}, ${ctx.town}.${reason} Please call ${who} now. ${left}${reach} ${replies} Call 911 for any emergency.${details}`;
   }
   const urgent = threshold === "h2" ? " Please check now." : "";
-  return `PILOT LIGHT: Power appears out at ${ctx.label}, ${ctx.town}.${reason} ${left}${urgent}${reach} ${replies} Call 911 for any emergency.`;
+  return `PILOT LIGHT: Power appears out at ${ctx.label}, ${ctx.town}.${reason} ${left}${urgent}${reach} ${replies} Call 911 for any emergency.${details}`;
 }
 
 export function thresholdVoice(threshold: Threshold, ctx: MessageContext, opts: { volunteer: boolean }): string {
@@ -87,11 +95,11 @@ export function allClearText(label: string): string {
   return `PILOT LIGHT: All clear: ${label} is back in contact.`;
 }
 
-export function helpCascadeText(reporter: string, label: string, address: string): string {
-  return `PILOT LIGHT: ${reporter} reports ${label} needs help. Address: ${address}. If you are nearby go now; otherwise call 911.`;
+export function helpCascadeText(reporter: string, label: string, address: string, link?: string | null): string {
+  return `PILOT LIGHT: ${reporter} reports ${label} needs help. Address: ${address}. If you are nearby go now and reply OK with your minutes away (OK 15); otherwise call 911.${detailsLine(link)}`;
 }
 
-export const REPLY_HELP_TEXT = "Pilot Light: reply OK if you've reached them, HELP if they need assistance, or CHECKED if you are the town volunteer. Call 911 for any emergency.";
+export const REPLY_HELP_TEXT = "Pilot Light: reply OK once you've seen the alert (OK 20 if you're 20 minutes away), HERE when you arrive, HELP if they need assistance. Call 911 for any emergency.";
 
 function xml(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -104,7 +112,7 @@ export function voiceTwiml(spoken: string, gatherUrl: string | null): string {
   if (!gatherUrl) {
     return `<?xml version="1.0" encoding="UTF-8"?><Response>${say}<Pause length="1"/>${say}</Response>`;
   }
-  const prompt = `<Say voice="alice">Press 1 if you have reached them. Press 2 if they need help.</Say>`;
+  const prompt = `<Say voice="alice">Press 1 if you have seen this and are handling it. Press 2 if they need help.</Say>`;
   return (
     `<?xml version="1.0" encoding="UTF-8"?><Response>` +
     `<Gather numDigits="1" timeout="6" method="POST" action="${xml(gatherUrl)}">${say}${prompt}</Gather>` +
