@@ -78,11 +78,11 @@ function readConfig(key) {
 self.addEventListener("periodicsync", (event) => {
   if (event.tag !== "pilot-light-heartbeat") return;
   event.waitUntil(
-    readConfig("heartbeatHouseholdId").then((id) => {
+    Promise.all([readConfig("heartbeatHouseholdId"), readConfig("heartbeatToken")]).then(([id, token]) => {
       if (!id) return;
       return fetch("/api/heartbeat", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: token ? { "Content-Type": "application/json", Authorization: "Bearer " + token } : { "Content-Type": "application/json" },
         body: JSON.stringify({ household_id: id }),
       }).catch(() => {});
     }),

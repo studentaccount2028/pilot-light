@@ -2,13 +2,12 @@
 import type { Metadata } from "next";
 import { EmsBoard } from "@/components/EmsBoard";
 import { Locked } from "@/components/Locked";
-import { tokenMatches } from "@/lib/admin";
+import { canSeeEms, staffFromCookies } from "@/lib/staff";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "EMS · Pilot Light", robots: { index: false, follow: false } };
 
-export default async function Page({ searchParams }: { searchParams: Promise<{ key?: string }> }) {
-  const { key } = await searchParams;
-  if (!tokenMatches(key)) return <Locked what="The EMS board" />;
-  return <EmsBoard adminKey={key ?? ""} />;
+export default async function Page() {
+  if (!canSeeEms(await staffFromCookies())) return <Locked what="The EMS board" next="/ems" />;
+  return <EmsBoard />;
 }

@@ -64,8 +64,12 @@ export const households = pgTable("households", {
   canReachBackup: boolean("can_reach_backup"),
   // How a neighbor or EMS crew gets in: which door, where the key is, a dog,
   // stairs. Shown only to this household's contacts and to EMS.
+  // Encrypted at rest (src/lib/security/fieldCrypto.ts).
   accessNotes: text("access_notes"),
   ownerUserId: uuid("owner_user_id"),
+  // The house phone's secret (hashed), issued when it's paired. Heartbeats must present it, so no one
+  // else can fake "the house is fine" and silence an outage.
+  heartbeatTokenHash: text("heartbeat_token_hash"),
   createdAt: ts("created_at").notNull().defaultNow(),
 });
 
@@ -240,9 +244,16 @@ export const appClock = pgTable("app_clock", {
 });
 
 // Login: an email, a session, and the one-time links that open sessions.
+// Staff roles. "member" is a family member who runs their own households. "ems" sees the EMS board
+// (every household shared with EMS); "coordinator" sees one town's roster (staffTown). Roles are
+// granted by an administrator (scripts/grant-role.ts), never self-assigned.
+export const userRoleEnum = pgEnum("user_role", ["member", "ems", "coordinator", "admin"]);
+
 export const users = pgTable("users", {
   id: uuid("id").primaryKey().defaultRandom(),
   email: text("email").notNull().unique(),
+  role: userRoleEnum("role").notNull().default("member"),
+  staffTown: text("staff_town"),
   createdAt: ts("created_at").notNull().defaultNow(),
 });
 
@@ -327,3 +338,18 @@ export type AlertKind = (typeof alertKindEnum.enumValues)[number];
 export type SendChannel = (typeof sendChannelEnum.enumValues)[number];
 export type DeviceType = (typeof deviceTypeEnum.enumValues)[number];
 export type Utility = (typeof utilityEnum.enumValues)[number];
+
+// Who saw or changed sensitive information, and when (src/lib/security/audit.ts). Append-only.
+export const auditLog = pgTable(
+  "audit_log",
+  {
+    id: bigserial("id", { mode: "number" }).primaryKey(),
+    at: ts("at").notNull().defaultNow(),
+    action: text("action").notNull(),
+    actor: text("actor").notNull(), // "admin", "ems:<email>", "contact:<id>", "user:<email>"
+    householdId: uuid("household_id"),
+    detail: text("detail"),
+    ipHash: text("ip_hash"),
+  },
+  (t) => [index("audit_household_at").on(t.householdId, t.at), index("audit_at").on(t.at)],
+);

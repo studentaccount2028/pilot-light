@@ -37,11 +37,15 @@ function detailsLine(link: string | null | undefined): string {
 }
 
 export function thresholdSms(threshold: Threshold, ctx: MessageContext, opts: { volunteer: boolean; link?: string | null }): string {
-  const who = ctx.residentName?.trim() || "them";
   const tier = ctx.tier ?? "stable";
   const reason = ctx.reason ? ` ${ctx.reason}` : "";
-  // A volunteer does not have the resident's number or address; family does.
-  const reach = opts.volunteer ? ` Address: ${ctx.address}.${ctx.residentPhone ? ` Phone: ${ctx.residentPhone}.` : ""}` : "";
+  // Texts aren't encrypted and stay on phones. Family already knows the house; a town volunteer gets
+  // the minimum: no medical device by name, and the address and phone only behind their secure link
+  // (which shows details only during an incident). Without a link, they still need the address.
+  const minimal = opts.volunteer && Boolean(opts.link);
+  ctx = opts.volunteer ? { ...ctx, deviceLabel: "the medical equipment" } : ctx;
+  const who = minimal ? "the resident" : ctx.residentName?.trim() || "them";
+  const reach = opts.volunteer && !minimal ? ` Address: ${ctx.address}.${ctx.residentPhone ? ` Phone: ${ctx.residentPhone}.` : ""}` : "";
   const replies = opts.volunteer
     ? "Reply OK and your minutes away if you're heading there (OK 20), CHECKED once you have checked in person, HELP if help is needed."
     : "Reply OK once you've seen this, with your minutes away if you're going (OK 20), HERE when you arrive, HELP if help is needed.";

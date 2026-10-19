@@ -3,6 +3,7 @@
 // or a plain GET with the token and short field names in the query string for
 // modems that can only fetch a URL:
 //   GET /api/sensor/report?t=<token>&m=1&v=121&c=1&b=87&wh=256&h=94&w=45&rssi=-91
+import { limited } from "@/lib/security/rateLimit";
 import { NextResponse, type NextRequest } from "next/server";
 import { bad, handle } from "@/lib/http";
 import { parseReading, recordReading, sensorForToken } from "@/lib/sensors";
@@ -10,6 +11,8 @@ import { parseReading, recordReading, sensorForToken } from "@/lib/sensors";
 export const dynamic = "force-dynamic";
 
 async function report(req: NextRequest, body: Record<string, unknown>) {
+  const slow = limited(req, "sensorReport");
+  if (slow) return slow;
   const auth = req.headers.get("authorization");
   const token = auth?.startsWith("Bearer ") ? auth.slice(7).trim() : String(body.t ?? body.token ?? "");
   if (!token) return bad("Missing token.", 401);

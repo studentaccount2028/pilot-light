@@ -25,8 +25,8 @@ interface ReplayDto {
 
 // The demo switch and the test harness in one. Replay fakes the storm, not
 // the system: these buttons only change inputs.
-export function ReplayConsole({ adminKey }: { adminKey: string }) {
-  const headers = useMemo(() => ({ "x-admin-token": adminKey }), [adminKey]);
+export function ReplayConsole() {
+  const headers = useMemo(() => ({}), []);
   const [householdId, setHouseholdId] = useState("");
   const [scenarioId, setScenarioId] = useState("");
   const [speed, setSpeed] = useState(120);
@@ -249,16 +249,16 @@ export function ReplayConsole({ adminKey }: { adminKey: string }) {
               />
             </Phone>
             <p className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 text-[14px]">
-              <Link className="link" href={`/h/${status.household.id}?from=replay${adminKey ? `&key=${encodeURIComponent(adminKey)}` : ""}`}>
+              <Link className="link" href={`/h/${status.household.id}?from=replay`}>
                 Open full screen
               </Link>
               {status.household.shareWithTown && (
-                <Link className="link" href={`/town/${encodeURIComponent(status.household.town)}${adminKey ? `?key=${encodeURIComponent(adminKey)}` : ""}`}>
+                <Link className="link" href={`/town/${encodeURIComponent(status.household.town)}`}>
                   {status.household.town} roster
                 </Link>
               )}
               {status.household.shareWithTown && (
-                <Link className="link" href={`/ems${adminKey ? `?key=${encodeURIComponent(adminKey)}` : ""}`}>
+                <Link className="link" href="/ems">
                   EMS board
                 </Link>
               )}

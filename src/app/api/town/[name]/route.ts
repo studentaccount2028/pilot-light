@@ -2,7 +2,8 @@
 // Town volunteer roster: opted-in households in one town, most urgent first.
 import { NextResponse, type NextRequest } from "next/server";
 import { db } from "@/db/client";
-import { isAdmin } from "@/lib/admin";
+import { audit } from "@/lib/security/audit";
+import { actorOf, canSeeTown, staffFromRequest } from "@/lib/staff";
 import { getClock, simNow } from "@/lib/clock";
 import { TIER_RANK } from "@/lib/engine/risk";
 import { limitingDevice } from "@/lib/engine/rules";
@@ -14,8 +15,9 @@ export const dynamic = "force-dynamic";
 type Ctx = { params: Promise<{ name: string }> };
 
 export const GET = handle(async (req: NextRequest, { params }: Ctx) => {
-  if (!isAdmin(req)) return bad("Not authorized.", 401);
   const town = decodeURIComponent((await params).name);
+  const staff = await staffFromRequest(req);
+  if (!canSeeTown(staff, town)) return bad("Not authorized.", 401);
   const clock = await getClock();
   const now = simNow(clock);
   const rows = (await listForTown(town)).map((r) => {
@@ -50,8 +52,9 @@ export const GET = handle(async (req: NextRequest, { params }: Ctx) => {
 
 // Coordinator marks a household as checked from the roster.
 export const POST = handle(async (req: NextRequest, { params }: Ctx) => {
-  if (!isAdmin(req)) return bad("Not authorized.", 401);
   const town = decodeURIComponent((await params).name);
+  const staff = await staffFromRequest(req);
+  if (!canSeeTown(staff, town)) return bad("Not authorized.", 401);
   const body = await req.json();
   if (!isUuid(body.householdId)) return bad("Unknown household.");
   const rows = await listForTown(town);
@@ -62,5 +65,6 @@ export const POST = handle(async (req: NextRequest, { params }: Ctx) => {
     kind: "checked",
     message: "Town coordinator marked this household as checked on the roster. The clock keeps running.",
   });
+  await audit(req, { action: "town.marked_checked", actor: actorOf(staff!), householdId: body.householdId, detail: town });
   return NextResponse.json({ ok: true });
 });

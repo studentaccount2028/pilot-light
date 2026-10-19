@@ -2,6 +2,7 @@
 // The page a neighbor or volunteer opens from their alert text (/r/<key>).
 // The key is theirs alone. Address, phone and entry notes are shown only
 // while there is an open incident; otherwise the page says there is nothing to do.
+import { open } from "./security/fieldCrypto";
 import { and, desc, eq, inArray } from "drizzle-orm";
 import { db } from "../db/client";
 import { alertsSent, contacts, devices, events, householdState, households } from "../db/schema";
@@ -79,7 +80,7 @@ export async function responderView(key: string) {
     address: h.address,
     lat: h.lat,
     lng: h.lng,
-    accessNotes: h.accessNotes,
+    accessNotes: open(h.accessNotes),
     resident: { name: h.residentName, phone: h.residentPhone, livesAlone: h.livesAlone, canLeaveUnassisted: h.canLeaveUnassisted },
     devices: deviceRows.map((d) => ({ label: d.label, type: d.type, backupHours: d.backupHours, limiting: d.id === limiting.device?.id })),
     team,
@@ -96,7 +97,7 @@ export async function responderView(key: string) {
       tier: risk.tier,
       livesAlone: h.livesAlone,
       canLeaveUnassisted: h.canLeaveUnassisted,
-      accessNotes: h.accessNotes,
+      accessNotes: open(h.accessNotes),
     }),
   };
 }

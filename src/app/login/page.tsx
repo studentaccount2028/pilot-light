@@ -1,4 +1,5 @@
 // AI-assisted: written with Claude Code from the team's build spec.
+import { safeNextPath } from "@/lib/security/paths";
 import Link from "next/link";
 import { LoginForm } from "@/components/LoginForm";
 import { PhoneStage } from "@/components/Phone";
@@ -18,7 +19,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ n
           <div className="space-y-4">
             <h1 className="title-xl">Signed in</h1>
             <p className="text-[15px] text-ink-2">You are signed in as {user.email}.</p>
-            <Link href={next && next.startsWith("/") ? next : "/"} className="btn btn-primary h-12 w-full">
+            <Link href={safeNextPath(next) ?? "/"} className="btn btn-primary h-12 w-full">
               Continue
             </Link>
           </div>

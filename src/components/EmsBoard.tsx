@@ -84,8 +84,9 @@ function urgencyOf(i: Incident, ms: number | null): { text: string; tone: string
 
 // What a dispatcher or crew lead looks at: every shared household in an
 // outage, worst first, with what they need to know before they roll.
-export function EmsBoard({ adminKey }: { adminKey: string }) {
-  const headers = useMemo(() => ({ "x-admin-token": adminKey }), [adminKey]);
+export function EmsBoard() {
+  // Signed in by cookie (staff account or administrator); nothing secret travels in the page.
+  const headers = useMemo(() => ({}), []);
   const { data, error, stale, reload, fetchedAt } = usePoll<BoardDto>("/api/ems", 3000, headers);
   const nowMs = useAppClock(data ? { now: data.now, multiplier: data.multiplier, replayActive: data.replayActive, replayHouseholdId: null } : undefined, fetchedAt);
   const [selected, setSelected] = useState<string | null>(null);

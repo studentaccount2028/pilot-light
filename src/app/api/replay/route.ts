@@ -6,6 +6,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { db } from "@/db/client";
 import { contacts, households } from "@/db/schema";
 import { isAdmin } from "@/lib/admin";
+import { audit } from "@/lib/security/audit";
 import { getClock } from "@/lib/clock";
 import { evaluateHousehold, tick } from "@/lib/engine/tick";
 import { recordHeartbeat } from "@/lib/heartbeat";
@@ -73,5 +74,6 @@ export const POST = handle(async (req: NextRequest) => {
   } else {
     return bad("Unknown action.");
   }
+  await audit(req, { action: "replay.control", actor: "admin", householdId: isUuid(body.householdId) ? body.householdId : null, detail: String(body.action) });
   return NextResponse.json(await snapshot(body.householdId ?? null));
 });

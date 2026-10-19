@@ -594,6 +594,26 @@ export function HouseholdForm({ id }: { id?: string }) {
       </section>
       )}
 
+      {id && step === LAST && (
+        <section className="mt-10 border-t border-line pt-6">
+          <h2 className="text-[16px] font-semibold">Delete this household</h2>
+          <p className="mt-1 text-[14px] leading-snug text-muted">Removes the household and everything about it: devices, contacts, check-ins, alerts and history. This can&apos;t be undone.</p>
+          <button
+            type="button"
+            className="btn mt-3 h-11 !border-danger/40 !text-danger"
+            onClick={async () => {
+              if (!window.confirm("Delete this household and all of its information? This can't be undone.")) return;
+              const res = await fetch(`/api/households/${id}`, { method: "DELETE" });
+              const json = await res.json().catch(() => ({}));
+              if (!res.ok) return window.alert(json.error ?? "Could not delete the household.");
+              window.location.assign("/");
+            }}
+          >
+            Delete household
+          </button>
+        </section>
+      )}
+
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-bg/90 px-5 pb-[calc(env(safe-area-inset-bottom)+12px)] pt-3 sm:pb-6">
         <div className="mx-auto flex max-w-[400px] gap-3">
           {step > 0 ? (

@@ -11,8 +11,8 @@ test("emails are trimmed, lowercased and checked", () => {
 });
 
 test("an unowned household is open by link; an owned one is its owner's or the admin's", () => {
-  const me = { id: "u1", email: "me@example.com" };
-  const other = { id: "u2", email: "other@example.com" };
+  const me = { id: "u1", email: "me@example.com", role: "member" as const, staffTown: null };
+  const other = { id: "u2", email: "other@example.com", role: "member" as const, staffTown: null };
   assert.equal(canAccess({ ownerUserId: null }, null), true);
   assert.equal(canAccess({ ownerUserId: "u1" }, me), true);
   assert.equal(canAccess({ ownerUserId: "u1" }, other), false);

@@ -14,6 +14,7 @@ export interface QueuedWrite {
   url: string;
   method: string;
   body: Record<string, unknown>;
+  headers?: Record<string, string>;
   queuedAt: string;
 }
 
@@ -51,13 +52,13 @@ async function enqueue(write: QueuedWrite) {
 }
 
 async function post(write: QueuedWrite): Promise<Response> {
-  return fetch(write.url, { method: write.method, headers: { "Content-Type": "application/json" }, body: JSON.stringify(write.body) });
+  return fetch(write.url, { method: write.method, headers: { "Content-Type": "application/json", ...write.headers }, body: JSON.stringify(write.body) });
 }
 
 // Send now; if the network is down, keep it for later. Returns "sent" or
 // "queued", or throws when the server itself rejected the write.
-export async function sendOrQueue(url: string, method: string, body: Record<string, unknown>): Promise<"sent" | "queued"> {
-  const write: QueuedWrite = { url, method, body, queuedAt: new Date().toISOString() };
+export async function sendOrQueue(url: string, method: string, body: Record<string, unknown>, headers?: Record<string, string>): Promise<"sent" | "queued"> {
+  const write: QueuedWrite = { url, method, body, headers, queuedAt: new Date().toISOString() };
   let res: Response;
   try {
     res = await post(write);
@@ -99,12 +100,14 @@ export async function flushQueue(): Promise<void> {
   }
 }
 
-// Tells the service worker which household this phone speaks for.
-export async function setHeartbeatHousehold(householdId: string | null) {
+// Tells the service worker which household this phone speaks for, and its house-phone token.
+export async function setHeartbeatHousehold(householdId: string | null, token: string | null = null) {
   try {
     const d = await idb();
     if (householdId) await d.put(CONFIG_STORE, householdId, "heartbeatHouseholdId");
     else await d.delete(CONFIG_STORE, "heartbeatHouseholdId");
+    if (householdId && token) await d.put(CONFIG_STORE, token, "heartbeatToken");
+    else await d.delete(CONFIG_STORE, "heartbeatToken");
   } catch {
     // ignore
   }

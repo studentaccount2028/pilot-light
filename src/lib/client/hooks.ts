@@ -87,7 +87,7 @@ async function batteryPct(): Promise<number | null> {
 // Heartbeat from the phone that lives at the household: every 5 minutes while
 // this page is open, plus a 15-minute background sync where the browser allows
 // it (Chrome on Android, installed). iOS Safari does not run it in the background.
-export function useHeartbeat(householdId: string, enabled: boolean) {
+export function useHeartbeat(householdId: string, enabled: boolean, token: string | null = null) {
   const [lastResult, setLastResult] = useState<"sent" | "queued" | "paused" | null>(null);
   useEffect(() => {
     if (!enabled) {
@@ -95,11 +95,11 @@ export function useHeartbeat(householdId: string, enabled: boolean) {
       setLastResult(null);
       return;
     }
-    setHeartbeatHousehold(householdId);
+    setHeartbeatHousehold(householdId, token);
     let cancelled = false;
     const beat = async () => {
       try {
-        const res = await sendOrQueue("/api/heartbeat", "POST", { household_id: householdId, battery_pct: await batteryPct(), at: new Date().toISOString() });
+        const res = await sendOrQueue("/api/heartbeat", "POST", { household_id: householdId, battery_pct: await batteryPct(), at: new Date().toISOString() }, token ? { Authorization: `Bearer ${token}` } : undefined);
         if (!cancelled) setLastResult(res);
       } catch {
         if (!cancelled) setLastResult("paused");
@@ -121,6 +121,6 @@ export function useHeartbeat(householdId: string, enabled: boolean) {
       cancelled = true;
       clearInterval(t);
     };
-  }, [householdId, enabled]);
+  }, [householdId, enabled, token]);
   return lastResult;
 }

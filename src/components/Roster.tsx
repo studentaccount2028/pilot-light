@@ -46,8 +46,8 @@ function describe(r: Row): { text: string; tone: string; pin: string; urgent: bo
 
 // What a town coordinator looks at during a storm: opted-in households, the
 // most urgent first, with a way to record that someone has checked.
-export function Roster({ town, adminKey }: { town: string; adminKey: string }) {
-  const headers = useMemo(() => ({ "x-admin-token": adminKey }), [adminKey]);
+export function Roster({ town }: { town: string }) {
+  const headers = useMemo(() => ({}), []);
   const url = `/api/town/${encodeURIComponent(town)}`;
   const { data, error, stale, reload } = usePoll<RosterDto>(url, 3000, headers);
   const [busy, setBusy] = useState<string | null>(null);

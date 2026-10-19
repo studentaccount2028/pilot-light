@@ -10,7 +10,7 @@ export function promptState(state: Pick<HouseholdState, "promptAlertId" | "promp
   return state.promptConfirmedAt ? "confirmed" : "no_reply";
 }
 
-export function riskFor(household: Household, state: HouseholdState | null | undefined, devices: Device[], alertId: string | null | undefined, now: Date): Risk & { prompt: PromptState } {
+export function riskFor(household: Omit<Household, "heartbeatTokenHash">, state: HouseholdState | null | undefined, devices: Device[], alertId: string | null | undefined, now: Date): Risk & { prompt: PromptState } {
   const prompt = promptState(state, alertId);
   const risk = computeRisk({
     residentName: household.residentName,

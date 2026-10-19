@@ -1,6 +1,7 @@
 // AI-assisted: written with Claude Code from the team's build spec.
 // Saving and reading a household profile. Bad input fails the save with a
 // message the form can show; nothing half-saves.
+import { open, seal } from "./security/fieldCrypto";
 import { and, desc, eq, ilike, inArray, notInArray } from "drizzle-orm";
 import { db } from "../db/client";
 import {
@@ -183,7 +184,8 @@ async function validate(input: HouseholdInput) {
       livesAlone: yesNo(input.livesAlone),
       canLeaveUnassisted: yesNo(input.canLeaveUnassisted),
       canReachBackup: yesNo(input.canReachBackup),
-      accessNotes: typeof input.accessNotes === "string" && input.accessNotes.trim() ? input.accessNotes.trim().slice(0, 300) : null,
+      // encrypted at rest: how to get into the house
+      accessNotes: seal(typeof input.accessNotes === "string" && input.accessNotes.trim() ? input.accessNotes.trim().slice(0, 300) : null),
     },
     deviceRows,
     contactRows,
@@ -230,7 +232,13 @@ export async function getHousehold(id: string) {
     db.select().from(devices).where(eq(devices.householdId, id)).orderBy(devices.label),
     db.select().from(contacts).where(eq(contacts.householdId, id)).orderBy(contacts.priority),
   ]);
-  return { household: { ...household, residentAge: ageFromBirthYear(household.residentBirthYear, new Date()) }, devices: deviceRows, contacts: contactRows };
+  // The house-phone token hash never leaves the server; entry notes are decrypted for the people allowed here.
+  const { heartbeatTokenHash, ...visible } = household;
+  return {
+    household: { ...visible, accessNotes: open(household.accessNotes), housePhonePaired: Boolean(heartbeatTokenHash), residentAge: ageFromBirthYear(household.residentBirthYear, new Date()) },
+    devices: deviceRows,
+    contacts: contactRows,
+  };
 }
 
 // Everything the status screen shows, in one read.

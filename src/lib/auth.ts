@@ -15,7 +15,7 @@ import { isAdminStrict } from "./admin";
 import { publicBaseUrl } from "./twilio";
 
 export const SESSION_COOKIE = "pl_session";
-const SESSION_DAYS = 90;
+const SESSION_DAYS = 30;
 const LINK_MINUTES = 15;
 
 const hash = (s: string) => createHash("sha256").update(s).digest("hex");
@@ -88,12 +88,14 @@ export async function endSession(raw: string | undefined) {
 export interface CurrentUser {
   id: string;
   email: string;
+  role: "member" | "ems" | "coordinator" | "admin";
+  staffTown: string | null;
 }
 
 async function userForCookie(raw: string | undefined): Promise<CurrentUser | null> {
   if (!raw) return null;
   const [row] = await db
-    .select({ id: users.id, email: users.email })
+    .select({ id: users.id, email: users.email, role: users.role, staffTown: users.staffTown })
     .from(sessions)
     .innerJoin(users, eq(users.id, sessions.userId))
     .where(and(eq(sessions.tokenHash, hash(raw)), gt(sessions.expiresAt, new Date())));

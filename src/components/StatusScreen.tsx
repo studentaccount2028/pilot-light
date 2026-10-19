@@ -42,14 +42,43 @@ export function StatusScreen({ id }: { id: string }) {
   // Only the phone that stays at the household should send heartbeats. A
   // relative checking from another town must not make the house look "alive".
   const [isHousePhone, setIsHousePhone] = useState(false);
+  const [housePhoneToken, setHousePhoneToken] = useState<string | null>(null);
+  const [pairError, setPairError] = useState<string | null>(null);
+  // Pairing issues this phone a secret the server checks on every heartbeat (src/lib/housePhone.ts).
+  async function pairHousePhone(on: boolean) {
+    setPairError(null);
+    try {
+      if (on) {
+        const res = await fetch(`/api/households/${id}/house-phone`, { method: "POST" });
+        const json = await res.json().catch(() => ({}));
+        if (!res.ok || !json.token) throw new Error(json.error ?? "Could not pair this phone.");
+        localStorage.setItem(`pl:hbt:${id}`, json.token);
+        setHousePhoneToken(json.token);
+      } else {
+        await fetch(`/api/households/${id}/house-phone`, { method: "DELETE" }).catch(() => {});
+        localStorage.removeItem(`pl:hbt:${id}`);
+        setHousePhoneToken(null);
+      }
+      localStorage.setItem(`pl:hb:${id}`, on ? "1" : "0");
+      setIsHousePhone(on);
+    } catch (err) {
+      setPairError(err instanceof Error ? err.message : "Could not pair this phone.");
+    }
+  }
   useEffect(() => {
     try {
-      setIsHousePhone(localStorage.getItem(`pl:hb:${id}`) === "1");
+      const on = localStorage.getItem(`pl:hb:${id}`) === "1";
+      const token = localStorage.getItem(`pl:hbt:${id}`);
+      setIsHousePhone(on);
+      setHousePhoneToken(token);
+      // A house phone from before pairing existed: pair it now.
+      if (on && !token) pairHousePhone(true);
     } catch {
       // storage blocked
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
-  const beat = useHeartbeat(id, isHousePhone);
+  const beat = useHeartbeat(id, isHousePhone, housePhoneToken);
 
   useEffect(() => {
     if (data) rememberHousehold(data.household.id, data.household.label);
@@ -109,16 +138,10 @@ export function StatusScreen({ id }: { id: string }) {
               type="checkbox"
               className="switch"
               checked={isHousePhone}
-              onChange={(e) => {
-                setIsHousePhone(e.target.checked);
-                try {
-                  localStorage.setItem(`pl:hb:${id}`, e.target.checked ? "1" : "0");
-                } catch {
-                  // storage blocked: the setting lasts until this page closes
-                }
-              }}
+              onChange={(e) => pairHousePhone(e.target.checked)}
             />
           </label>
+          {pairError && <p className="mt-3 text-[14px] text-danger">{pairError}</p>}
           {isHousePhone && (
             <p className="mt-3 flex items-center gap-2 text-[14px] font-semibold text-ok">
               <span className="h-2 w-2 animate-breathe rounded-full bg-ok" />

@@ -3,7 +3,8 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { db } from "@/db/client";
 import { households } from "@/db/schema";
-import { isAdmin } from "@/lib/admin";
+import { audit } from "@/lib/security/audit";
+import { actorOf, canSeeEms, staffFromRequest } from "@/lib/staff";
 import { isEmsStatus, recordEms } from "@/lib/ems";
 import { isUuid } from "@/lib/households";
 import { bad, handle } from "@/lib/http";
@@ -14,7 +15,7 @@ type Ctx = { params: Promise<{ id: string }> };
 const short = (v: unknown, max: number) => (typeof v === "string" && v.trim() ? v.trim().slice(0, max) : null);
 
 export const GET = handle(async (req: NextRequest, { params }: Ctx) => {
-  if (!isAdmin(req)) return bad("Not authorized.", 401);
+  if (!canSeeEms(await staffFromRequest(req))) return bad("Not authorized.", 401);
   const id = (await params).id;
   if (!isUuid(id)) return bad("Unknown household.", 404);
   const [h] = await db.select({ lat: households.lat, lng: households.lng }).from(households).where(and(eq(households.id, id), eq(households.shareWithTown, true)));
@@ -23,12 +24,14 @@ export const GET = handle(async (req: NextRequest, { params }: Ctx) => {
 });
 
 export const POST = handle(async (req: NextRequest, { params }: Ctx) => {
-  if (!isAdmin(req)) return bad("Not authorized.", 401);
+  const staff = await staffFromRequest(req);
+  if (!canSeeEms(staff)) return bad("Not authorized.", 401);
   const id = (await params).id;
   if (!isUuid(id)) return bad("Unknown household.", 404);
   const body = await req.json();
   if (!isEmsStatus(body.status)) return bad("Choose a status.");
   const result = await recordEms({ householdId: id, status: body.status, unit: short(body.unit, 60), note: short(body.note, 300) });
   if ("error" in result) return bad(result.error, 409);
+  await audit(req, { action: "ems.status_updated", actor: actorOf(staff!), householdId: id, detail: `${body.status}${body.unit ? ` · ${short(body.unit, 60)}` : ""}` });
   return NextResponse.json(result);
 });

@@ -3,6 +3,7 @@
 // help, most urgent first, with what a crew needs before they roll (mobility,
 // devices, how to get in, which neighbor is already there). EMS status
 // updates are logged to the household so the family and neighbors see them.
+import { open } from "./security/fieldCrypto";
 import { and, desc, eq, inArray } from "drizzle-orm";
 import { db } from "../db/client";
 import { alertsSent, contacts, devices, emsStatusEnum, emsUpdates, householdState, households, type EmsStatus } from "../db/schema";
@@ -104,7 +105,7 @@ export async function emsBoard() {
         livesAlone: h.livesAlone,
         canLeaveUnassisted: h.canLeaveUnassisted,
       },
-      accessNotes: h.accessNotes,
+      accessNotes: open(h.accessNotes),
       devices: mine.map((d) => ({ type: d.type, label: d.label, backupHours: d.backupHours, limiting: d.id === limiting.device?.id })),
       responders: contactRows
         .filter((c) => c.householdId === h.id)

@@ -5,13 +5,13 @@ import { accessFromCookies } from "@/lib/gate";
 
 export const dynamic = "force-dynamic";
 
-export default async function Page({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ from?: string; key?: string }> }) {
+export default async function Page({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ from?: string }> }) {
   const { id } = await params;
-  const { from, key } = await searchParams;
+  const { from } = await searchParams;
   const access = await accessFromCookies(id);
   if (access !== "ok") return <Gate state={access} next={`/h/${id}`} />;
   // Opened from the storm replay: offer the way back.
-  const exitHref = from === "replay" ? `/replay${key ? `?key=${encodeURIComponent(key)}` : ""}` : undefined;
+  const exitHref = from === "replay" ? "/replay" : undefined;
   return (
     <>
       {exitHref && <ExitFullScreen href={exitHref} />}
