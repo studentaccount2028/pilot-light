@@ -17,6 +17,7 @@ const csp = [
   "base-uri 'self'",
   "form-action 'self'",
   "object-src 'none'",
+  "report-uri /api/csp-report",
   // only meaningful when enforced (browsers ignore it in report-only mode)
   ...(process.env.CSP_ENFORCE === "1" ? ["upgrade-insecure-requests"] : []),
 ].join("; ");

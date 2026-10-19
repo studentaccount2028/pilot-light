@@ -1,5 +1,5 @@
 // AI-assisted: written with Claude Code from the team's build spec.
-import { limited } from "@/lib/security/rateLimit";
+import { limitedShared } from "@/lib/security/rateLimit";
 import { safeNextPath } from "@/lib/security/paths";
 import { NextResponse, type NextRequest } from "next/server";
 import { emailMode, normalizeEmail, requestLogin } from "@/lib/auth";
@@ -8,7 +8,7 @@ import { bad, handle } from "@/lib/http";
 const recent = new Map<string, number>();
 
 export const POST = handle(async (req: NextRequest) => {
-  const slow = limited(req, "loginRequest");
+  const slow = await limitedShared(req, "loginRequest");
   if (slow) return slow;
   const body = await req.json();
   const email = normalizeEmail(body.email);

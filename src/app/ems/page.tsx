@@ -2,12 +2,13 @@
 import type { Metadata } from "next";
 import { EmsBoard } from "@/components/EmsBoard";
 import { Locked } from "@/components/Locked";
-import { canSeeEms, staffFromCookies } from "@/lib/staff";
+import { canSeeEms, staffAccess } from "@/lib/staff";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "EMS · Pilot Light", robots: { index: false, follow: false } };
 
 export default async function Page() {
-  if (!canSeeEms(await staffFromCookies())) return <Locked what="The EMS board" next="/ems" />;
+  const { staff, need, email } = await staffAccess();
+  if (!canSeeEms(staff)) return <Locked what="The EMS board" next="/ems" need={staff ? "signin" : need} email={email} />;
   return <EmsBoard />;
 }

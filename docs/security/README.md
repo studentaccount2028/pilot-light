@@ -14,4 +14,7 @@
 | [pilot-mou-draft.md](pilot-mou-draft.md) | A fire department | DRAFT pilot agreement |
 | [grant-narrative-draft.md](grant-narrative-draft.md) | Grant applications | DRAFT project narrative and budget |
 
-Security tests: `tests/security.test.ts` (run `npm test`).
+Checks you can run:
+- `npm test`: unit tests, including `tests/security.test.ts`
+- `npx tsx scripts/e2e-security.ts`: 38 end-to-end attack and access checks against a running server and test database
+- `npx tsx scripts/preflight.ts <env file>`: production readiness before a deploy

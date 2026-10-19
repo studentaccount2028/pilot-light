@@ -17,12 +17,12 @@
 **Access control**
 - Authentication: one-time email sign-in links (no passwords); staff roles granted by the administrator; administrator access by a signed 12-hour session.
 - Authorization: role-based (member / coordinator / EMS / admin), checked on every API request; tested in `tests/security.test.ts`.
-- MFA: email-link sign-in is single-factor for families. **Planned:** passkeys or a second factor for EMS and administrator accounts; MFA on all provider accounts now.
-- Logging: audit log of sensitive views and changes (who, what, when, hashed IP).
+- MFA: **required for all staff accounts** (authenticator app, re-verified every 12 hours, replay-protected). Families sign in with one-time email links; passkeys planned. MFA on all provider accounts.
+- Logging and monitoring: audit log of sensitive views and changes (who, what, when, hashed IP), with a daily automated review that emails the team about anomalies.
 
 **Application security**
-- Secure development: code review, typecheck, lint and an automated test suite on every change, including security tests.
-- Vulnerability management: `npm audit` reviewed; findings fixed or documented with reasoning ([accepted-risks.md](accepted-risks.md)). **Planned:** Dependabot, quarterly review.
+- Secure development: typecheck, lint and 57 automated tests on every push (GitHub Actions), GitHub CodeQL scanning, and a 38-check end-to-end security test against a real database before releases.
+- Vulnerability management: Dependabot weekly; `npm audit` in CI; findings fixed or documented with reasoning ([accepted-risks.md](accepted-risks.md)).
 - Penetration testing: **Planned** before the pilot holds real resident data.
 - Protections: rate limiting, CSP and security headers, webhook signature verification, safe redirects, output escaping.
 

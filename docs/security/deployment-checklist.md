@@ -9,13 +9,17 @@
 | `AUDIT_IP_SALT` | Salt for hashed IP addresses in the audit log. | `openssl rand -hex 16` |
 | `CRON_SECRET` | Protects the scheduled job. | `openssl rand -hex 32` |
 | `TWILIO_AUTH_TOKEN` | Required: webhooks are rejected in production without it. | Twilio console |
-| `CSP_ENFORCE` | Set to `1` once a week of CSP reports is clean. | — |
+| `CSP_ENFORCE` | Set to `1` once a week of CSP reports (`[csp]` lines in the logs) is clean. | — |
+| `SECURITY_ALERT_EMAIL` | Where the daily security check sends findings (needs `RESEND_API_KEY` and `RESEND_FROM`). | Your email |
+| `DATABASE_SSL` | `require` to force an encrypted, certificate-checked database connection (or put `sslmode=require` in the URL). | — |
 | `DATABASE_URL` | Must use TLS: include `sslmode=require` unless the host enforces it. | Database host |
 
 ## 2. Database
 1. `npm run db:migrate` (adds staff roles, house-phone tokens and the audit log; additive only).
 2. `npx tsx scripts/encrypt-existing.ts` (encrypts entry notes saved before encryption).
-3. Grant staff access: `npx tsx scripts/grant-role.ts <email> ems` (or `coordinator <town>`).
+3. Grant staff access: `npx tsx scripts/grant-role.ts <email> ems` (or `coordinator <town>`). At first sign-in they set up an authenticator app. Lost phone: `npx tsx scripts/grant-role.ts <email> --reset-2fa`.
+4. Check everything: `vercel env pull .env.production.local && npx tsx scripts/preflight.ts .env.production.local`. Deploy only when it says "Ready to deploy."
+5. Optional, against a copy of the database or a test project: `BASE_URL=... npx tsx scripts/e2e-security.ts` (38 checks; creates and deletes test accounts).
 
 ## 3. After deploying
 - Existing house phones re-pair themselves the next time their page is open (owned households). Check each one shows "checking in".

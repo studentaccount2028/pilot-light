@@ -12,7 +12,10 @@ function init(): Db {
   if (!g.__plDb) {
     const url = process.env.DATABASE_URL;
     if (!url) throw new Error("DATABASE_URL is not set. Copy .env.example to .env.local.");
-    g.__plPool = new Pool({ connectionString: url, max: 10 });
+    // DATABASE_SSL=require: encrypted connection with the server's certificate checked.
+    // (A URL with sslmode=require already turns TLS on.)
+    const ssl = process.env.DATABASE_SSL === "require" ? { rejectUnauthorized: true } : undefined;
+    g.__plPool = new Pool({ connectionString: url, max: 10, ...(ssl ? { ssl } : {}) });
     g.__plDb = drizzle(g.__plPool, { schema });
   }
   return g.__plDb;

@@ -254,6 +254,10 @@ export const users = pgTable("users", {
   email: text("email").notNull().unique(),
   role: userRoleEnum("role").notNull().default("member"),
   staffTown: text("staff_town"),
+  // Two-factor (authenticator app), required for staff roles. Secrets are encrypted at rest.
+  totpSecret: text("totp_secret"),
+  totpPendingSecret: text("totp_pending_secret"),
+  totpLastStep: integer("totp_last_step"), // last code used, so a code can't be replayed
   createdAt: ts("created_at").notNull().defaultNow(),
 });
 
@@ -265,6 +269,8 @@ export const sessions = pgTable(
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
     expiresAt: ts("expires_at").notNull(),
+    // When this session passed the second factor. Staff access needs it within the last 12 hours.
+    mfaAt: ts("mfa_at"),
     createdAt: ts("created_at").notNull().defaultNow(),
   },
   (t) => [index("sessions_user").on(t.userId)],
@@ -353,3 +359,10 @@ export const auditLog = pgTable(
   },
   (t) => [index("audit_household_at").on(t.householdId, t.at), index("audit_at").on(t.at)],
 );
+
+// Rate-limit counters shared by every server instance (src/lib/security/rateLimit.ts, hitShared).
+export const rateLimits = pgTable("rate_limits", {
+  key: text("key").primaryKey(),
+  windowStart: ts("window_start").notNull(),
+  count: integer("count").notNull(),
+});

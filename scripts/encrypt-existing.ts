@@ -1,7 +1,7 @@
 // AI-assisted: written with Claude Code from the team's security plan.
 // One-time: encrypt entry notes saved before field encryption was turned on.
 // Run after setting FIELD_ENCRYPTION_KEY:  npx tsx scripts/encrypt-existing.ts
-import "dotenv/config";
+import "./_env";
 import { eq, isNotNull } from "drizzle-orm";
 import { db } from "../src/db/client";
 import { households } from "../src/db/schema";

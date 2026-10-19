@@ -5,12 +5,12 @@ import { NextResponse, type NextRequest } from "next/server";
 import { ADMIN_COOKIE, adminConfigured, adminCookieOptions, adminCookieValue, tokenMatches } from "@/lib/admin";
 import { bad, handle } from "@/lib/http";
 import { audit } from "@/lib/security/audit";
-import { limited } from "@/lib/security/rateLimit";
+import { limitedShared } from "@/lib/security/rateLimit";
 
 export const dynamic = "force-dynamic";
 
 export const POST = handle(async (req: NextRequest) => {
-  const slow = limited(req, "staffSignIn");
+  const slow = await limitedShared(req, "staffSignIn");
   if (slow) return slow;
   if (!adminConfigured() && process.env.NODE_ENV === "production") return bad("Administrator sign-in is not configured.", 503);
   const body = await req.json();

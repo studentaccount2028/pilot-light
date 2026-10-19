@@ -31,6 +31,8 @@ Method: walk each way information enters or leaves the system, ask who would wan
 | T13 | Data kept after a family stops using the service | Info disclosure | One-tap delete cascades to all records | `DELETE /api/households/[id]` |
 | T14 | Vulnerable dependency | Tampering | `npm audit` reviewed; unreachable findings documented; Dependabot recommended | [accepted-risks.md](accepted-risks.md) |
 | T15 | Outage of a provider (Twilio, hosting) during a storm | DoS | Phone schedules its own 2-hour and zero alerts offline (iOS); retries for undelivered alerts; documented in incident response | `src/lib/native.ts`, alert retries |
+| T16 | A staff member's email account is taken over, giving the attacker sign-in links | Spoofing / Elevation | Staff roles require an authenticator code every 12 hours (replay-protected, rate limited in the database); lost phones reset only by the administrator | `src/lib/security/totp.ts`, `/api/staff/mfa` |
+| T17 | Slow, quiet abuse goes unnoticed | Repudiation | Daily automated review of the audit log (failed sign-ins and codes, heavy EMS viewing, forwarded responder links) emailed to the team | `src/lib/security/maintenance.ts` |
 
 ## Review
 

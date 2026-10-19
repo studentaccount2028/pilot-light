@@ -11,6 +11,7 @@ import { isSealed, open, seal } from "../src/lib/security/fieldCrypto";
 import { safeNextPath } from "../src/lib/security/paths";
 import { hit, LIMITS, resetLimits } from "../src/lib/security/rateLimit";
 import { canRunReplay, canSeeEms, canSeeTown, staffFor } from "../src/lib/staff";
+import { base32Encode, otpauthUri, totpAt, verifyTotp } from "../src/lib/security/totp";
 
 process.env.FIELD_ENCRYPTION_KEY = randomBytes(32).toString("base64");
 process.env.ADMIN_TOKEN = "correct-horse-battery-staple";
@@ -64,8 +65,8 @@ test("the admin cookie proves the token without containing it, and expires", () 
 });
 
 test("roles: EMS sees the board, a coordinator only their town, only the admin runs the replay", () => {
-  const ems = staffFor({ id: "1", email: "medic@pafd.org", role: "ems", staffTown: null }, false);
-  const coord = staffFor({ id: "2", email: "c@ossipee.org", role: "coordinator", staffTown: "Ossipee" }, false);
+  const ems = staffFor({ id: "1", email: "medic@pafd.org", role: "ems", staffTown: null, mfaFresh: true }, false);
+  const coord = staffFor({ id: "2", email: "c@ossipee.org", role: "coordinator", staffTown: "Ossipee", mfaFresh: true }, false);
   const family = staffFor({ id: "3", email: "f@example.com", role: "member", staffTown: null }, false);
   const admin = staffFor(null, true);
   assert.ok(canSeeEms(ems) && canSeeEms(admin));
@@ -73,7 +74,8 @@ test("roles: EMS sees the board, a coordinator only their town, only the admin r
   assert.ok(canSeeTown(coord, "ossipee") && !canSeeTown(coord, "Tamworth"));
   assert.ok(!canSeeTown(family, "Ossipee") && !canSeeTown(null, "Ossipee"));
   assert.ok(canRunReplay(admin) && !canRunReplay(ems) && !canRunReplay(coord));
-  assert.equal(staffFor({ id: "4", email: "x@y.z", role: "coordinator", staffTown: null }, false), null, "a coordinator without a town gets nothing");
+  assert.equal(staffFor({ id: "4", email: "x@y.z", role: "coordinator", staffTown: null, mfaFresh: true }, false), null, "a coordinator without a town gets nothing");
+  assert.equal(staffFor({ id: "5", email: "medic@pafd.org", role: "ems", staffTown: null, mfaFresh: false }, false), null, "no staff access until the authenticator code is entered");
 });
 
 test("heartbeats need the house phone's token; a fake one can't silence an outage", () => {
@@ -105,4 +107,20 @@ test("every page sends the security headers; personal pages are never cached", a
   assert.ok(all.some((h) => /Content-Security-Policy/.test(h.key) && /frame-ancestors 'none'/.test(h.value)));
   const responder = rules.find((r) => r.source === "/r/:path*")!.headers;
   assert.ok(responder.some((h) => h.key === "Cache-Control" && h.value === "no-store"));
+});
+
+test("authenticator codes match the RFC 6238 standard and can't be replayed", () => {
+  // RFC 6238 appendix B: secret "12345678901234567890", T = 59 s, SHA-1 -> 94287082 (6 digits: 287082)
+  const secret = base32Encode(Buffer.from("12345678901234567890"));
+  assert.equal(secret, "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ");
+  assert.equal(totpAt(secret, 1), "287082");
+  // T = 1111111109 -> 07081804
+  assert.equal(totpAt(secret, Math.floor(1111111109 / 30)), "081804");
+  const now = 1111111109_000;
+  const step = verifyTotp(secret, "081804", now);
+  assert.equal(step, Math.floor(1111111109 / 30));
+  assert.equal(verifyTotp(secret, "081804", now, step), null, "the same code can't be used twice");
+  assert.equal(verifyTotp(secret, "000000", now), null);
+  assert.equal(verifyTotp(secret, "12345", now), null);
+  assert.match(otpauthUri("medic@pafd.org", secret), /^otpauth:\/\/totp\/Pilot%20Light%3Amedic%40pafd\.org\?secret=GEZD/);
 });

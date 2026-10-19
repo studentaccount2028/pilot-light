@@ -90,16 +90,24 @@ export interface CurrentUser {
   email: string;
   role: "member" | "ems" | "coordinator" | "admin";
   staffTown: string | null;
+  // Second factor: whether the account has an authenticator set up, and whether this session passed it recently.
+  totpEnabled?: boolean;
+  mfaFresh?: boolean;
+  sessionHash?: string;
 }
+
+export const MFA_HOURS = 12;
 
 async function userForCookie(raw: string | undefined): Promise<CurrentUser | null> {
   if (!raw) return null;
   const [row] = await db
-    .select({ id: users.id, email: users.email, role: users.role, staffTown: users.staffTown })
+    .select({ id: users.id, email: users.email, role: users.role, staffTown: users.staffTown, totpSecret: users.totpSecret, mfaAt: sessions.mfaAt })
     .from(sessions)
     .innerJoin(users, eq(users.id, sessions.userId))
     .where(and(eq(sessions.tokenHash, hash(raw)), gt(sessions.expiresAt, new Date())));
-  return row ?? null;
+  if (!row) return null;
+  const { totpSecret, mfaAt, ...user } = row;
+  return { ...user, totpEnabled: Boolean(totpSecret), mfaFresh: Boolean(totpSecret && mfaAt && Date.now() - mfaAt.getTime() < MFA_HOURS * 3_600_000), sessionHash: hash(raw) };
 }
 
 // In a route handler.
