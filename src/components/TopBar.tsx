@@ -13,7 +13,7 @@ export function Wordmark() {
 
 export function TopBar({ wide = false }: { wide?: boolean }) {
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-bg print:hidden">
+    <header className="sticky top-0 z-40 border-b border-line bg-bg pt-[env(safe-area-inset-top)] print:hidden">
       <div className={`mx-auto flex h-14 items-center justify-between gap-3 px-5 ${wide ? "max-w-6xl" : "max-w-[440px]"}`}>
         <Wordmark />
       </div>

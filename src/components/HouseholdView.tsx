@@ -18,6 +18,7 @@ import { ResponderCard } from "./ResponderCard";
 import { scrollAppToTop } from "./Phone";
 import { RiskCard, TierChip } from "./RiskCard";
 import { StatusBand, summarize, TONE_COLOR } from "./StatusCard";
+import { scheduleBackupAlerts } from "@/lib/native";
 
 const TABS = [
   { key: "home", label: "Home", icon: IconHome },
@@ -76,6 +77,14 @@ export function HouseholdView({
       cancelled = true;
     };
   }, [householdId, placesKey]);
+  // In the iOS app: the phone schedules its own 2-hour and zero reminders for this countdown, so they
+  // fire even if the app is closed. (Not inside the replay console's phone frame, which is a simulation.)
+  const zeroAt = data.state?.countdownZeroAt ?? null;
+  const countingNow = data.state?.status === "probable_outage" || data.state?.status === "countdown";
+  useEffect(() => {
+    if (framed) return;
+    scheduleBackupAlerts(householdId, data.household.label, countingNow ? zeroAt : null);
+  }, [framed, householdId, data.household.label, countingNow, zeroAt]);
   const sum = summarize(data, nowMs);
   const utility = UTILITIES[data.household.utility];
   const h = data.household;
@@ -185,6 +194,7 @@ export function HouseholdView({
                   </p>
                 </div>
               )}
+              {data.race && sum.timed && <RaceBlock race={data.race} />}
               {(sum.out || sum.helped) && (
                 <a href="tel:911" className="btn btn-danger mt-4 h-11 w-full text-[15px]">
                   <IconPhone className="h-5 w-5" />
@@ -339,3 +349,31 @@ const initialsOf = (name: string) =>
     .slice(0, 2)
     .map((w) => w[0]?.toUpperCase() ?? "")
     .join("") || "?";
+
+// The race: how long the outage may last, against the shortest backup.
+function RaceBlock({ race }: { race: NonNullable<StatusDto["race"]> }) {
+  const h = (x: number) => (x < 10 ? x.toFixed(1) : Math.round(x).toString());
+  const max = Math.max(race.high, race.batteryHours) * 1.05;
+  return (
+    <div className="mt-3 rounded-lg border border-line bg-surface-2 p-3">
+      <p className="flex items-baseline justify-between gap-3">
+        <span className="text-[13px] font-medium text-muted">Outage likely lasts</span>
+        <span className="text-[20px] font-semibold tabular-nums tracking-[-0.02em]">~{h(race.predictedHours)} h</span>
+      </p>
+      <div className="mt-2 space-y-1.5" role="presentation">
+        <div className="relative h-1.5 overflow-hidden rounded-full bg-surface-3">
+          <div className="absolute inset-y-0 rounded-full bg-danger/30" style={{ left: `${(race.low / max) * 100}%`, width: `${((race.high - race.low) / max) * 100}%` }} />
+          <div className="h-full rounded-full bg-danger" style={{ width: `${(race.predictedHours / max) * 100}%` }} />
+        </div>
+        <div className="h-1.5 overflow-hidden rounded-full bg-surface-3">
+          <div className="h-full rounded-full bg-ink" style={{ width: `${(race.batteryHours / max) * 100}%` }} />
+        </div>
+      </div>
+      <p className="mt-2 text-[12px] leading-snug text-muted">
+        Backup lasts {h(race.batteryHours)} h. {race.percentOutlasts}% chance the outage outlasts it
+        (likely {h(race.low)} to {h(race.high)} h for a typical home in the county). {race.source}.
+      </p>
+    </div>
+  );
+}
+

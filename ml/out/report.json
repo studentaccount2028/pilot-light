@@ -1,0 +1,404 @@
+{
+  "rows": 833,
+  "dev_rows": 817,
+  "dev_storms": 139,
+  "holdout_storm": [
+    "2025-12-28",
+    "2025-12-29",
+    "2025-12-30"
+  ],
+  "base_rate_outage": 0.24,
+  "model_a": {
+    "Current app model (logistic, event + county + calendar + forecast)": {
+      "auc": 0.652,
+      "sd": 0.014
+    },
+    "Gradient-boosted trees, same features": {
+      "auc": 0.603,
+      "sd": 0.018
+    },
+    "Gradient-boosted trees + roadside trees (no county IDs)": {
+      "auc": 0.619,
+      "sd": 0.016
+    },
+    "Shallow gradient-boosted trees + roadside trees + county": {
+      "auc": 0.635,
+      "sd": 0.019
+    },
+    "Logistic + roadside trees (no county IDs)": {
+      "auc": 0.651,
+      "sd": 0.016
+    },
+    "During the storm: logistic + observed station weather": {
+      "auc": 0.687,
+      "sd": 0.017
+    },
+    "During the storm: gradient-boosted + observed station weather": {
+      "auc": 0.727,
+      "sd": 0.013
+    },
+    "During the storm: shallow gradient-boosted + observed weather": {
+      "auc": 0.731,
+      "sd": 0.013
+    }
+  },
+  "model_b": {
+    "Before the outage: forecast + calendar + trees": {
+      "c_index": 0.603,
+      "c_sd": 0.032,
+      "median_abs_error_factor": 2.02,
+      "auc_dark_over_4h": 0.665
+    },
+    "One hour in: + how fast the outage is spreading": {
+      "c_index": 0.696,
+      "c_sd": 0.007,
+      "median_abs_error_factor": 1.74,
+      "auc_dark_over_4h": 0.794
+    }
+  },
+  "sigma_1h": 0.814,
+  "sigma_pre": 0.926,
+  "calibration_dark_over_4h": [
+    {
+      "predicted": 0.17,
+      "observed": 0.15,
+      "n": 39
+    },
+    {
+      "predicted": 0.32,
+      "observed": 0.15,
+      "n": 39
+    },
+    {
+      "predicted": 0.49,
+      "observed": 0.51,
+      "n": 39
+    },
+    {
+      "predicted": 0.64,
+      "observed": 0.74,
+      "n": 39
+    },
+    {
+      "predicted": 0.82,
+      "observed": 0.8,
+      "n": 40
+    }
+  ],
+  "drivers_a": [
+    [
+      "duration_hours",
+      0.5341
+    ],
+    [
+      "night_onset",
+      0.4653
+    ],
+    [
+      "month_cos",
+      0.3605
+    ],
+    [
+      "month_sin",
+      0.339
+    ],
+    [
+      "roadside_canopy_pct",
+      0.3024
+    ],
+    [
+      "fc_snowIn",
+      0.2323
+    ],
+    [
+      "fc_gustMph",
+      0.2196
+    ],
+    [
+      "heavily_treed_share",
+      0.1973
+    ],
+    [
+      "ev_winter_storm",
+      0.024
+    ],
+    [
+      "ev_wind_advisory",
+      0.0219
+    ],
+    [
+      "ev_high_wind",
+      0.0
+    ],
+    [
+      "ev_blizzard_warning",
+      0.0
+    ],
+    [
+      "fc_iceIn",
+      0.0
+    ]
+  ],
+  "drivers_b": [
+    [
+      "o_growth_1h",
+      0.3648
+    ],
+    [
+      "duration_hours",
+      0.2902
+    ],
+    [
+      "o_start_hour_utc",
+      0.1415
+    ],
+    [
+      "month_sin",
+      0.0868
+    ],
+    [
+      "o_share_1h",
+      0.0857
+    ],
+    [
+      "ev_wind_advisory",
+      0.0853
+    ],
+    [
+      "fc_snowIn",
+      0.0712
+    ],
+    [
+      "fc_gustMph",
+      0.0542
+    ],
+    [
+      "month_cos",
+      0.0241
+    ],
+    [
+      "roadside_canopy_pct",
+      0.0199
+    ],
+    [
+      "night_onset",
+      0.0159
+    ],
+    [
+      "heavily_treed_share",
+      0.0109
+    ],
+    [
+      "ev_winter_storm",
+      0.0062
+    ],
+    [
+      "fc_iceIn",
+      0.0022
+    ],
+    [
+      "ev_high_wind",
+      0.0
+    ],
+    [
+      "ev_blizzard_warning",
+      0.0
+    ]
+  ],
+  "storm_backtest": [
+    {
+      "county": "Coos",
+      "event": "Wind Advisory",
+      "onset": "2025-12-30T00:00:00.000Z",
+      "p_outage_before": 0.589,
+      "predicted_dark_hours_before": 4.4,
+      "p_race_lost_before": 0.32,
+      "actual_outage": 0,
+      "actual_peak_share": 0,
+      "actual_dark_hours": 0
+    },
+    {
+      "county": "Grafton",
+      "event": "Winter Storm Warning",
+      "onset": "2025-12-29T03:00:00.000Z",
+      "p_outage_before": 0.201,
+      "predicted_dark_hours_before": 6.2,
+      "p_race_lost_before": 0.137,
+      "actual_outage": 1,
+      "actual_peak_share": 0.098,
+      "actual_dark_hours": 4.1,
+      "predicted_dark_hours_1h": 9.1,
+      "p_dark_over_battery_1h": 0.843
+    },
+    {
+      "county": "Grafton",
+      "event": "Wind Advisory",
+      "onset": "2025-12-30T00:00:00.000Z",
+      "p_outage_before": 0.615,
+      "predicted_dark_hours_before": 5.3,
+      "p_race_lost_before": 0.381,
+      "actual_outage": 1,
+      "actual_peak_share": 0.028,
+      "actual_dark_hours": 1.2,
+      "predicted_dark_hours_1h": 2.5,
+      "p_dark_over_battery_1h": 0.276
+    },
+    {
+      "county": "Carroll",
+      "event": "Winter Storm Warning",
+      "onset": "2025-12-29T03:00:00.000Z",
+      "p_outage_before": 0.196,
+      "predicted_dark_hours_before": 5.6,
+      "p_race_lost_before": 0.126,
+      "actual_outage": 1,
+      "actual_peak_share": 0.293,
+      "actual_dark_hours": 8.6,
+      "predicted_dark_hours_1h": 8.7,
+      "p_dark_over_battery_1h": 0.831
+    },
+    {
+      "county": "Carroll",
+      "event": "Wind Advisory",
+      "onset": "2025-12-30T00:00:00.000Z",
+      "p_outage_before": 0.663,
+      "predicted_dark_hours_before": 5.1,
+      "p_race_lost_before": 0.399,
+      "actual_outage": 1,
+      "actual_peak_share": 0.026,
+      "actual_dark_hours": 4.7,
+      "predicted_dark_hours_1h": 2.6,
+      "p_dark_over_battery_1h": 0.3
+    },
+    {
+      "county": "Sullivan",
+      "event": "Winter Storm Warning",
+      "onset": "2025-12-29T03:00:00.000Z",
+      "p_outage_before": 0.237,
+      "predicted_dark_hours_before": 4.8,
+      "p_race_lost_before": 0.137,
+      "actual_outage": 1,
+      "actual_peak_share": 0.294,
+      "actual_dark_hours": 5.7,
+      "predicted_dark_hours_1h": 5.3,
+      "p_dark_over_battery_1h": 0.631
+    },
+    {
+      "county": "Sullivan",
+      "event": "Wind Advisory",
+      "onset": "2025-12-30T00:00:00.000Z",
+      "p_outage_before": 0.669,
+      "predicted_dark_hours_before": 5.2,
+      "p_race_lost_before": 0.408,
+      "actual_outage": 1,
+      "actual_peak_share": 0.05,
+      "actual_dark_hours": 11.8,
+      "predicted_dark_hours_1h": 2.3,
+      "p_dark_over_battery_1h": 0.242
+    },
+    {
+      "county": "Merrimack",
+      "event": "Winter Storm Warning",
+      "onset": "2025-12-29T03:00:00.000Z",
+      "p_outage_before": 0.06,
+      "predicted_dark_hours_before": 7.1,
+      "p_race_lost_before": 0.044,
+      "actual_outage": 1,
+      "actual_peak_share": 0.042,
+      "actual_dark_hours": 1.3,
+      "predicted_dark_hours_1h": 5.9,
+      "p_dark_over_battery_1h": 0.683
+    },
+    {
+      "county": "Merrimack",
+      "event": "Wind Advisory",
+      "onset": "2025-12-30T00:00:00.000Z",
+      "p_outage_before": 0.399,
+      "predicted_dark_hours_before": 5.3,
+      "p_race_lost_before": 0.247,
+      "actual_outage": 0,
+      "actual_peak_share": 0,
+      "actual_dark_hours": 0
+    },
+    {
+      "county": "Belknap",
+      "event": "Winter Storm Warning",
+      "onset": "2025-12-29T03:00:00.000Z",
+      "p_outage_before": 0.091,
+      "predicted_dark_hours_before": 7.1,
+      "p_race_lost_before": 0.067,
+      "actual_outage": 1,
+      "actual_peak_share": 0.161,
+      "actual_dark_hours": 5.5,
+      "predicted_dark_hours_1h": 3.0,
+      "p_dark_over_battery_1h": 0.365
+    },
+    {
+      "county": "Belknap",
+      "event": "Wind Advisory",
+      "onset": "2025-12-30T00:00:00.000Z",
+      "p_outage_before": 0.499,
+      "predicted_dark_hours_before": 5.4,
+      "p_race_lost_before": 0.311,
+      "actual_outage": 1,
+      "actual_peak_share": 0.033,
+      "actual_dark_hours": 2.9,
+      "predicted_dark_hours_1h": 3.2,
+      "p_dark_over_battery_1h": 0.386
+    },
+    {
+      "county": "Strafford",
+      "event": "Wind Advisory",
+      "onset": "2025-12-30T01:24:00.000Z",
+      "p_outage_before": 0.254,
+      "predicted_dark_hours_before": 5.4,
+      "p_race_lost_before": 0.159,
+      "actual_outage": 0,
+      "actual_peak_share": 0,
+      "actual_dark_hours": 0
+    },
+    {
+      "county": "Cheshire",
+      "event": "Wind Advisory",
+      "onset": "2025-12-30T01:24:00.000Z",
+      "p_outage_before": 0.445,
+      "predicted_dark_hours_before": 3.7,
+      "p_race_lost_before": 0.208,
+      "actual_outage": 0,
+      "actual_peak_share": 0,
+      "actual_dark_hours": 0
+    },
+    {
+      "county": "Hillsborough",
+      "event": "Wind Advisory",
+      "onset": "2025-12-30T01:33:00.000Z",
+      "p_outage_before": 0.3,
+      "predicted_dark_hours_before": 3.9,
+      "p_race_lost_before": 0.147,
+      "actual_outage": 0,
+      "actual_peak_share": 0,
+      "actual_dark_hours": 0
+    },
+    {
+      "county": "Rockingham",
+      "event": "Wind Advisory",
+      "onset": "2025-12-30T01:24:00.000Z",
+      "p_outage_before": 0.262,
+      "predicted_dark_hours_before": 5.7,
+      "p_race_lost_before": 0.17,
+      "actual_outage": 0,
+      "actual_peak_share": 0,
+      "actual_dark_hours": 0
+    },
+    {
+      "county": "Hillsborough",
+      "event": "Wind Advisory",
+      "onset": "2025-12-30T01:24:00.000Z",
+      "p_outage_before": 0.267,
+      "predicted_dark_hours_before": 5.1,
+      "p_race_lost_before": 0.162,
+      "actual_outage": 0,
+      "actual_peak_share": 0,
+      "actual_dark_hours": 0
+    }
+  ]
+}

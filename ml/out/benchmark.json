@@ -1,0 +1,30 @@
+{
+  "outages": 196,
+  "storms": 61,
+  "models": {
+    "Naive baseline (median)": {
+      "c_index": 0.436,
+      "c_sd": 0.021,
+      "typical_error_factor": 2.13,
+      "auc_dark_over_4h": 0.416
+    },
+    "Linear AFT (log-normal)": {
+      "c_index": 0.591,
+      "c_sd": 0.008,
+      "typical_error_factor": 1.99,
+      "auc_dark_over_4h": 0.655
+    },
+    "Random forest": {
+      "c_index": 0.677,
+      "c_sd": 0.004,
+      "typical_error_factor": 1.91,
+      "auc_dark_over_4h": 0.769
+    },
+    "Gradient-boosted AFT (ours)": {
+      "c_index": 0.696,
+      "c_sd": 0.007,
+      "typical_error_factor": 1.74,
+      "auc_dark_over_4h": 0.794
+    }
+  }
+}

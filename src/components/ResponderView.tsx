@@ -1,5 +1,6 @@
 // AI-assisted: written with Claude Code from the team's build spec.
 "use client";
+import { tap } from "@/lib/native";
 import { useEffect, useRef, useState } from "react";
 import { fmtAgo, fmtCountdown, fmtHours } from "@/lib/client/format";
 import { useAppClock, usePoll } from "@/lib/client/hooks";
@@ -81,6 +82,7 @@ export function ResponderView({ linkKey }: { linkKey: string }) {
 
   async function act(action: "on_way" | "arrived" | "help", minutes?: number) {
     if (action === "help" && !window.confirm("Alert everyone on this household's list that help is needed?")) return;
+    tap(action === "help" ? "warning" : "action");
     setBusy(action);
     setToast(null);
     try {

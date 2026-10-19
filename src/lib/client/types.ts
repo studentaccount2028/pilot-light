@@ -114,6 +114,8 @@ export interface StatusDto {
   resident: { name: string | null; phone: string | null; age: number | null };
   risk: RiskDto;
   outageRisk: { percent: number; why: string; auc: number; baseRatePercent: number } | null;
+  // How long the outage may last against the shortest backup (src/lib/engine/outageLength.ts)
+  race: { predictedHours: number; low: number; high: number; batteryHours: number; percentOutlasts: number; source: string } | null;
   clock: ClockDto;
   transport: "twilio" | "simulated";
 }

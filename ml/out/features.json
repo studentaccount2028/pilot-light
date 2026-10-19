@@ -1,0 +1,52 @@
+{
+  "colsA": [
+    "ev_winter_storm",
+    "ev_high_wind",
+    "ev_blizzard_warning",
+    "ev_wind_advisory",
+    "duration_hours",
+    "month_sin",
+    "month_cos",
+    "night_onset",
+    "fc_iceIn",
+    "fc_snowIn",
+    "fc_gustMph",
+    "roadside_canopy_pct",
+    "heavily_treed_share"
+  ],
+  "colsB_pre": [
+    "ev_winter_storm",
+    "ev_high_wind",
+    "ev_blizzard_warning",
+    "ev_wind_advisory",
+    "duration_hours",
+    "month_sin",
+    "month_cos",
+    "night_onset",
+    "fc_iceIn",
+    "fc_snowIn",
+    "fc_gustMph",
+    "roadside_canopy_pct",
+    "heavily_treed_share"
+  ],
+  "colsB_1h": [
+    "ev_winter_storm",
+    "ev_high_wind",
+    "ev_blizzard_warning",
+    "ev_wind_advisory",
+    "duration_hours",
+    "month_sin",
+    "month_cos",
+    "night_onset",
+    "fc_iceIn",
+    "fc_snowIn",
+    "fc_gustMph",
+    "roadside_canopy_pct",
+    "heavily_treed_share",
+    "o_share_1h",
+    "o_growth_1h",
+    "o_start_hour_utc"
+  ],
+  "sigma_pre": 0.9262693275361656,
+  "sigma_1h": 0.8141341610441981
+}

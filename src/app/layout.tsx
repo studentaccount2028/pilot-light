@@ -1,6 +1,7 @@
 // AI-assisted: written with Claude Code from the team's build spec.
 import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
+import { NativeBridge } from "@/components/NativeBridge";
 import { ServiceWorker } from "@/components/ServiceWorker";
 import "./globals.css";
 
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         {children}
         <ServiceWorker />
+        <NativeBridge />
       </body>
     </html>
   );

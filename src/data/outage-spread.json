@@ -1,0 +1,10 @@
+{
+  "_about": "How fast the county outage spread in its first hour, per storm. The race model reads it one hour into an outage. Live, this comes from the utilities' outage counts; for the replayed storm it is the real record from DOE/ORNL EAGLE-I (county customers out every 15 minutes).",
+  "pilot-light-replay:KGYX.WS.W.0007.2025": {
+    "county": "Carroll",
+    "outageStart": "2025-12-29T12:15:00Z",
+    "shareOutAtStart": 0.021646,
+    "shareOutAt1h": 0.082241,
+    "source": "DOE/ORNL EAGLE-I, Carroll County, December 29, 2025"
+  }
+}
